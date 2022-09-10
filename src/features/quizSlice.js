@@ -8,7 +8,6 @@ const initialState = {
   isTimerFinished: false,
   timeElapsed: 0,
   revealAnswers: false,
-  leave : false,
   submit : false
 };
 
@@ -31,16 +30,13 @@ const quizSlice = createSlice({
     updateTimerFinished(state, { payload }) {
       state.isTimerFinished = payload;
     },
-
     updateTimeElapsed(state, { payload }) {
       state.timeElapsed = payload;
     },
     updateRevealAnswers(state, { payload }) {
       state.revealAnswers = payload;
     },
-    updateLeave(state, { payload }) {
-      state.leave = payload;
-    },
+
     updateSubmit(state, { payload }) {
       state.submit = payload;
     },
@@ -65,7 +61,6 @@ export const {
   updateTimerFinished,
   updateTimeElapsed,
   updateRevealAnswers,
-  updateLeave,
   updateSubmit,
   clearQuiz,
   pickAnswer,
