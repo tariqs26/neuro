@@ -13,6 +13,7 @@
 
 - Add a feature to save previous quizzes in local storage so that they can be accessed later.
 - Light mode, and auto dark mode based on the user's system settings.
+- flashing animation when timer is about to end.
 
 ## To Get Started
 
