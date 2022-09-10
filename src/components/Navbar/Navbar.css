@@ -5,3 +5,10 @@
   background-color: hsl(240, 10%, 10%);
   width: 100%;
 }
+
+@media (max-height: 660px) {
+  .title {
+    font-size: 1rem;
+  }
+ 
+}
