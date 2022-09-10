@@ -5,20 +5,19 @@
 
 .quiz {
   flex-grow: 1;
-  place-items: center;
   margin-bottom: 2rem;
+  place-items: center;
   position: relative;
 }
 
 .quiz .loader {
-  color: white;
-  margin-top: 20px;
+  color: var(--text);
 }
 
 .questions {
   gap: 1em;
-  width: 80%;
   grid-template-columns: 1fr 1fr;
+  width: 80%;
 }
 
 @media (max-width: 390px) {
