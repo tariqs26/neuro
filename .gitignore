@@ -11,7 +11,7 @@
 
 # misc
 /.vscode
-/ts
+ts/
 .DS_Store
 .env.local
 .env.development.local
