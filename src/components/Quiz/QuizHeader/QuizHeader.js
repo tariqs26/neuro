@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
+import { updateRevealAnswers } from "features/quizSlice";
 import Timer from "./components/Timer/Timer";
 import LeaveButton from "./components/LeaveButton/LeaveButton";
 import SubmitButton from "./components/SubmitButton/SubmitButton";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import ScoreDisplay from "./components/ScoreDisplay/ScoreDisplay";
-import { updateRevealAnswers } from "features/quizSlice";
 import "./QuizHeader.css";
 
 export default function QuizHeader() {
@@ -16,7 +16,7 @@ export default function QuizHeader() {
   return (
     <div className="header">
       <LeaveButton dispatch={dispatch} />
-      <div className="container">
+      <div className="quiz-info">
         <Timer {...{ submit, questions }} />
         <ProgressBar />
         <ScoreDisplay cond={isTimerFinished || submit} questions={questions} />

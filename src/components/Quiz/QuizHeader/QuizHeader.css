@@ -41,7 +41,7 @@
   background-color: hsl(240, 80%, 35%);
 }
 
-.container {
+.quiz-info {
   width: 100%;
   margin: 0 1em;
   display: flex;
