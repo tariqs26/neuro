@@ -5,18 +5,18 @@
 }
 
 .header {
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg);
-  display: flex;
+  width: 82%;
   margin-bottom: 20px;
   padding: 1em;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: sticky;
   top: 0;
-  width: 82%;
 }
 
-@media (max-width : 390px){ 
+@media (max-width: 390px) {
   .header {
     width: 100%;
   }
@@ -27,7 +27,7 @@
 .reveal {
   max-width: 20%;
   min-width: max-content;
-  padding : 0.5rem;
+  padding: 0.5rem;
 }
 
 .reveal {
@@ -42,21 +42,22 @@
 }
 
 .container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
   margin: 0 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-.timer , .score{
-  color: rgb(212, 208, 199);
-  text-align: center;
+.timer,
+.score {
+  color: var(--text);
 }
 
-@media (max-width : 650px) {
-  .timer, .score {
+@media (max-width: 650px) {
+  .timer,
+  .score {
     font-size: 1.2em;
   }
 }
