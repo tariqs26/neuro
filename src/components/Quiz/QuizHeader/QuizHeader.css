@@ -20,6 +20,7 @@
 .submit,
 .reveal {
   max-width: 20%;
+  min-width: fit-content;
 }
 
 .reveal {
