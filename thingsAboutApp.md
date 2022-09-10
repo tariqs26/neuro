@@ -1,0 +1,5 @@
+- responsive
+- redux for state management
+- gather data api
+- react hooks and all the fancy stuff
+- absolute import

@@ -1,0 +1,6 @@
+.leave {
+  background-color: hsl(5, 80%, 48%);
+}
+.leave:hover {
+  background-color: hsl(5, 80%, 55%);
+}

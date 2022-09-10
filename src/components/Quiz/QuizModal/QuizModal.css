@@ -1,0 +1,55 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap:10px;
+}
+
+.buttons button {
+    border-radius: 5px;
+    border:none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: hsl(0, 100%, 45%);
+}
+
+.cancel:hover {
+    background-color: hsl(0, 100%, 55%);
+}
+
+.modal-container {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.684);
+}
+
+.modal {
+    background-color: var(--bg);
+    padding: 1rem;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    outline: 2px solid var(--green);
+}
+
+.modal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color : var(--green);
+}

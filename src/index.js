@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
+import "./index.css";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import Form from "./components/Form/Form";
+import Quiz from "./components/Quiz/Quiz";
+import Navbar from "./components/Navbar/Navbar";
+
+createRoot(document.querySelector("#root")).render(
+  <Provider store={store}>
+    <Navbar />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" element={<Form />} />
+        <Route path="/quiz/:id" element={<Quiz />} />
+        <Route path="/quiz" element={<Quiz />} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,0 +1,33 @@
+.quiz,
+.questions {
+  display: grid;
+  width: 100%;
+}
+
+.quiz {
+  place-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.quiz .loader{
+  color: white;
+  margin-top: 20px;
+}
+
+.questions {
+  gap: 1em;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .questions {
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  }
+}
+
+/* .stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+} */
