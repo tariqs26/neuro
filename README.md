@@ -12,6 +12,7 @@
 ### Future Improvements
 
 - Add a feature to save previous quizzes in local storage so that they can be accessed later.
+- Light mode, and auto dark mode based on the user's system settings.
 
 ## To Get Started
 
