@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { closeModal } from "features/quizModalSlice";
-import { clearQuiz , updateTimerStatus } from "features/quizSlice";
+import { clearQuiz, updateTimerStatus } from "features/quizSlice";
 import { useNavigate } from "react-router-dom";
 import "./QuizModal.css";
+
 export default function QuizModal() {
   const { isOpen } = useSelector((state) => state.quizModal);
   const { submit } = useSelector((state) => state.quiz);
@@ -14,16 +15,14 @@ export default function QuizModal() {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
-    }
+    };
   }, [isOpen]);
 
   return (
     isOpen && (
       <div className="modal-container">
         <div className="modal">
-          <h3>
-            Are you sure you want to leave? All current progress will be lost!
-          </h3>
+          <h3>Leave Quiz?</h3>
           <div className="buttons">
             <button
               className="confirm"
