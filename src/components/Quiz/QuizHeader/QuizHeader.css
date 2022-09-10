@@ -46,6 +46,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin: 0 1em;
 }
 
 .timer , .score{
@@ -55,7 +56,7 @@
 
 @media (max-width : 650px) {
   .timer, .score {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
