@@ -1,6 +1,6 @@
 .submit {
-  background-color: hsl(40, 60%, 45%);
+  background-color: hsl(40, 60%, 40%);
 }
 .submit:hover {
-  background-color: hsl(40, 60%, 50%);
+  background-color: hsl(40, 60%, 45%);
 }
