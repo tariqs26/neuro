@@ -1,16 +1,16 @@
 .quiz,
 .questions {
   display: grid;
-  width: 100%;
 }
 
 .quiz {
+  flex-grow: 1;
   place-items: center;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.quiz .loader{
+.quiz .loader {
   color: white;
   margin-top: 20px;
 }
@@ -21,20 +21,20 @@
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width : 390px){ 
+@media (max-width: 390px) {
   .questions {
-    width : 100%;
+    width: 100%;
   }
 }
-
 
 @media (max-width: 900px) {
   .questions {
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
-/* .stop-scrolling {
-  height: 100%;
-  overflow: hidden;
-} */
+.no-questions {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
