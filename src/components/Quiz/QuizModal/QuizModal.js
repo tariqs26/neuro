@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { closeModal } from "features/quizModalSlice";
-import { clearQuiz, updateLeave, updateTimerStatus } from "features/quizSlice";
+import { clearQuiz , updateTimerStatus } from "features/quizSlice";
 import { useNavigate } from "react-router-dom";
 import "./QuizModal.css";
 export default function QuizModal() {
@@ -38,7 +38,6 @@ export default function QuizModal() {
             <button
               className="cancel"
               onClick={() => {
-                dispatch(updateLeave(false));
                 !submit && dispatch(updateTimerStatus(false));
                 dispatch(closeModal());
               }}

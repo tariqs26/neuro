@@ -12,11 +12,8 @@
   --text: hsl(42, 13%, 81%);
 }
 
-/* error was that the body was full vh, but root was not */
-
 body {
   background-color: var(--bg);
-  transition : 200ms overflow ease-in-out;
 }
 
 #root {
