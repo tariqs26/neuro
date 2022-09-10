@@ -1,20 +1,13 @@
 .progress-bar {
-    background-color: hsl(240, 10%, 20%);
-    border: 2px solid hsl(240, 10%, 5%);
-    border-radius: 10px;
-    height: 20px;
-    overflow: hidden;
-    width: 70%;
-  }
-  
-  .bar {
-    background-color: hsl(240, 10%, 40%);
-    height: 100%;
-  }
-  
-  @media (min-width: 1000px) {
-    .progress-bar {
-      width: 80%;
-    }
-  }
-  
+  background-color: hsl(240, 10%, 20%);
+  border: 2px solid hsl(240, 10%, 5%);
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+  width: 80%;
+}
+
+.bar {
+  background-color: hsl(240, 10%, 40%);
+  height: 100%;
+}
