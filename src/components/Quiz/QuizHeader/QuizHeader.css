@@ -25,9 +25,7 @@
 .leave,
 .submit,
 .reveal {
-  max-width: 15%;
-  min-width: max-content;
-  padding: 0.5rem;
+  flex-shrink:3;
 }
 
 .reveal {
