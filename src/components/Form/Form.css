@@ -17,6 +17,7 @@ form {
   flex-direction: column;
   padding: 1rem;
   font-size: 1.2rem;
+  height: fit-content;
 }
 
 
