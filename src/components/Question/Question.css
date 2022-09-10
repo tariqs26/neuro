@@ -1,7 +1,6 @@
 * {
   --correct: hsl(139, 56%, 34%);
   --wrong: hsl(0, 63%, 52%);
-  --picked: hsl(240, 38%, 59%);
   --q-background: hsl(0, 5%, 45%);
 }
 
