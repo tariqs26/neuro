@@ -21,6 +21,13 @@
   grid-template-columns: 1fr 1fr;
 }
 
+@media (max-width : 390px){ 
+  .questions {
+    width : 100%;
+  }
+}
+
+
 @media (max-width: 900px) {
   .questions {
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));

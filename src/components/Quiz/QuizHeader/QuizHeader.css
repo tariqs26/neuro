@@ -16,6 +16,12 @@
   width: 82%;
 }
 
+@media (max-width : 390px){ 
+  .header {
+    width: 100%;
+  }
+}
+
 .leave,
 .submit,
 .reveal {
