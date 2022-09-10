@@ -20,7 +20,7 @@
 .submit,
 .reveal {
   max-width: 20%;
-  min-width: fit-content;
+  min-width: max-content;
 }
 
 .reveal {
@@ -42,11 +42,15 @@
   width: 100%;
 }
 
-h2 {
+.timer , .score{
   color: rgb(212, 208, 199);
   text-align: center;
-  top: 0;
-  transition: 100ms ease-in-out all;
+}
+
+@media (max-width : 650px) {
+  .timer, .score {
+    font-size: 1em;
+  }
 }
 
 .quizEnd {

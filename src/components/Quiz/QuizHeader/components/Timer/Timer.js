@@ -24,11 +24,12 @@ export default function Timer({ submit, questions }) {
   return (
     <h2
       className={
-        isTimerComplete && isTimerFinished
+        "timer " +
+        (isTimerComplete && isTimerFinished
           ? "quizEnd"
           : isTimerComplete && submit
           ? "quizSubmit"
-          : ""
+          : "")
       }
     >
       {!(isTimerComplete && isTimerFinished) ? (
