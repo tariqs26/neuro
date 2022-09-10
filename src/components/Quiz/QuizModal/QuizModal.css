@@ -14,7 +14,7 @@
     border-radius: 5px;
     border:none;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -45,11 +45,11 @@
     width: 80%;
     max-width: 500px;
     text-align: center;
-    outline: 2px solid var(--green);
 }
 
 .modal h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
     margin-bottom: 1rem;
     color : var(--green);
 }

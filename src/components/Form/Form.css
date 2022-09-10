@@ -19,11 +19,6 @@
   font-size: 1.2rem;
 }
 
-input[type="submit"]:hover {
-  background-color: var(--btn-blue-hover);
-  cursor: pointer;
-}
-
 .input-container {
   color: var(--text);
   margin-top: 20px;
@@ -41,7 +36,7 @@ input[type="submit"]:hover {
   color: inherit;
   display: block;
   font-size: inherit;
-  margin-top: 10px;
+  margin-top: 0.5em;
   outline: 1px solid black;
   padding: 0.5rem;
   width: 100%;
@@ -49,13 +44,9 @@ input[type="submit"]:hover {
 
 .form-control[type="submit"] {
   background-color: var(--btn-blue);
-  margin-top: 3rem;
 }
-@media (max-height: 660px) {
-  .form-control[type="submit"] {
-    margin-top: 1rem;
-  }
-  .form form {
-    font-size: 0.6rem;
-  }
+input[type="submit"]:hover {
+  background-color: var(--btn-blue-hover);
+  cursor: pointer;
 }
+
