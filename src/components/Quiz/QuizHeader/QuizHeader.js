@@ -27,7 +27,7 @@ export default function QuizHeader() {
           className={"reveal " + (!revealAnswers ? "" : "engaged")}
           onClick={() => dispatch(updateRevealAnswers(!revealAnswers))}
         >
-          Reveal
+          reveal
         </button>
       )}
     </div>
