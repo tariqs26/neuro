@@ -1,9 +1,3 @@
-* {
-  --btn-blue: hsl(240, 80%, 45%);
-  --btn-blue-hover: hsl(240, 80%, 55%);
-  --btn-blue-active: hsl(240, 80%, 35%);
-}
-
 .header {
   width: 82%;
   margin-bottom: 20px;
@@ -28,17 +22,6 @@
   flex-shrink:3;
 }
 
-.reveal {
-  background-color: var(--btn-blue);
-}
-.reveal:hover {
-  background-color: var(--btn-blue-hover);
-}
-.reveal.engaged,
-.reveal.engaged:hover {
-  background-color: hsl(240, 80%, 35%);
-}
-
 .quiz-info {
   width: 100%;
   margin: 0 1em;
@@ -60,9 +43,3 @@
   }
 }
 
-.quizEnd {
-  color: hsl(0, 100%, 70%);
-}
-.quizSubmit {
-  color: hsl(116, 44%, 53%);
-}

@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useTimer } from "hooks/useTimer";
 import { updateTimerFinished } from "features/quizSlice";
+import "./Timer.css";
 
 export default function Timer({ submit, questions }) {
   const { isTimerComplete, timeElapsed, isTimerFinished } = useSelector(
