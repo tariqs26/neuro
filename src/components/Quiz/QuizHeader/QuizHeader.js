@@ -1,15 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateRevealAnswers } from "features/quizSlice";
 import Timer from "./components/Timer/Timer";
 import LeaveButton from "./components/LeaveButton/LeaveButton";
 import SubmitButton from "./components/SubmitButton/SubmitButton";
+import RevealButton from "./components/RevealButton/RevealButton";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import ScoreDisplay from "./components/ScoreDisplay/ScoreDisplay";
 import "./QuizHeader.css";
 
 export default function QuizHeader() {
   const dispatch = useDispatch();
-  const { questions, isTimerFinished, revealAnswers, submit } = useSelector(
+  const { questions, isTimerFinished,  submit } = useSelector(
     (state) => state.quiz
   );
 
@@ -22,14 +22,10 @@ export default function QuizHeader() {
         <ScoreDisplay cond={isTimerFinished || submit} questions={questions} />
       </div>
       <SubmitButton dispatch={dispatch} cond={!(isTimerFinished || submit)} />
-      {(isTimerFinished || (submit && !isTimerFinished)) && (
-        <button
-          className={"reveal " + (!revealAnswers ? "" : "engaged")}
-          onClick={() => dispatch(updateRevealAnswers(!revealAnswers))}
-        >
-          reveal
-        </button>
-      )}
+      <RevealButton
+        dispatch={dispatch}
+        cond={isTimerFinished || (submit && !isTimerFinished)}
+      />
     </div>
   );
 }
