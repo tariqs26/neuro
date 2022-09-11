@@ -1,16 +1,16 @@
 * {
-    --btn-blue: hsl(240, 80%, 45%);
-    --btn-blue-hover: hsl(240, 80%, 55%);
-    --btn-blue-active: hsl(240, 80%, 35%);
-  }
-  
+  --btn-blue: hsl(240, 80%, 45%);
+  --btn-blue-hover: hsl(240, 80%, 55%);
+  --btn-blue-active: hsl(240, 80%, 35%);
+}
+
 .reveal {
-    background-color: var(--btn-blue);
-  }
-  .reveal:hover {
-    background-color: var(--btn-blue-hover);
-  }
-  .reveal.engaged,
-  .reveal.engaged:hover {
-    background-color: hsl(240, 80%, 35%);
-  }
+  background-color: var(--btn-blue);
+}
+.reveal:hover {
+  background-color: var(--btn-blue-hover);
+}
+.reveal.engaged,
+.reveal.engaged:hover {
+  background-color: hsl(240, 80%, 35%);
+}
