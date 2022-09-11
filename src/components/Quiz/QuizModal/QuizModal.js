@@ -22,7 +22,7 @@ export default function QuizModal() {
     isOpen && (
       <div className="modal-container">
         <div className="modal">
-          <h3>Leave Quiz?</h3>
+          <h3>Leave quiz?</h3>
           <div className="buttons">
             <button
               className="confirm"
@@ -32,7 +32,7 @@ export default function QuizModal() {
                 navigate("/");
               }}
             >
-              confirm
+              Confirm
             </button>
             <button
               className="cancel"
@@ -41,7 +41,7 @@ export default function QuizModal() {
                 dispatch(closeModal());
               }}
             >
-              cancel
+              Cancel
             </button>
           </div>
         </div>

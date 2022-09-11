@@ -9,7 +9,7 @@ export default function RevealButton({ dispatch, cond }) {
         className={"reveal " + (!revealAnswers ? "" : "engaged")}
         onClick={() => dispatch(updateRevealAnswers(!revealAnswers))}
       >
-        {revealAnswers ? "hide answers" : "show answers"}
+        {revealAnswers ? "Hide Answers" : "Show Answers"}
       </button>
     )
   );

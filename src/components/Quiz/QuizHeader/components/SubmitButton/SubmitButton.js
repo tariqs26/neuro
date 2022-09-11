@@ -11,7 +11,7 @@ export default function SubmitButton({ dispatch, cond }) {
           dispatch(updateTimerStatus(true));
         }}
       >
-        submit
+        Submit Answers
       </button>
     )
   );

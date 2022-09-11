@@ -34,7 +34,7 @@ export default function Timer({ submit, questions }) {
     >
       {!(isTimerComplete && isTimerFinished) ? (
         <>
-          time: {(timeElapsed / 1000).toFixed(1)}/
+          Time: {(timeElapsed / 1000).toFixed(1)}/
           {(limit / 1000).toFixed(1)}
         </>
       ) : (
