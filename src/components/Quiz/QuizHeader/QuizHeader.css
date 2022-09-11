@@ -19,7 +19,7 @@
 .leave,
 .submit,
 .reveal {
-  flex-shrink:3;
+  flex-shrink: 3;
 }
 
 .quiz-info {
@@ -41,5 +41,12 @@
   .score {
     font-size: 1.2em;
   }
+  .leave,
+  .submit,
+  .reveal {
+    font-size: 1em;
+  }
+  .progress-bar {
+    width: 100%;
+  }
 }
-
