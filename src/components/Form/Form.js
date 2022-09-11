@@ -42,7 +42,7 @@ export default function Form() {
           <option value="boolean">True / False</option>
         </Select>
         <div className="input-container">
-          <input type="submit" value="Start Quiz" className="form-control" />
+          <input type="submit" value="Start quiz" className="form-control" />
         </div>
       </form>
     </div>

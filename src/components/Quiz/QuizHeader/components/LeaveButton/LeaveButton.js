@@ -11,7 +11,7 @@ export default function LeaveButton({ dispatch }) {
         dispatch(openModal());
       }}
     >
-      Leave Quiz
+      Leave quiz
     </button>
   );
 }
