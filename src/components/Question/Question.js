@@ -26,12 +26,12 @@ export default function Question({
     <div className="question">
       <h3 ref={questionText}>{null}</h3>
       <div className="options">
-        {questions.map((text, idx) => {
+        {questions.map((text) => {
           const isPicked = picked === text;
           const timerEnd = isTimerComplete ? "finished" : "";
           return (
             <Option
-              key={idx}
+              key={text} // unique key
               className={
                 (revealAnswers && correct === text && !isPicked
                   ? "correct"

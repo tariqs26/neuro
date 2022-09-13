@@ -23,8 +23,8 @@ export default function Quiz() {
         <>
           <QuizHeader />
           <div className="questions">
-            {questions.map((question, index) => (
-              <Question key={index} {...question} />
+            {questions.map((question) => (
+              <Question key={question.question} {...question} />
             ))}
           </div>
         </>

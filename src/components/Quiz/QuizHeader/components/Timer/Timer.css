@@ -1,7 +1,6 @@
-.quizEnd {
-    color: hsl(0, 100%, 70%);
-  }
-  .quizSubmit {
-    color: hsl(116, 44%, 53%);
-  }
-  
+.quiz-end {
+  color: hsl(0, 100%, 70%);
+}
+.quiz-submit {
+  color: hsl(116, 44%, 53%);
+}

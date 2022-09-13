@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { closeModal } from "features/quizModalSlice";
 import { clearQuiz, updateTimerStatus } from "features/quizSlice";
 import { useNavigate } from "react-router-dom";

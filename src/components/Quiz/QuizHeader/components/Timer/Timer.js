@@ -27,9 +27,9 @@ export default function Timer({ submit, questions }) {
       className={
         "timer " +
         (isTimerComplete && isTimerFinished
-          ? "quizEnd"
+          ? "quiz-end"
           : isTimerComplete && submit
-          ? "quizSubmit"
+          ? "quiz-submit"
           : "")
       }
     >
