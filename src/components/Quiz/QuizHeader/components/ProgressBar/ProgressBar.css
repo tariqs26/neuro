@@ -10,4 +10,5 @@
 .bar {
   background-color: var(--picked);
   height: 100%;
+  transition: 200ms width ease-in-out;
 }
