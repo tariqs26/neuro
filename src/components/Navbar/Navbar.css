@@ -1,9 +1,23 @@
-.title {
-  color: hsl(100, 80%, 49%);
-  text-align: center;
-  padding: 1em;
+.nav-bar {
   background-color: hsl(240, 10%, 10%);
   width: 100%;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+}
+
+.nav-title, .nav-svg {
+  color: hsl(100, 80%, 49%);
+}
+
+.nav-svg {
+  width: 1.8em
+}
+
+.nav-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 0.5em;
 }
 
 /* @media (max-height: 660px) {
