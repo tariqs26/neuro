@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateProgress, pickAnswer } from "features/quizSlice";
+import { pickAnswer, stopTimer, updateScore } from "features/quizSlice";
 import { useText } from "hooks/useText";
 import Option from "./Option/Option";
 import "./Question.css";
@@ -9,17 +9,19 @@ export default function Question({
   questions,
   picked,
   correct_answer: correct,
-  idx
+  idx,
 }) {
   const questionText = useText(idx + 1 + ": " + question);
 
   const dispatch = useDispatch();
-  const { isTimerComplete, revealAnswers } = useSelector((state) => state.quiz);
+  const { isTimerStopped, revealAnswers, timeElapsed } = useSelector(
+    (state) => state.quiz
+  );
 
   const handleOptionClick = (isPicked, text) => {
-    if (isTimerComplete) return;
-    if (isPicked) dispatch(updateProgress(-1));
-    else if (!picked) dispatch(updateProgress(1));
+    if (isTimerStopped) return;
+    dispatch(stopTimer());
+    dispatch(updateScore((1 - timeElapsed / 10000) * 100));
     dispatch(pickAnswer({ question, answer: `${isPicked ? "" : text}` }));
   };
 
@@ -29,7 +31,7 @@ export default function Question({
       <div className="options">
         {questions.map((text) => {
           const isPicked = picked === text;
-          const timerEnd = isTimerComplete ? "finished" : "";
+          const timerEnd = isTimerStopped ? "finished" : "";
           return (
             <Option
               key={text}

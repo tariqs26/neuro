@@ -1,24 +1,25 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTimerStatus, updateTimeElapsed } from "features/quizSlice";
+import { stopTimer, updateTimeElapsed } from "features/quizSlice";
 
 export const useTimer = (limit, increment) => {
   const dispatch = useDispatch();
-  const { isTimerComplete, timeElapsed } = useSelector((state) => state.quiz);
+  const { isTimerStopped, timeElapsed } = useSelector((state) => state.quiz);
 
   useEffect(() => {
     let interval = null;
 
-    if (timeElapsed > limit || isTimerComplete) {
+    if (timeElapsed > limit || isTimerStopped) {
       clearInterval(interval);
-      dispatch(updateTimerStatus(true));
+      dispatch(stopTimer());
     }
-    if (!isTimerComplete) {
+    if (!isTimerStopped) {
       interval = setInterval(() => {
         dispatch(updateTimeElapsed(timeElapsed + increment));
       }, increment);
     }
+
     return () => clearInterval(interval);
-  }, [limit, increment, dispatch, isTimerComplete, timeElapsed]);
+  }, [limit, increment, dispatch, isTimerStopped, timeElapsed]);
   return limit + increment;
 };

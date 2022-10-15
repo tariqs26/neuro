@@ -6,7 +6,7 @@ button {
   padding: 0.5em;
   font-size: 1.1rem;
   width: 100%;
-  transition: 120ms ease-in-out all;
+  transition: 120ms ease-in-out background-color;
 }
 
 button:hover {
@@ -26,13 +26,12 @@ button:hover {
   color: white;
 }
 
+.finished:hover {
+  background-color: hsl(240, 10%, 40%);
+}
+
 .picked,
 .picked:hover {
   background-color: var(--picked);
   color: white;
-}
-
-.finished,
-.finished:hover {
-  cursor: not-allowed;
 }

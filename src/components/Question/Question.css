@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap:1.2em;
   flex:1;
 }
@@ -24,9 +25,17 @@
 }
 
 .options {
-  display: inherit;
+  display:inherit;
   flex-direction: inherit;
   gap: 10px;
   align-items: center;
   width: 80%;
+  animation: slide 1s 2s ease-in-out forwards;
+  transform : scaleY(0);
+}
+
+@keyframes slide {
+  100% {
+    transform: scaleY(1);
+  }
 }

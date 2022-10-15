@@ -21,16 +21,9 @@
   border-radius: 5px;
   gap:1em;
   overflow: clip;
-  height:45vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-@media screen and (max-width: 768px) {
-  .quiz-area {
-    height: 50vh;
-  }
 }
 
 .btns {

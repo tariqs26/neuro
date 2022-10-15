@@ -1,19 +1,33 @@
 import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useQuestionsFetch } from "hooks/useQuestionsFetch";
 import QuizHeader from "./QuizHeader/QuizHeader";
 import Question from "../Question/Question";
 import QuizModal from "./QuizModal/QuizModal";
-import { updateCurrentIndex } from "features/quizSlice";
+import {
+  updateCurrentIndex,
+  updateTimeElapsed,
+  updateTimerComplete,
+  startTimer,
+} from "features/quizSlice";
 import "./Quiz.css";
 
 export default function Quiz() {
   const location = useLocation();
   const { id } = useParams();
   useQuestionsFetch(id, location);
-  const { isLoading, questions, currentIndex, submit, isTimerFinished } =
-    useSelector((state) => state.quiz);
+  const { isLoading, questions, currentIndex, submit } = useSelector(
+    (state) => state.quiz
+  );
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (currentIndex === questions.length - 1) return;
+    setTimeout(() => {
+      dispatch(startTimer());
+    }, 4000);
+  }, [dispatch, currentIndex, questions.length]);
+
   return (
     <div className="quiz">
       <QuizModal />
@@ -37,10 +51,12 @@ export default function Quiz() {
                 </button>
               )}
               <button
-                onClick={() =>
-                  currentIndex < questions.length - 1 &&
-                  dispatch(updateCurrentIndex(1))
-                }
+                onClick={() => {
+                  if (!(currentIndex < questions.length - 1)) return;
+                  dispatch(updateCurrentIndex(1));
+                  dispatch(updateTimeElapsed(0));
+                  dispatch(updateTimerComplete(false));
+                }}
               >
                 Next
               </button>

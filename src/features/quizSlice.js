@@ -5,45 +5,44 @@ const initialState = {
   currentIndex: 0,
   isLoading: true,
   progress: 0,
+  isTimerStopped: true,
   isTimerComplete: false,
-  isTimerFinished: false,
   timeElapsed: 0,
   revealAnswers: false,
-  submit : false
+  submit: false,
+  score: 0,
 };
 
 const quizSlice = createSlice({
   name: "quiz",
   initialState,
   reducers: {
-    updateProgress(state, { payload }) {
-      state.progress += payload;
-    },
     updateQuestions(state, { payload }) {
       state.questions = payload;
     },
     updateIsLoading(state, { payload }) {
       state.isLoading = payload;
     },
-    updateTimerStatus(state, { payload }) {
-      state.isTimerComplete = payload;
+    startTimer(state) {
+      state.isTimerStopped = false;
     },
-    updateTimerFinished(state, { payload }) {
-      state.isTimerFinished = payload;
+    stopTimer(state) {
+      state.isTimerStopped = true;
+    },
+    updateTimerComplete(state, { payload }) {
+      state.isTimerComplete = payload;
     },
     updateTimeElapsed(state, { payload }) {
       state.timeElapsed = payload;
     },
-    updateRevealAnswers(state, { payload }) {
-      state.revealAnswers = payload;
-    },
-
     updateCurrentIndex(state, { payload }) {
       state.currentIndex += payload;
     },
-
     updateSubmit(state, { payload }) {
       state.submit = payload;
+    },
+    updateScore(state, { payload }) {
+      state.score += payload;
     },
     clearQuiz() {
       return initialState;
@@ -52,6 +51,7 @@ const quizSlice = createSlice({
       const questionIndex = state.questions.findIndex(
         ({ question: q }) => q === payload.question
       );
+      if(state.questions[questionIndex].picked) return;
       state.questions[questionIndex].picked = payload.answer;
     },
   },
@@ -59,15 +59,16 @@ const quizSlice = createSlice({
 });
 
 export const {
-  updateProgress,
   updateQuestions,
   updateIsLoading,
-  updateTimerStatus,
-  updateTimerFinished,
+  startTimer,
+  stopTimer,
+  updateTimerComplete,
   updateTimeElapsed,
   updateRevealAnswers,
   updateSubmit,
   updateCurrentIndex,
+  updateScore,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;
