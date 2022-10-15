@@ -9,8 +9,9 @@ export default function Question({
   questions,
   picked,
   correct_answer: correct,
+  idx
 }) {
-  const questionText = useText(question);
+  const questionText = useText(idx + 1 + ": " + question);
 
   const dispatch = useDispatch();
   const { isTimerComplete, revealAnswers } = useSelector((state) => state.quiz);
@@ -31,7 +32,7 @@ export default function Question({
           const timerEnd = isTimerComplete ? "finished" : "";
           return (
             <Option
-              key={text} // unique key
+              key={text}
               className={
                 (revealAnswers && correct === text && !isPicked
                   ? "correct"

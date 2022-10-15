@@ -11,9 +11,9 @@ import Categories from "./Categories";
 export default function Form() {
   const [url, dispatch] = useReducer(reducer, {
     amount: "10",
-    category: "",
-    difficulty: "",
-    type: "",
+    category: "9",
+    difficulty: "easy",
+    type: "multiple",
   });
   let navigate = useNavigate();
   const quizDispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function Form() {
   };
 
   return (
-    <div className="form">
+    <div className="form-container">
       <form action="" onSubmit={handleSubmit}>
         <AmountInput dispatch={dispatch} />
         <Select name="category" dispatch={dispatch}>

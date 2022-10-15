@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   questions: [],
+  currentIndex: 0,
   isLoading: true,
   progress: 0,
   isTimerComplete: false,
@@ -37,6 +38,10 @@ const quizSlice = createSlice({
       state.revealAnswers = payload;
     },
 
+    updateCurrentIndex(state, { payload }) {
+      state.currentIndex += payload;
+    },
+
     updateSubmit(state, { payload }) {
       state.submit = payload;
     },
@@ -62,6 +67,7 @@ export const {
   updateTimeElapsed,
   updateRevealAnswers,
   updateSubmit,
+  updateCurrentIndex,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;

@@ -1,72 +1,47 @@
 .header {
-  width: 82%;
-  margin-bottom: 20px;
-  padding: 1em;
+  width: clamp(50vw, 100%, 80vw);
+  padding: 1rem;
   background-color: var(--bg);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-}
-
-@media (max-width: 390px) {
-  .header {
-    width: 100%;
-  }
-}
-
-.leave,
-.submit,
-.reveal {
-  flex-shrink: 3;
-}
-
-.quiz-info {
-  width: 100%;
-  margin: 0 1em;
-  display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: 0.5em;
+  align-items: center;
+  gap:1em;
+}
+
+.inner-info {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.quiz-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.quiz-buttons button {
+  width:20%;
 }
 
 .timer,
 .score {
   color: var(--text);
+  font-size: 1.3rem;
 }
 
 .score {
-  animation: dropIn 0.3s ease-in-out;
+  opacity : 0;
+  animation: dropIn 300ms ease-in-out forwards;
 }
 
 @keyframes dropIn {
   from {
-    opacity: 0;
-    transform: translateY(-10%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(10%);
+    transform: translateY(-20%) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-
-@media (max-width: 650px) {
-  .timer,
-  .score {
-    font-size: 1.2em;
-  }
-  .leave,
-  .submit,
-  .reveal {
-    font-size: 1em;
-  }
-  .progress-bar {
-    width: 100%;
-  }
-}

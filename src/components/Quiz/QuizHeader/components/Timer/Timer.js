@@ -4,7 +4,7 @@ import { useTimer } from "hooks/useTimer";
 import { updateTimerFinished } from "features/quizSlice";
 import "./Timer.css";
 
-export default function Timer({ submit, questions }) {
+export default function Timer({ submit}) {
   const { isTimerComplete, timeElapsed, isTimerFinished } = useSelector(
     (state) => state.quiz
   );
@@ -12,7 +12,7 @@ export default function Timer({ submit, questions }) {
   const LENGTH_PER_QUESTION = 6000;
   const INCREMENT = 100;
   const limit = useTimer(
-    questions.length * LENGTH_PER_QUESTION - INCREMENT,
+    LENGTH_PER_QUESTION - INCREMENT,
     INCREMENT
   );
 
@@ -35,8 +35,7 @@ export default function Timer({ submit, questions }) {
     >
       {!(isTimerComplete && isTimerFinished) ? (
         <>
-          Time: {(timeElapsed / 1000).toFixed(1)}/
-          {(limit / 1000).toFixed(1)}
+          Time: {((limit - timeElapsed) / 1000).toFixed(1)}s
         </>
       ) : (
         <> Time's Up! </>

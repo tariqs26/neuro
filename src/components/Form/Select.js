@@ -14,7 +14,7 @@ export default function Select({ name, dispatch, children }) {
           });
         }}
       >
-        <option value="any">{"Any " + capitalize(name)}</option>
+        {/* <option value="any">{"Any " + capitalize(name)}</option> */}
         {children}
       </select>
     </div>
