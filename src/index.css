@@ -11,6 +11,8 @@
   --green: hsl(39, 50%, 58%);
   --text: hsl(42, 13%, 89%);
   --picked: hsl(240, 38%, 50%);
+  --correct: hsl(139, 56%, 34%);
+  --wrong: hsl(0, 63%, 52%);
 }
 
 body {

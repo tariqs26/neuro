@@ -5,28 +5,29 @@ import { useQuestionsFetch } from "hooks/useQuestionsFetch";
 import QuizHeader from "./QuizHeader/QuizHeader";
 import Question from "../Question/Question";
 import QuizModal from "./QuizModal/QuizModal";
-import {
-  updateCurrentIndex,
-  updateTimeElapsed,
-  updateTimerComplete,
-  startTimer,
-} from "features/quizSlice";
+import { updateCurrentIndex } from "features/quizSlice";
+import { clearTimer, stopTimer } from "features/timerSlice";
 import "./Quiz.css";
 
 export default function Quiz() {
   const location = useLocation();
   const { id } = useParams();
   useQuestionsFetch(id, location);
-  const { isLoading, questions, currentIndex, submit } = useSelector(
+  const { isLoading, questions, currentIndex } = useSelector(
     (state) => state.quiz
   );
+  const { isTimerComplete } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (currentIndex === questions.length - 1) return;
-    setTimeout(() => {
-      dispatch(startTimer());
-    }, 4000);
-  }, [dispatch, currentIndex, questions.length]);
+    if (!questions || questions.length === 0) return;
+    if (!isTimerComplete) return;
+    if (currentIndex === questions.length - 1) {
+      dispatch(stopTimer());
+      return;
+    }
+    if (currentIndex < questions.length - 1) dispatch(updateCurrentIndex(1));
+    dispatch(clearTimer());
+  }, [dispatch, questions, currentIndex, isTimerComplete]);
 
   return (
     <div className="quiz">
@@ -37,31 +38,10 @@ export default function Quiz() {
         <NoQuestions />
       ) : (
         <>
-          <QuizHeader />
           <div className="quiz-area">
             <Question {...questions[currentIndex]} idx={currentIndex} />
-            <div className="btns">
-              {submit && (
-                <button
-                  onClick={() =>
-                    currentIndex > 0 && dispatch(updateCurrentIndex(-1))
-                  }
-                >
-                  Previous
-                </button>
-              )}
-              <button
-                onClick={() => {
-                  if (!(currentIndex < questions.length - 1)) return;
-                  dispatch(updateCurrentIndex(1));
-                  dispatch(updateTimeElapsed(0));
-                  dispatch(updateTimerComplete(false));
-                }}
-              >
-                Next
-              </button>
-            </div>
           </div>
+          <QuizHeader />
         </>
       )}
     </div>

@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { closeModal } from "features/quizModalSlice";
-import { clearQuiz, startTimer } from "features/quizSlice";
 import { useNavigate } from "react-router-dom";
+import { closeModal } from "features/quizModalSlice";
+import { clearQuiz } from "features/quizSlice";
+import { startTimer } from "features/timerSlice";
 import "./QuizModal.css";
 
 export default function QuizModal() {

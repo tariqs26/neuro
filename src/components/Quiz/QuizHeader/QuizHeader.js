@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import Timer from "./components/Timer/Timer";
-import LeaveButton from "./components/LeaveButton/LeaveButton";
-import ScoreDisplay from "./components/ScoreDisplay";
+import { useSelector } from "react-redux";
+import Timer from "./components/Timer";
 import "./QuizHeader.css";
+import ProgressBar from "./components/ProgressBar";
 
 export default function QuizHeader() {
-  const dispatch = useDispatch();
-  const { questions, submit } = useSelector(
+  const { questions, submit, currentIndex } = useSelector(
     (state) => state.quiz
   );
 
@@ -14,10 +12,10 @@ export default function QuizHeader() {
     <div className="header">
       <div className="inner-info">
         <Timer {...{ submit, questions }} />
-        <ScoreDisplay questions={questions} />
-      </div>
-      <div className="quiz-buttons">
-        <LeaveButton dispatch={dispatch} />
+        <ProgressBar {...{ questions, currentIndex }} />
+        <h2 className="score">
+          Q: {currentIndex + 1}/{questions.length}
+        </h2>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearQuiz } from "features/quizSlice";
+import { clearTimer } from "features/timerSlice";
 import reducer from "./reducer";
 import "./Form.css";
 import AmountInput from "./AmountInput";
@@ -20,6 +21,7 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     quizDispatch(clearQuiz());
+    quizDispatch(clearTimer());
     navigate("/quiz", {
       state: { url: url, timer: { limit: 9000, increment: 500 } },
     });

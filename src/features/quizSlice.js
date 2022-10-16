@@ -5,9 +5,6 @@ const initialState = {
   currentIndex: 0,
   isLoading: true,
   progress: 0,
-  isTimerStopped: true,
-  isTimerComplete: false,
-  timeElapsed: 0,
   revealAnswers: false,
   submit: false,
   score: 0,
@@ -22,18 +19,6 @@ const quizSlice = createSlice({
     },
     updateIsLoading(state, { payload }) {
       state.isLoading = payload;
-    },
-    startTimer(state) {
-      state.isTimerStopped = false;
-    },
-    stopTimer(state) {
-      state.isTimerStopped = true;
-    },
-    updateTimerComplete(state, { payload }) {
-      state.isTimerComplete = payload;
-    },
-    updateTimeElapsed(state, { payload }) {
-      state.timeElapsed = payload;
     },
     updateCurrentIndex(state, { payload }) {
       state.currentIndex += payload;
@@ -51,7 +36,7 @@ const quizSlice = createSlice({
       const questionIndex = state.questions.findIndex(
         ({ question: q }) => q === payload.question
       );
-      if(state.questions[questionIndex].picked) return;
+      if (state.questions[questionIndex].picked) return;
       state.questions[questionIndex].picked = payload.answer;
     },
   },
@@ -61,10 +46,6 @@ const quizSlice = createSlice({
 export const {
   updateQuestions,
   updateIsLoading,
-  startTimer,
-  stopTimer,
-  updateTimerComplete,
-  updateTimeElapsed,
   updateRevealAnswers,
   updateSubmit,
   updateCurrentIndex,

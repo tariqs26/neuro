@@ -1,12 +1,14 @@
 import { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
-import "./ProgressBar.css"
+
 export default function ProgressBar() {
-  const { questions, progress } = useSelector((state) => state.quiz);
+  const { questions, currentIndex } = useSelector((state) => state.quiz);
   const barRef = useRef(null);
   useEffect(() => {
-    barRef.current.style.width = `${(progress / questions.length) * 100}%`;
-  }, [progress, questions]);
+    barRef.current.style.width = `${
+      ((currentIndex + 1) / questions.length) * 100
+    }%`;
+  }, [currentIndex, questions]);
 
   return (
     <div className="progress-bar">
