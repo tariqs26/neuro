@@ -14,7 +14,8 @@
 .inner-info {
   width: 100%;
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
+  align-items: center;
 }
 
 .timer,
@@ -63,13 +64,10 @@
   }
 }
 
-@media (max-width: 500px) {
-  .progress-bar {
-    flex: 1;
-  }
-}
 .bar {
   background-color: var(--picked);
   height: 100%;
   transition: 200ms width ease-in-out;
+  width: 0;
 }
+

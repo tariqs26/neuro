@@ -7,7 +7,7 @@
 }
 
 .nav-title, .nav-svg {
-  color: hsl(100, 80%, 49%);
+  color: #5454ba;
 }
 
 .nav-svg {
@@ -16,6 +16,6 @@
 
 .nav-title {
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0.5em;
 }

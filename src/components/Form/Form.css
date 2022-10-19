@@ -1,54 +1,87 @@
-::selection {
-  user-select: none;
-}
-
 .form-container {
   display: grid;
   place-items: center;
-  margin: 2rem;
   flex-grow: 1;
 }
 
 form {
   width: 20em;
-  align-items: center;
-  background-color: hsl(240, 10%, 20%);
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: hsl(240, 10%, 15%);
+  outline: 2px solid #5454ba;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  font-size: 1.2rem;
-  overflow:clip;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+label {
+  color: #fabb26;
 }
 
 .input-container {
   color: var(--text);
-  margin-top: 20px;
   width: 100%;
 }
 
-.input-container:first-child {
-  margin-top: 0;
-}
-
-.form-control {
+.form-control,
+.opt-group option {
+  color: var(--text);
   background-color: hsl(240, 10%, 40%);
-  border-radius: 5px;
   border: none;
-  color: inherit;
-  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 1.5px hsl(240, 21%, 10%);
   font-size: inherit;
-  margin-top: 0.5em;
-  outline: 1px solid black;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   width: 100%;
 }
 
 .form-control[type="submit"] {
-  background-color: var(--btn-blue);
-}
-input[type="submit"]:hover {
-  background-color: var(--btn-blue-hover);
-  cursor: pointer;
+  transition: 200ms ease-in-out;
+  background-color: transparent;
 }
 
+.opt-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.opt-group option {
+  padding: 0.4rem 0.8rem;
+  background-color: initial;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-image: linear-gradient(to bottom, #5454ba 100%, transparent 0%);
+  text-align: center;
+  transition: 200ms ease-in-out;
+}
+
+.opt-group .active {
+  animation: active 120ms ease-in-out forwards;
+}
+
+@keyframes active {
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.opt-group .inactive {
+  background-size: 100% 100%;
+  animation: inactive 120ms ease-in-out forwards;
+}
+
+@keyframes inactive {
+  100% {
+    background-size: 100% 0%;
+  }
+}
+.opt-group option:hover,
+input[type="submit"]:hover {
+  background-color: hsla(240, 10%, 40%, 0.5);
+  cursor: pointer;
+}

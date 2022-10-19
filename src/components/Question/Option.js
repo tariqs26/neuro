@@ -1,5 +1,5 @@
-import { useText } from "hooks/useText";
-import "./Option.css";
+import { useText } from 'hooks/useText';
+import './Option.css';
 
 export default function Option({ text, ...args }) {
   const textRef = useText(text);

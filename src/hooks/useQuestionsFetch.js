@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { updateQuestions, updateIsLoading } from "features/quizSlice";
-import getQuestionsProxy from "api/getQuestionsProxy";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateQuestions, updateIsLoading } from 'features/quizSlice';
+import getQuestionsProxy from 'api/getQuestionsProxy';
 
 export const useQuestionsFetch = (id, location) => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const useQuestionsFetch = (id, location) => {
         data = await getQuestionsProxy(location.state.url);
         data = data.map((question) => ({
           ...question,
-          picked: "",
+          picked: '',
           questions: [
             question.correct_answer,
             ...question.incorrect_answers,

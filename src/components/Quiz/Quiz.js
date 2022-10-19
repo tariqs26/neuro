@@ -1,13 +1,13 @@
-import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useQuestionsFetch } from "hooks/useQuestionsFetch";
-import QuizHeader from "./QuizHeader/QuizHeader";
-import Question from "../Question/Question";
-import QuizModal from "./QuizModal/QuizModal";
-import { updateCurrentIndex } from "features/quizSlice";
-import { clearTimer, stopTimer } from "features/timerSlice";
-import "./Quiz.css";
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
+import QuizHeader from './QuizHeader/QuizHeader';
+import Question from '../Question/Question';
+import QuizModal from './QuizModal/QuizModal';
+import { updateCurrentIndex } from 'features/quizSlice';
+import { clearTimer, stopTimer } from 'features/timerSlice';
+import './Quiz.css';
 
 export default function Quiz() {
   const location = useLocation();
@@ -30,15 +30,15 @@ export default function Quiz() {
   }, [dispatch, questions, currentIndex, isTimerComplete]);
 
   return (
-    <div className="quiz">
+    <div className='quiz'>
       <QuizModal />
       {isLoading ? (
-        <h1 className="loader">Loading...</h1>
+        <h1 className='loader'>Loading...</h1>
       ) : !(questions && questions.length) ? (
         <NoQuestions />
       ) : (
         <>
-          <div className="quiz-area">
+          <div className='quiz-area'>
             <Question {...questions[currentIndex]} idx={currentIndex} />
           </div>
           <QuizHeader />
@@ -51,9 +51,9 @@ export default function Quiz() {
 const NoQuestions = () => {
   const navigate = useNavigate();
   return (
-    <div className="no-questions">
-      <h1 className="loader">No Questions Found</h1>
-      <button className="back" onClick={() => navigate("/")}>
+    <div className='no-questions'>
+      <h1 className='loader'>No Questions Found</h1>
+      <button className='back' onClick={() => navigate('/')}>
         back
       </button>
     </div>

@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
 import {
   pickAnswer,
   updateScore,
   updateCurrentIndex,
-} from "features/quizSlice";
-import { clearTimer, stopTimer } from "features/timerSlice";
-import { useText } from "hooks/useText";
-import Option from "./Option";
-import "./Question.css";
+} from 'features/quizSlice';
+import { clearTimer, stopTimer } from 'features/timerSlice';
+import { useText } from 'hooks/useText';
+import Option from './Option';
+import './Question.css';
 
 export default function Question({
   question,
@@ -16,7 +16,7 @@ export default function Question({
   correct_answer: correct,
   idx,
 }) {
-  const questionText = useText(idx + 1 + ": " + question);
+  const questionText = useText(idx + 1 + ': ' + question);
 
   const dispatch = useDispatch();
   const {
@@ -24,14 +24,16 @@ export default function Question({
     questions: stateQuestions,
     revealAnswers,
   } = useSelector((state) => state.quiz);
-  const { isTimerStopped, timeElapsed } = useSelector((state) => state.timer);
+  const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
+    (state) => state.timer
+  );
 
   const handleOptionClick = (isPicked, text) => {
-    if (isTimerStopped) return;
+    if (isTimerStopped || timeElapsed === 0) return;
     dispatch(updateScore((1 - timeElapsed / 20000) * 100));
-    dispatch(pickAnswer({ question, answer: `${isPicked ? "" : text}` }));
+    dispatch(pickAnswer({ question, answer: `${isPicked ? '' : text}` }));
     if (currentIndex === stateQuestions.length - 1) {
-      console.log("timer stopped");
+      console.log('timer stopped');
       dispatch(stopTimer());
       return;
     }
@@ -40,26 +42,26 @@ export default function Question({
     dispatch(clearTimer());
   };
   return (
-    <div className="question">
+    <div className='question'>
       <h3 ref={questionText}>{null}</h3>
-      {stateQuestions[currentIndex].picked || timeElapsed > 0 ? (
-        <div className="options">
+      {stateQuestions[currentIndex].picked || timerDelay > 3200 ? (
+        <div className='options'>
           {questions.map((text) => {
             const isPicked = picked === text;
-            const timerEnd = isTimerStopped ? "finished" : "";
+            const timerEnd = isTimerStopped ? 'finished' : '';
             return (
               <Option
                 key={text}
                 className={
-                  "option " +
+                  'option ' +
                   (revealAnswers && correct === text && !isPicked
-                    ? "correct"
+                    ? 'correct'
                     : revealAnswers && isPicked && !(correct === text)
-                    ? "incorrect"
+                    ? 'incorrect'
                     : isPicked
-                    ? "picked"
-                    : "") +
-                  " " +
+                    ? 'picked'
+                    : '') +
+                  ' ' +
                   timerEnd
                 }
                 text={text}
@@ -69,7 +71,7 @@ export default function Question({
           })}
         </div>
       ) : (
-        <h2 className="option-loader">Get Ready...</h2>
+        <h2 className='option-loader'>Get Ready...</h2>
       )}
     </div>
   );

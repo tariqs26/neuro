@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   stopTimer,
   updateTimeElapsed,
   updateTimerDelay,
-} from "features/timerSlice";
+} from 'features/timerSlice';
 
 export const useTimer = (limit, increment, delay) => {
   const dispatch = useDispatch();
