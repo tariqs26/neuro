@@ -1,21 +1,16 @@
 import { useSelector } from 'react-redux';
 import useCreateTimer from 'hooks/useCreateTimer';
 
-export default function Timer({ submit }) {
+export default function Timer() {
   const { isTimerStopped, isTimerComplete } = useSelector(
     (state) => state.timer
   );
   const { limit, timeElapsed } = useCreateTimer();
-
   return (
     <h2
       className={
         'timer ' +
-        (isTimerStopped && isTimerComplete
-          ? 'quiz-end'
-          : isTimerStopped && submit
-          ? 'quiz-submit'
-          : '')
+        (isTimerComplete ? 'quiz-end' : isTimerStopped ? 'quiz-submit' : '')
       }
     >
       {!(isTimerStopped && isTimerComplete) ? (

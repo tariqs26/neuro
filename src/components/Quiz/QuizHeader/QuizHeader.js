@@ -4,14 +4,14 @@ import './QuizHeader.css';
 import ProgressBar from './components/ProgressBar';
 
 export default function QuizHeader() {
-  const { questions, submit, currentIndex } = useSelector(
+  const { questions, currentIndex } = useSelector(
     (state) => state.quiz
   );
 
   return (
     <div className='header'>
       <div className='inner-info'>
-        <Timer {...{ submit, questions }} />
+        <Timer />
         <ProgressBar {...{ questions, currentIndex }} />
         <h2 className='score'>
           Q: {currentIndex + 1}/{questions.length}

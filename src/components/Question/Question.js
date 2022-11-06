@@ -14,9 +14,8 @@ export default function Question({
   questions,
   picked,
   correct_answer: correct,
-  idx,
 }) {
-  const questionText = useText(idx + 1 + ': ' + question);
+  const questionText = useText(question);
 
   const dispatch = useDispatch();
   const {
@@ -42,37 +41,39 @@ export default function Question({
     dispatch(clearTimer());
   };
   return (
-    <div className='question'>
+    <>
       <h3 ref={questionText}>{null}</h3>
-      {stateQuestions[currentIndex].picked || timerDelay > 3200 ? (
-        <div className='options'>
-          {questions.map((text) => {
-            const isPicked = picked === text;
-            const timerEnd = isTimerStopped ? 'finished' : '';
-            return (
-              <Option
-                key={text}
-                className={
-                  'option ' +
-                  (revealAnswers && correct === text && !isPicked
-                    ? 'correct'
-                    : revealAnswers && isPicked && !(correct === text)
-                    ? 'incorrect'
-                    : isPicked
-                    ? 'picked'
-                    : '') +
-                  ' ' +
-                  timerEnd
-                }
-                text={text}
-                onClick={() => handleOptionClick(isPicked, text)}
-              />
-            );
-          })}
-        </div>
-      ) : (
-        <h2 className='option-loader'>Get Ready...</h2>
-      )}
-    </div>
+      <div className='question'>
+        {stateQuestions[currentIndex].picked || timerDelay > 2200 ? (
+          <div className='options'>
+            {questions.map((text) => {
+              const isPicked = picked === text;
+              const timerEnd = isTimerStopped ? 'finished' : '';
+              return (
+                <Option
+                  key={text}
+                  className={
+                    'option ' +
+                    (revealAnswers && correct === text && !isPicked
+                      ? 'correct'
+                      : revealAnswers && isPicked && !(correct === text)
+                      ? 'incorrect'
+                      : isPicked
+                      ? 'picked'
+                      : '') +
+                    ' ' +
+                    timerEnd
+                  }
+                  text={text}
+                  onClick={() => handleOptionClick(isPicked, text)}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <h2 className='option-loader'>Get Ready...</h2>
+        )}
+      </div>
+    </>
   );
 }

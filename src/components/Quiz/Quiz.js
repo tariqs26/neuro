@@ -1,4 +1,4 @@
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
@@ -10,14 +10,13 @@ import { clearTimer, stopTimer } from 'features/timerSlice';
 import './Quiz.css';
 
 export default function Quiz() {
-  const location = useLocation();
-  const { id } = useParams();
-  useQuestionsFetch(id, location);
+  useQuestionsFetch();
   const { isLoading, questions, currentIndex } = useSelector(
     (state) => state.quiz
   );
   const { isTimerComplete } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     if (!questions || questions.length === 0) return;
     if (!isTimerComplete) return;
@@ -39,7 +38,7 @@ export default function Quiz() {
       ) : (
         <>
           <div className='quiz-area'>
-            <Question {...questions[currentIndex]} idx={currentIndex} />
+            <Question {...questions[currentIndex]} />
           </div>
           <QuizHeader />
         </>

@@ -6,7 +6,7 @@ import { updateTimerComplete } from 'features/timerSlice';
 export default function useCreateTimer() {
   const { timeElapsed } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
-  const DELAY = 4000;
+  const DELAY = 3000;
   const LENGTH_PER_QUESTION = 20000;
   const INCREMENT = 100;
   const limit = useTimer(LENGTH_PER_QUESTION - INCREMENT, INCREMENT, DELAY);

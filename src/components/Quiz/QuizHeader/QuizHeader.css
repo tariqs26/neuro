@@ -7,6 +7,7 @@
   align-items: center;
   gap: 1em;
   background-color: hsl(240, 10%, 5%);
+  outline: 0.1rem solid black;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -31,10 +32,7 @@
   }
 }
 
-.timer {
-  flex: 1;
-}
-
+.timer { flex: 1; }
 .timer.quiz-end {
   color: hsl(0, 100%, 70%);
 }
@@ -59,15 +57,13 @@
 }
 
 @media (max-width: 768px) {
-  .progress-bar {
-    flex: 1.8;
-  }
+  .progress-bar { flex: 1.8; }
 }
 
 .bar {
   background-color: var(--picked);
   height: 100%;
-  transition: 200ms width ease-in-out;
+  transition: 180ms width ease-in-out;
   width: 0;
 }
 

@@ -1,13 +1,12 @@
 .quiz {
   display: flex;
-  flex-grow: 1;
   margin-bottom: 2rem;
-  justify-content: center;
   margin: 0 auto;
-  position: relative;
   flex-direction: column;
   color: var(--text);
   width : min(90%, 45rem);
+  position:relative;
+  top:2rem;
 }
 
 .no-questions {
@@ -16,19 +15,19 @@
   gap: 20px;
 }
 
+.no-questions button { width: 40%; }
+
 .quiz-area {
   width: 100%;
   background-color: hsl(240, 10%, 18%);
   border-radius: 5px;
+  outline: 0.1rem solid black;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  gap: 1em;
   overflow: clip;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.loader {
-  text-align: center;
-}
+.loader { text-align: center; }

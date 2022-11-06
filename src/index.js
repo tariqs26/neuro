@@ -10,16 +10,15 @@ import Quiz from './components/Quiz/Quiz';
 import Navbar from './components/Navbar/Navbar';
 
 createRoot(document.querySelector('#root')).render(
-  <StrictMode>
+  // <StrictMode>
     <Provider store={store}>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Switch>
           <Route exact path='/' element={<Form />} />
-          <Route path='/quiz/:id' element={<Quiz />} />
           <Route path='/quiz' element={<Quiz />} />
         </Switch>
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+  ,{/* </StrictMode> */}
 );
