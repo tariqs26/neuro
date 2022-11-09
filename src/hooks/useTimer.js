@@ -39,5 +39,4 @@ export const useTimer = (limit, increment, delay) => {
     delay,
     dispatch,
   ]);
-  return limit + increment;
 };

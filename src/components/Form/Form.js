@@ -29,10 +29,10 @@ export default function Form() {
     e.target.classList.remove('inactive');
     dispatch(setValue({ name: parent.dataset.name, value: e.target.value }));
   };
-  
+
   useEffect(() => {
     dispatch(clearForm());
-  }, []);
+  }, [dispatch]);
   return (
     <form action='' onSubmit={handleSubmit}>
       <AmountInput clickHandler={handleOptionClick} />

@@ -18,13 +18,12 @@ export default function Quiz() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!questions || questions.length === 0) return;
-    if (!isTimerComplete) return;
+    if (!(questions && questions.length) || !isTimerComplete) return;
     if (currentIndex === questions.length - 1) {
       dispatch(stopTimer());
       return;
     }
-    if (currentIndex < questions.length - 1) dispatch(updateCurrentIndex(1));
+    dispatch(updateCurrentIndex(1));
     dispatch(clearTimer());
   }, [dispatch, questions, currentIndex, isTimerComplete, isLoading]);
 

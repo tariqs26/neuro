@@ -1,11 +1,14 @@
 import { useSelector } from 'react-redux';
-import useCreateTimer from 'hooks/useCreateTimer';
+import { useTimer } from 'hooks/useTimer';
 
 export default function Timer() {
   const { isTimerStopped, isTimerComplete, timeElapsed } = useSelector(
     (state) => state.timer
   );
-  const limit = useCreateTimer();
+  const DELAY = 3000;
+  const LENGTH_PER_QUESTION = 20000;
+  const INCREMENT = 100;
+  useTimer(LENGTH_PER_QUESTION - INCREMENT, INCREMENT, DELAY);
   return (
     <h2
       className={
@@ -14,7 +17,7 @@ export default function Timer() {
       }
     >
       {!(isTimerStopped && isTimerComplete) ? (
-        <>Time: {((limit - timeElapsed) / 1000).toFixed(1)}</>
+        <>Time: {((LENGTH_PER_QUESTION - timeElapsed) / 1000).toFixed(1)}</>
       ) : (
         <> Time's Up! </>
       )}
