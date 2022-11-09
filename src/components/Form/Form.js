@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setValue, clearForm } from 'features/formSlice';
@@ -16,7 +17,6 @@ export default function Form() {
     e.preventDefault();
     dispatch(clearQuiz());
     dispatch(clearTimer());
-    dispatch(clearForm());
     navigate('/quiz');
   };
 
@@ -29,6 +29,10 @@ export default function Form() {
     e.target.classList.remove('inactive');
     dispatch(setValue({ name: parent.dataset.name, value: e.target.value }));
   };
+  
+  useEffect(() => {
+    dispatch(clearForm());
+  }, []);
   return (
     <form action='' onSubmit={handleSubmit}>
       <AmountInput clickHandler={handleOptionClick} />
