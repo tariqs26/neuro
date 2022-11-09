@@ -45,7 +45,7 @@ label {
 }
 
 .form-control[type='submit'] {
-  transition: 180ms ease-in-out;
+  transition: 150ms ease-in-out;
   background-color: hsl(0, 77%, 42%);
 }
 input[type='submit']:hover {
@@ -65,7 +65,7 @@ input[type='submit']:hover {
   background-size: 100% 0;
   background-image: linear-gradient(to bottom, #5454ba 100%, transparent 0%);
   text-align: center;
-  transition: 200ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 
 .opt-group .active {

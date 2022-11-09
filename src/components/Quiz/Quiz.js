@@ -7,6 +7,7 @@ import Question from '../Question/Question';
 import QuizModal from './QuizModal/QuizModal';
 import { updateCurrentIndex } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
+import { clearForm } from 'features/formSlice';
 import './Quiz.css';
 
 export default function Quiz() {
@@ -16,8 +17,12 @@ export default function Quiz() {
   );
   const { isTimerComplete } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
+    if ((!questions || questions.length === 0) && !isLoading) {
+      dispatch(clearForm());
+      return;
+    }
     if (!questions || questions.length === 0) return;
     if (!isTimerComplete) return;
     if (currentIndex === questions.length - 1) {
@@ -26,7 +31,7 @@ export default function Quiz() {
     }
     if (currentIndex < questions.length - 1) dispatch(updateCurrentIndex(1));
     dispatch(clearTimer());
-  }, [dispatch, questions, currentIndex, isTimerComplete]);
+  }, [dispatch, questions, currentIndex, isTimerComplete, isLoading]);
 
   return (
     <div className='quiz'>
@@ -51,7 +56,7 @@ const NoQuestions = () => {
   const navigate = useNavigate();
   return (
     <div className='no-questions'>
-      <h1 className='loader'>No Questions Found</h1>
+      <h2 className='loader'>No Questions Found</h2>
       <button className='back' onClick={() => navigate('/')}>
         back
       </button>

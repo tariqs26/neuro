@@ -12,6 +12,7 @@
 body {
   background-color: var(--bg);
   --bg: hsl(240, 10%, 12%);
+  --nav-bg: hsl(240, 10%, 10%);
   --form-bg: hsl(240, 10%, 18%);
   --outline : hsl(0, 0%, 10%);
   --green: hsl(39, 50%, 58%);
@@ -19,19 +20,6 @@ body {
   --picked: hsl(240, 38%, 50%);
   --correct: hsl(139, 56%, 34%);
   --wrong: hsl(0, 63%, 52%);
-}
-
-@media (prefers-color-scheme : light ){
-  body {
-    --bg: hsl(240, 10%, 98%);
-    --form-bg: hsl(240, 10%, 98%);
-    --outline : hsl(0, 0%, 90%);
-    --green: hsl(39, 50%, 58%);
-    --text: hsl(42, 13%, 89%);
-    --picked: hsl(240, 38%, 50%);
-    --correct: hsl(139, 56%, 34%);
-    --wrong: hsl(0, 63%, 52%);
-  }
 }
 
 #root {

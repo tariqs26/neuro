@@ -29,5 +29,5 @@ export const useQuestionsFetch = () => {
       dispatch(updateIsLoading(false));
     };
     fetchData();
-  }, [dispatch, params]);
+  }, []);
 };

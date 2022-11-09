@@ -1,27 +1,30 @@
 .quiz {
   display: flex;
-  margin-bottom: 2rem;
-  margin: 0 auto;
   flex-direction: column;
+  width: min(90%, 45rem);
+  margin: 0 auto;
+  margin-bottom: 2rem;
   color: var(--text);
-  width : min(90%, 45rem);
-  position:relative;
-  top:2rem;
+  position: relative;
+  top: 2rem;
 }
 
 .no-questions {
   display: grid;
   place-items: center;
-  gap: 20px;
+  gap: 1rem;
 }
 
-.no-questions button { width: 40%; }
+.no-questions button {
+  width: 30%;
+  padding: 0.4rem 0.8rem;
+}
 
 .quiz-area {
   width: 100%;
   background-color: hsl(240, 10%, 18%);
+  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
   border-radius: 5px;
-  outline: 0.1rem solid black;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   overflow: clip;
@@ -30,4 +33,6 @@
   justify-content: space-between;
 }
 
-.loader { text-align: center; }
+.loader {
+  text-align: center;
+}

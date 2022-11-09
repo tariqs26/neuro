@@ -14,7 +14,7 @@ export const useTimer = (limit, increment, delay) => {
 
   useEffect(() => {
     let interval = null;
-    if (timeElapsed > limit || isTimerStopped) {
+    if (timeElapsed >= limit || isTimerStopped) {
       clearInterval(interval);
       dispatch(updateTimerDelay(0));
       dispatch(stopTimer());
@@ -27,7 +27,6 @@ export const useTimer = (limit, increment, delay) => {
           dispatch(updateTimeElapsed(timeElapsed + increment));
       }, increment);
     }
-
     return () => clearInterval(interval);
   }, [
     isTimerStopped,
