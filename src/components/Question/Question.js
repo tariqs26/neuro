@@ -10,7 +10,7 @@ import './Question.css';
 
 export default function Question({
   question,
-  questions,
+  options,
   picked,
   correct_answer: correct,
 }) {
@@ -19,7 +19,7 @@ export default function Question({
   const dispatch = useDispatch();
   const {
     currentIndex,
-    questions: stateQuestions,
+    questions,
     revealAnswers,
   } = useSelector((state) => state.quiz);
   const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
@@ -30,7 +30,7 @@ export default function Question({
     if (isTimerStopped || timeElapsed === 0) return;
     dispatch(updateScore((1 - timeElapsed / 20000) * 100));
     dispatch(pickAnswer({ question, answer: `${isPicked ? '' : text}` }));
-    if (currentIndex === stateQuestions.length - 1) {
+    if (currentIndex === questions.length - 1) {
       dispatch(stopTimer());
       return;
     }
@@ -41,9 +41,9 @@ export default function Question({
     <>
       <h3 ref={questionText}>{null}</h3>
       <div className='question'>
-        {stateQuestions[currentIndex].picked || timerDelay > 2200 ? (
+        {questions[currentIndex].picked || timerDelay > 2200 ? (
           <div className='options'>
-            {questions.map((text) => {
+            {options.map((text) => {
               const isPicked = picked === text;
               const timerEnd = isTimerStopped ? 'finished' : '';
               return (

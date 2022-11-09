@@ -20,7 +20,7 @@ export const useQuestionsFetch = () => {
       data = data.map((question) => ({
         ...question,
         picked: '',
-        questions: [
+        options: [
           question.correct_answer,
           ...question.incorrect_answers,
         ].sort(() => Math.random() - 0.5),
