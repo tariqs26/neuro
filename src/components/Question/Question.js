@@ -6,7 +6,6 @@ import {
 } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import { useText } from 'hooks/useText';
-import Option from './Option';
 import './Question.css';
 
 export default function Question({
@@ -32,12 +31,10 @@ export default function Question({
     dispatch(updateScore((1 - timeElapsed / 20000) * 100));
     dispatch(pickAnswer({ question, answer: `${isPicked ? '' : text}` }));
     if (currentIndex === stateQuestions.length - 1) {
-      console.log('timer stopped');
       dispatch(stopTimer());
       return;
     }
-    if (currentIndex < stateQuestions.length - 1)
-      dispatch(updateCurrentIndex(1));
+    dispatch(updateCurrentIndex(1));
     dispatch(clearTimer());
   };
   return (
@@ -76,4 +73,9 @@ export default function Question({
       </div>
     </>
   );
+}
+
+function Option({ text, ...args }) {
+  const textRef = useText(text);
+  return <button {...args} ref={textRef}></button>;
 }

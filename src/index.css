@@ -27,3 +27,19 @@ body {
   display: grid;
   place-items: center;
 }
+
+button {
+  background-color: hsl(240, 42%, 36%);
+  border-radius: 5px;
+  border: 2px solid hsl(0, 1%, 15%);
+  color: var(--text);
+  padding: 0.8rem 0;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: 120ms ease-in-out background-color;
+}
+
+button:hover {
+  background-color: hsl(240, 41%, 40%);
+  cursor: pointer;
+}

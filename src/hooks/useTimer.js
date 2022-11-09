@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  stopTimer,
   updateTimeElapsed,
   updateTimerDelay,
   updateTimerComplete,
@@ -15,12 +14,8 @@ export const useTimer = (limit, increment, delay) => {
 
   useEffect(() => {
     let interval = null;
-    if (timeElapsed >= limit || isTimerStopped) {
-      clearInterval(interval);
-      dispatch(stopTimer());
-    }
+    if (timeElapsed >= limit || isTimerStopped) clearInterval(interval);
     if (timeElapsed >= limit) dispatch(updateTimerComplete(true));
-    
     if (!isTimerStopped) {
       interval = setInterval(() => {
         timerDelay < delay &&
