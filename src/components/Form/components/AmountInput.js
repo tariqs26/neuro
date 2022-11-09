@@ -7,7 +7,7 @@ export default function AmountInput({ clickHandler }) {
           5
         </option>
         {[10, 15, 20].map((amt) => (
-          <option value={amt} onClick={clickHandler}>
+          <option key={amt} value={amt} onClick={clickHandler}>
             {amt}
           </option>
         ))}
