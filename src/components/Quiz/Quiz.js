@@ -7,7 +7,6 @@ import Question from '../Question/Question';
 import QuizModal from './QuizModal/QuizModal';
 import { updateCurrentIndex } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
-import { clearForm } from 'features/formSlice';
 import './Quiz.css';
 
 export default function Quiz() {
@@ -19,10 +18,6 @@ export default function Quiz() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if ((!questions || questions.length === 0) && !isLoading) {
-      dispatch(clearForm());
-      return;
-    }
     if (!questions || questions.length === 0) return;
     if (!isTimerComplete) return;
     if (currentIndex === questions.length - 1) {

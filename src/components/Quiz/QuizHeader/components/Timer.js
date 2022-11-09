@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 import useCreateTimer from 'hooks/useCreateTimer';
 
 export default function Timer() {
-  const { isTimerStopped, isTimerComplete } = useSelector(
+  const { isTimerStopped, isTimerComplete, timeElapsed } = useSelector(
     (state) => state.timer
   );
-  const { limit, timeElapsed } = useCreateTimer();
+  const limit = useCreateTimer();
   return (
     <h2
       className={

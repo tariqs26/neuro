@@ -23,13 +23,9 @@ form {
   }
 }
 
-label {
-  color: #e7dbdb;
-}
+label { color: #e7dbdb; }
 
-.input-container {
-  width: 100%;
-}
+.input-container { width: 100%; }
 
 .form-control,
 .opt-group option {
@@ -73,9 +69,7 @@ input[type='submit']:hover {
 }
 
 @keyframes active {
-  100% {
-    background-size: 100% 100%;
-  }
+  100% { background-size: 100% 100%; }
 }
 
 .opt-group .inactive {
@@ -84,10 +78,9 @@ input[type='submit']:hover {
 }
 
 @keyframes inactive {
-  100% {
-    background-size: 100% 0%;
-  }
+  100% { background-size: 100% 0%; }
 }
+
 .opt-group option:hover {
   background-color: hsla(240, 10%, 40%);
   cursor: pointer;

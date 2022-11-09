@@ -4,6 +4,7 @@ import {
   stopTimer,
   updateTimeElapsed,
   updateTimerDelay,
+  updateTimerComplete,
 } from 'features/timerSlice';
 
 export const useTimer = (limit, increment, delay) => {
@@ -16,9 +17,10 @@ export const useTimer = (limit, increment, delay) => {
     let interval = null;
     if (timeElapsed >= limit || isTimerStopped) {
       clearInterval(interval);
-      dispatch(updateTimerDelay(0));
       dispatch(stopTimer());
     }
+    if (timeElapsed >= limit) dispatch(updateTimerComplete(true));
+    
     if (!isTimerStopped) {
       interval = setInterval(() => {
         timerDelay < delay &&
