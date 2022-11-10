@@ -6,7 +6,7 @@ import {
   updateTimerComplete,
 } from 'features/timerSlice';
 
-export const useTimer = (limit, increment, delay) => {
+export const useTimer = (duration, increment, delay) => {
   const dispatch = useDispatch();
   const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
     (state) => state.timer
@@ -14,8 +14,8 @@ export const useTimer = (limit, increment, delay) => {
 
   useEffect(() => {
     let interval = null;
-    if (timeElapsed >= limit || isTimerStopped) clearInterval(interval);
-    if (timeElapsed >= limit) dispatch(updateTimerComplete(true));
+    if (timeElapsed >= duration || isTimerStopped) clearInterval(interval);
+    if (timeElapsed >= duration) dispatch(updateTimerComplete(true));
     if (!isTimerStopped) {
       interval = setInterval(() => {
         timerDelay < delay &&
@@ -29,9 +29,6 @@ export const useTimer = (limit, increment, delay) => {
     isTimerStopped,
     timeElapsed,
     timerDelay,
-    limit,
-    increment,
-    delay,
     dispatch,
   ]);
 };

@@ -15,15 +15,13 @@ export const useQuestionsFetch = () => {
   const params = useSelector((state) => state.form);
   useEffect(() => {
     const fetchData = async () => {
-      let data;
-      data = await getQuestionsProxy(params);
+      let data = await getQuestionsProxy(params);
       data = data.map((question) => ({
         ...question,
         picked: '',
-        options: [
-          question.correct_answer,
-          ...question.incorrect_answers,
-        ].sort(() => Math.random() - 0.5),
+        options: [question.correct_answer, ...question.incorrect_answers].sort(
+          () => Math.random() - 0.5
+        ),
       }));
       dispatch(updateQuestions(data));
       dispatch(updateIsLoading(false));

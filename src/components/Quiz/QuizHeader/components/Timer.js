@@ -5,10 +5,10 @@ export default function Timer() {
   const { isTimerStopped, isTimerComplete, timeElapsed } = useSelector(
     (state) => state.timer
   );
-  const DELAY = 3000;
-  const LENGTH_PER_QUESTION = 20000;
-  const INCREMENT = 100;
-  useTimer(LENGTH_PER_QUESTION - INCREMENT, INCREMENT, DELAY);
+  const questionDuration = 20000;
+  const increment = 100;
+  const delay = 3000;
+  useTimer(questionDuration - increment, increment, delay);
   return (
     <h2
       className={
@@ -17,7 +17,7 @@ export default function Timer() {
       }
     >
       {!(isTimerStopped && isTimerComplete) ? (
-        <>Time: {((LENGTH_PER_QUESTION - timeElapsed) / 1000).toFixed(1)}</>
+        <>Time: {((questionDuration - timeElapsed) / 1000).toFixed(1)}</>
       ) : (
         <> Time's Up! </>
       )}

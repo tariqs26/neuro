@@ -17,11 +17,9 @@ export default function Question({
   const questionText = useText(question);
 
   const dispatch = useDispatch();
-  const {
-    currentIndex,
-    questions,
-    revealAnswers,
-  } = useSelector((state) => state.quiz);
+  const { currentIndex, questions, revealAnswers } = useSelector(
+    (state) => state.quiz
+  );
   const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
     (state) => state.timer
   );
