@@ -25,10 +25,5 @@ export const useTimer = (duration, increment, delay) => {
       }, increment);
     }
     return () => clearInterval(interval);
-  }, [
-    isTimerStopped,
-    timeElapsed,
-    timerDelay,
-    dispatch,
-  ]);
+  }, [isTimerStopped, timeElapsed, timerDelay, dispatch]);
 };

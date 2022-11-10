@@ -23,12 +23,11 @@ const timerSlice = createSlice({
     updateTimeElapsed(state, { payload }) {
       state.timeElapsed = payload;
     },
-    clearTimer() {
-      return initialState;
-    },
-
     updateTimerDelay(state, { payload }) {
       state.timerDelay = payload;
+    },
+    clearTimer() {
+      return initialState;
     },
   },
 });
