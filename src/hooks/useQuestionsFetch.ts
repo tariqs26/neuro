@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import get from 'axios';
 import { updateQuestions, updateIsLoading } from 'features/quizSlice';
-import { Question, FormParams } from 'types/app_types';
+import { Question } from 'interfaces/app_interfaces';
+import { FormParams } from 'types/app_types';
+
 
 const API_URL = 'https://opentdb.com/api.php';
 
