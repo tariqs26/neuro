@@ -32,7 +32,9 @@ export default function Form() {
     group.classList.add('inactive');
     target.classList.add('active');
     target.classList.remove('inactive');
-    dispatch(setValue({ name: parent.dataset.name, value: target.value }));
+    dispatch(
+      setValue({ name: parent.dataset.name as string, value: target.value })
+    );
   };
 
   useEffect(() => {

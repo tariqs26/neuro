@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Question } from 'hooks/useQuestionsFetch';
 
-interface QuizQuestion extends Question{
+interface QuizQuestion extends Question {
   picked: string;
   options: string[];
 }
@@ -30,25 +30,28 @@ const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-    updateQuestions(state, { payload }) {
+    updateQuestions(state, { payload }: PayloadAction<QuizQuestion[]>) {
       state.questions = payload;
     },
-    updateIsLoading(state, { payload }) {
+    updateIsLoading(state, { payload }: PayloadAction<boolean>) {
       state.isLoading = payload;
     },
-    updateCurrentIndex(state, { payload }) {
+    updateCurrentIndex(state, { payload }: PayloadAction<number>) {
       state.currentIndex += payload;
     },
-    updateSubmit(state, { payload }) {
+    updateSubmit(state, { payload }: PayloadAction<boolean>) {
       state.submit = payload;
     },
-    updateScore(state, { payload }) {
+    updateScore(state, { payload }: PayloadAction<number>) {
       state.score += payload;
     },
     clearQuiz() {
       return initialState;
     },
-    pickAnswer(state, { payload }) {
+    pickAnswer(
+      state,
+      { payload }: PayloadAction<{ question: string; answer: string }>
+    ) {
       const questionIndex = state.questions.findIndex(
         ({ question: q }) => q === payload.question
       );

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   isTimerStopped: false,
@@ -17,13 +17,13 @@ const timerSlice = createSlice({
     stopTimer(state) {
       state.isTimerStopped = true;
     },
-    updateTimerComplete(state, { payload }) {
+    updateTimerComplete(state, { payload }: PayloadAction<boolean>) {
       state.isTimerComplete = payload;
     },
-    updateTimeElapsed(state, { payload }) {
+    updateTimeElapsed(state, { payload }: PayloadAction<number>) {
       state.timeElapsed = payload;
     },
-    updateTimerDelay(state, { payload }) {
+    updateTimerDelay(state, { payload }: PayloadAction<number>) {
       state.timerDelay = payload;
     },
     clearTimer() {
