@@ -1,7 +1,7 @@
 import { FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from 'app/hooks';
-import { setValue, clearForm } from 'features/formSlice';
+import { setValue, clearForm, FormState } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
 import CategoryInput from './components/CategoryInput';
@@ -33,7 +33,10 @@ export default function Form() {
     target.classList.add('active');
     target.classList.remove('inactive');
     dispatch(
-      setValue({ name: parent.dataset.name as string, value: target.value })
+      setValue({
+        name: parent.dataset.name as keyof FormState,
+        value: target.value,
+      })
     );
   };
 

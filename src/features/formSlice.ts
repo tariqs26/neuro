@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export type FormState = {
-  amount: string;
+  amount: '5' | '10' | '15' | '20';
   category: string;
-  difficulty: string;
-  type: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  type: 'multiple' | 'boolean';
 };
 
 const initialState: FormState = {
@@ -20,10 +20,10 @@ const formSlice = createSlice({
   reducers: {
     setValue(
       state,
-      { payload }: PayloadAction<{ name: string; value: string }>
+      { payload }: PayloadAction<{ name: keyof FormState; value: string }>
     ) {
       const { name, value } = payload;
-      state[name as keyof FormState] = value;
+      state[name] = value as never;
     },
     clearForm() {
       return initialState;
