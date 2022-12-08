@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import get from 'axios';
 import { updateQuestions, updateIsLoading } from 'features/quizSlice';
+import { FormState } from 'features/formSlice';
 import { Question } from 'interfaces/app_interfaces';
-import { FormParams } from 'types/app_types';
 
 
 const API_URL = 'https://opentdb.com/api.php';
 
-export default async function getQuestionsProxy(params : FormParams) {
+async function getQuestionsProxy(params : FormState) {
   const { results } = (await get(API_URL, { params })).data;
   return results;
 }
