@@ -1,18 +1,16 @@
 .nav-bar {
+  width: 100vw;
+  padding: 1rem;
+  z-index: 1;
   background-color: var(--nav-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 1;
-  padding: 1rem;
   display: flex;
   gap: 0.5rem;
 }
 
-.nav-title, .nav-svg { 
-  color: #5ce119 
-}
+.nav-title, .nav-svg {  color: #5ce119 }
 
 .nav-svg { width: 1.5em }
 
