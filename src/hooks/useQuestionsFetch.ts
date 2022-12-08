@@ -1,14 +1,7 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import get from 'axios';
 import { updateQuestions, updateIsLoading } from 'features/quizSlice';
-import { FormState } from 'features/formSlice';
-
-const API_URL = 'https://opentdb.com/api.php';
-async function getQuestionsProxy(params: FormState) {
-  const { results } = (await get(API_URL, { params })).data;
-  return results;
-}
+import getQuestionsProxy from 'api/getQuestionsProxy';
 
 export interface Question {
   category: string;

@@ -44,7 +44,7 @@ export default function Form() {
     dispatch(clearForm());
   }, [dispatch]);
   return (
-    <form action='' onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <AmountInput clickHandler={handleOptionClick} />
       <CategoryInput dispatch={dispatch} />
       <DifficultyInput clickHandler={handleOptionClick} />
