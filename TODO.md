@@ -1,4 +1,0 @@
-- loading animation, score system, visualize correct/incorrect answers
-- add a "back" button to the "help" page
-- figure out the best way to show question prompt
-- store results in local storage
