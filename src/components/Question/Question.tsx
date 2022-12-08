@@ -1,5 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from 'store';
+import { useAppSelector, useAppDispatch } from 'app/hooks';
 import {
   pickAnswer,
   updateScore,
@@ -23,12 +22,12 @@ export default function Question({
 }: QuestionProps) {
   const questionText = useText(question);
 
-  const dispatch = useDispatch();
-  const { currentIndex, questions, revealAnswers } = useSelector(
-    (state: RootState) => state.quiz
+  const dispatch = useAppDispatch();
+  const { currentIndex, questions, revealAnswers } = useAppSelector(
+    (state) => state.quiz
   );
-  const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
-    (state: RootState) => state.timer
+  const { isTimerStopped, timeElapsed, timerDelay } = useAppSelector(
+    (state) => state.timer
   );
 
   const handleOptionClick = (isPicked: boolean, text: string) => {

@@ -1,13 +1,10 @@
-import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { useAppSelector } from 'app/hooks';
 import Timer from './components/Timer';
 import './QuizHeader.css';
 import ProgressBar from './components/ProgressBar';
 
 export default function QuizHeader() {
-  const { questions, currentIndex } = useSelector(
-    (state: RootState) => state.quiz
-  );
+  const { questions, currentIndex } = useAppSelector((state) => state.quiz);
   return (
     <div className='header'>
       <div className='inner-info'>

@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from 'store';
+import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { updateCurrentIndex } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import QuizHeader from './QuizHeader/QuizHeader';
@@ -12,11 +11,11 @@ import './Quiz.css';
 
 export default function Quiz() {
   useQuestionsFetch();
-  const { isLoading, questions, currentIndex } = useSelector(
-    (state: RootState) => state.quiz
+  const { isLoading, questions, currentIndex } = useAppSelector(
+    (state) => state.quiz
   );
-  const { isTimerComplete } = useSelector((state: RootState) => state.timer);
-  const dispatch = useDispatch();
+  const { isTimerComplete } = useAppSelector((state) => state.timer);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (!(questions && questions.length) || !isTimerComplete) return;

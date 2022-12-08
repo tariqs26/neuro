@@ -1,4 +1,4 @@
-import { AppDispatch } from 'store';
+import { AppDispatch } from 'app/store';
 import { setValue } from 'features/formSlice';
 
 type CategoryInputProps = {

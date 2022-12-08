@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from 'store';
+import { useAppSelector, useAppDispatch } from 'app/hooks';
 import {
   updateTimeElapsed,
   updateTimerDelay,
@@ -12,9 +11,9 @@ export const useTimer = (
   increment: number,
   delay: number
 ) => {
-  const dispatch = useDispatch();
-  const { isTimerStopped, timeElapsed, timerDelay } = useSelector(
-    (state: RootState) => state.timer
+  const dispatch = useAppDispatch();
+  const { isTimerStopped, timeElapsed, timerDelay } = useAppSelector(
+    (state) => state.timer
   );
 
   useEffect(() => {

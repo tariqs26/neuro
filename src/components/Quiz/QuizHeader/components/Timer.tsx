@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { useAppSelector } from 'app/hooks';
 import { useTimer } from 'hooks/useTimer';
 
 export default function Timer() {
-  const { isTimerStopped, isTimerComplete, timeElapsed } = useSelector(
-    (state: RootState) => state.timer
+  const { isTimerStopped, isTimerComplete, timeElapsed } = useAppSelector(
+    (state) => state.timer
   );
   const questionDuration = 20000;
   const increment = 100;
