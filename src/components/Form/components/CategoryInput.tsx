@@ -4,7 +4,7 @@ import { setValue } from 'features/formSlice';
 type CategoryInputProps = {
   dispatch: AppDispatch;
 };
-export default function CategoryInput({ dispatch } : CategoryInputProps) {
+export default function CategoryInput({ dispatch }: CategoryInputProps) {
   const name = 'category';
   return (
     <div className='input-container'>

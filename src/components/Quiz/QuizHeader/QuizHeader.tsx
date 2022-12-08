@@ -6,7 +6,7 @@ import ProgressBar from './components/ProgressBar';
 
 export default function QuizHeader() {
   const { questions, currentIndex } = useSelector(
-    (state : RootState) => state.quiz
+    (state: RootState) => state.quiz
   );
   return (
     <div className='header'>

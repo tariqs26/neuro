@@ -11,20 +11,20 @@ import TypeInput from './components/TypeInput';
 import './Form.css';
 
 export type InputProps = {
-  clickHandler: (e : React.MouseEvent) => void;
+  clickHandler: (e: React.MouseEvent) => void;
 };
 
 export default function Form() {
   const navigate = useNavigate(),
     dispatch = useDispatch();
-  const handleSubmit = (e : FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(clearQuiz());
     dispatch(clearTimer());
     navigate('/quiz');
   };
 
-  const handleOptionClick = (e : React.MouseEvent) => {
+  const handleOptionClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLOptionElement;
     const parent = target.parentNode as HTMLDivElement;
     const group = parent.querySelector('.active') as HTMLOptionElement;

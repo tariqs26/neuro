@@ -13,9 +13,9 @@ import './Quiz.css';
 export default function Quiz() {
   useQuestionsFetch();
   const { isLoading, questions, currentIndex } = useSelector(
-    (state : RootState) => state.quiz
+    (state: RootState) => state.quiz
   );
-  const { isTimerComplete } = useSelector((state : RootState) => state.timer);
+  const { isTimerComplete } = useSelector((state: RootState) => state.timer);
   const dispatch = useDispatch();
 
   useEffect(() => {

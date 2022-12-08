@@ -1,6 +1,6 @@
-import { InputProps } from "../Form"
+import { InputProps } from '../Form';
 
-export default function DifficultyInput({ clickHandler } : InputProps) {
+export default function DifficultyInput({ clickHandler }: InputProps) {
   return (
     <div className='input-container'>
       <label>Select Difficulty:</label>

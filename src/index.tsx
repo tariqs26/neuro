@@ -10,13 +10,13 @@ import Quiz from 'components/Quiz/Quiz';
 import Navbar from 'components/Navbar/Navbar';
 
 createRoot(document.querySelector('#root') as HTMLDivElement).render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route path='/' element={<Form />} />
-          <Route path='/quiz' element={<Quiz />} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <Route path='/' element={<Form />} />
+        <Route path='/quiz' element={<Quiz />} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>
 );

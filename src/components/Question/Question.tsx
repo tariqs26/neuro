@@ -20,7 +20,7 @@ export default function Question({
   options,
   picked,
   correct_answer: correct,
-} : QuestionProps) {
+}: QuestionProps) {
   const questionText = useText(question);
 
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function Question({
     (state: RootState) => state.timer
   );
 
-  const handleOptionClick = (isPicked : boolean, text : string) => {
+  const handleOptionClick = (isPicked: boolean, text: string) => {
     if (isTimerStopped || timeElapsed === 0) return;
     dispatch(updateScore((1 - timeElapsed / 20000) * 100));
     dispatch(pickAnswer({ question, answer: `${isPicked ? '' : text}` }));
@@ -48,7 +48,7 @@ export default function Question({
       <div className='question'>
         {questions[currentIndex].picked || timerDelay > 2200 ? (
           <div className='options'>
-            {options.map((text : string) => {
+            {options.map((text: string) => {
               const isPicked = picked === text;
               const timerEnd = isTimerStopped ? 'finished' : '';
               return (
@@ -85,7 +85,7 @@ type OptionProps = {
   className: string;
   onClick: () => void;
 };
-function Option({ text, ...args } : OptionProps) {
+function Option({ text, ...args }: OptionProps) {
   const textRef = useText(text);
   return <button {...args} ref={textRef}></button>;
 }

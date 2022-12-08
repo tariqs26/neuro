@@ -4,7 +4,7 @@ import { useTimer } from 'hooks/useTimer';
 
 export default function Timer() {
   const { isTimerStopped, isTimerComplete, timeElapsed } = useSelector(
-    (state : RootState) => state.timer
+    (state: RootState) => state.timer
   );
   const questionDuration = 20000;
   const increment = 100;

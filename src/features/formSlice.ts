@@ -7,7 +7,7 @@ export type FormState = {
   type: string;
 };
 
-const initialState  : FormState = {
+const initialState: FormState = {
   amount: '5',
   category: '9',
   difficulty: 'easy',

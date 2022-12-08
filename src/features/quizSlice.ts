@@ -16,7 +16,7 @@ export type QuizState = {
   score: number;
 };
 
-const initialState  : QuizState = {
+const initialState: QuizState = {
   questions: [],
   currentIndex: 0,
   isLoading: true,

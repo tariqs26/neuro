@@ -5,7 +5,7 @@ import { AppDispatch } from 'store';
 interface Props {
   dispatch: AppDispatch;
 }
-export default function LeaveButton({ dispatch } : Props) {
+export default function LeaveButton({ dispatch }: Props) {
   return (
     <button
       className='leave'

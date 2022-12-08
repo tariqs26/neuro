@@ -1,6 +1,6 @@
 import { InputProps } from '../Form';
 
-export default function TypeInput({ clickHandler } : InputProps) {
+export default function TypeInput({ clickHandler }: InputProps) {
   return (
     <div className='input-container'>
       <label>Select Type:</label>

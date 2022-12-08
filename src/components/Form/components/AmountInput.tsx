@@ -1,6 +1,6 @@
 import { InputProps } from '../Form';
 
-export default function AmountInput({ clickHandler } : InputProps) {
+export default function AmountInput({ clickHandler }: InputProps) {
   return (
     <div className='input-container'>
       <label>Number of Questions:</label>
