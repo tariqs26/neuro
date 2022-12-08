@@ -1,6 +1,6 @@
 # Trivify
 
-## About the App
+## Description:
 
 - Trivia app that allows users to generate timed quizzes based on the number of questions, category, and difficulty.
 - Includes a timer , progress bar, and a leave button which opens a modal to confirm exiting the quiz.
@@ -9,13 +9,13 @@
 - Uses **Axios** to fetch data from the **Open Trivia Database API** to generate the questions.
 - Uses **Redux Toolkit** to manage the state of the quiz, form, and timer.
 
-### Future Improvements
+## Future Improvements:
 
 - Use **React Query** to fetch data from the API.
 - Feature to save previous quizzes in local storage so that they can be accessed later.
 - Flashing animation when timer is about to end.
 
-## To Get Started
+## Installation:
 
 ### `npm install`
 
