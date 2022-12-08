@@ -5,10 +5,9 @@ type Props = {
   currentIndex: number;
 };
 export default function ProgressBar({ questions, currentIndex: idx }: Props) {
-  const barRef = useRef(null);
+  const barRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!barRef.current) return;
-    (barRef.current as HTMLElement).style.width = `${
+    (barRef.current as HTMLDivElement).style.width = `${
       ((idx + 1) / questions.length) * 100
     }%`;
   }, [idx, questions]);
