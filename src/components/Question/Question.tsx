@@ -20,7 +20,7 @@ export default function Question({
   picked,
   correct_answer: correct,
 }: QuestionProps) {
-  const questionText = useText(question);
+  const questionText = useText<HTMLHeadingElement>(question);
 
   const dispatch = useAppDispatch();
   const { currentIndex, questions, revealAnswers } = useAppSelector(
@@ -85,6 +85,6 @@ type OptionProps = {
   onClick: () => void;
 };
 function Option({ text, ...args }: OptionProps) {
-  const textRef = useText(text);
+  const textRef = useText<HTMLButtonElement>(text);
   return <button {...args} ref={textRef}></button>;
 }
