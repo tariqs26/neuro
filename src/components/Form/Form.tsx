@@ -27,9 +27,9 @@ export default function Form() {
   const handleOptionClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLOptionElement;
     const parent = target.parentNode as HTMLDivElement;
-    const group = parent.querySelector('.active') as HTMLOptionElement;
-    group.classList.remove('active');
-    group.classList.add('inactive');
+    const active = parent.querySelector('.active') as HTMLOptionElement;
+    active.classList.remove('active');
+    active.classList.add('inactive');
     target.classList.add('active');
     target.classList.remove('inactive');
     dispatch(

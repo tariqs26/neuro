@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-export const useText = (text : string) => {
+export const useText = (text: string) => {
   const textRef = useRef(null);
   useEffect(() => {
     if (!textRef.current) return;
