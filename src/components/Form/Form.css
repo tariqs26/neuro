@@ -1,52 +1,87 @@
-::selection {
-  user-select: none;
-}
-
-.form {
+form {
+  width: 23rem;
+  margin-top: 4rem;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  background-color: var(--form-bg);
+  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
+  border-radius: 8px;
   display: grid;
   place-items: center;
-  margin: 2rem;
-  flex-grow: 1;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: slide-in 300ms ease-in-out forwards;
 }
 
-.form form {
-  align-items: center;
-  background-color: hsl(240, 10%, 20%);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  font-size: 1.2rem;
+@keyframes slide-in {
+  0% {
+    transform: translateY(1.5rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.input-container {
+label { color: #e7dbdb; }
+
+.input-container { width: 100%; }
+
+.form-control,
+.opt-group option {
   color: var(--text);
-  margin-top: 20px;
-  width: 100%;
-}
-
-.input-container:first-child {
-  margin-top: 0;
-}
-
-.form-control {
-  background-color: hsl(240, 10%, 40%);
-  border-radius: 5px;
+  background-color: hsla(240, 10%, 40%, 0.7);
+  box-shadow: 0 0 0.5rem 0.1rem hsl(0, 0%, 15%);
   border: none;
-  color: inherit;
-  display: block;
+  border-radius: 8px;
   font-size: inherit;
-  margin-top: 0.5em;
-  outline: 1px solid black;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   width: 100%;
 }
 
-.form-control[type="submit"] {
-  background-color: var(--btn-blue);
+.form-control[type='submit'] {
+  transition: 150ms ease-in-out;
+  background-color: hsl(0, 77%, 42%);
 }
-input[type="submit"]:hover {
-  background-color: var(--btn-blue-hover);
+input[type='submit']:hover {
+  background-color: hsl(0, 77%, 45%);
   cursor: pointer;
 }
 
+.opt-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.opt-group option {
+  padding: 0.4rem 0.8rem;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-image: linear-gradient(to bottom, #5454ba 100%, transparent 0%);
+  text-align: center;
+  transition: 150ms ease-in-out;
+}
+
+.opt-group .active {
+  animation: active 120ms ease-in-out forwards;
+}
+
+@keyframes active {
+  100% { background-size: 100% 100%; }
+}
+
+.opt-group .inactive {
+  background-size: 100% 100%;
+  animation: inactive 120ms ease-in-out forwards;
+}
+
+@keyframes inactive {
+  100% { background-size: 100% 0%; }
+}
+
+.opt-group option:hover {
+  background-color: hsla(240, 10%, 40%);
+  cursor: pointer;
+}

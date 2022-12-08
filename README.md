@@ -1,4 +1,4 @@
-# Quizr
+# Trivify
 
 ## About the App
 
