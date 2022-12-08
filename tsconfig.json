@@ -20,7 +20,6 @@
         "components/*": ["./components/*"],
         "hooks/*": ["./hooks/*"],
         "features/*": ["./features/*"],
-        "types/*": ["./ts/types/*"],
         "interfaces/*": ["./ts/interfaces/*"],
       }
     },
