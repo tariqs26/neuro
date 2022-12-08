@@ -1,5 +1,4 @@
-.question,
-.options {
+.question, .options {
   display: flex;
 }
 
@@ -32,22 +31,16 @@ h3 {
   place-items: center;
 }
 
-.correct,
-.correct:hover {
+.correct, .correct:hover {
   background-color: var(--correct);
-  color: white;
 }
 
-.incorrect,
-.incorrect:hover {
+.incorrect,.incorrect:hover {
   background-color: var(--wrong);
-  color: white;
 }
 
-.picked,
-.picked:hover {
+.picked, .picked:hover {
   background-color: var(--picked);
-  color: white;
 }
 
 .option {

@@ -10,8 +10,9 @@
   gap: 0.5rem;
 }
 
-.nav-title,
-.nav-svg { color: #5ce119 }
+.nav-title, .nav-svg { 
+  color: #5ce119 
+}
 
 .nav-svg { width: 1.5em }
 

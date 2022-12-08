@@ -27,8 +27,7 @@ label { color: #e7dbdb; }
 
 .input-container { width: 100%; }
 
-.form-control,
-.opt-group option {
+.form-control, .opt-group option {
   color: var(--text);
   background-color: hsla(240, 10%, 40%, 0.7);
   box-shadow: 0 0 0.5rem 0.1rem hsl(0, 0%, 15%);
