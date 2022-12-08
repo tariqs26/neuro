@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Question } from 'interfaces/app_interfaces';
+import { Question } from 'hooks/useQuestionsFetch';
 
-interface QuizQuestion extends Question {
+interface QuizQuestion extends Question{
   picked: string;
   options: string[];
 }

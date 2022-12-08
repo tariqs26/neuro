@@ -10,6 +10,7 @@ import Quiz from 'components/Quiz/Quiz';
 import Navbar from 'components/Navbar/Navbar';
 
 createRoot(document.querySelector('#root') as HTMLDivElement).render(
+  <StrictMode>
   <Provider store={store}>
     <BrowserRouter>
       <Navbar />
@@ -19,4 +20,5 @@ createRoot(document.querySelector('#root') as HTMLDivElement).render(
       </Switch>
     </BrowserRouter>
   </Provider>
+  </StrictMode>
 );

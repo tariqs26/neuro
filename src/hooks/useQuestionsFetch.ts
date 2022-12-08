@@ -4,13 +4,21 @@ import { RootState } from 'store';
 import get from 'axios';
 import { updateQuestions, updateIsLoading } from 'features/quizSlice';
 import { FormState } from 'features/formSlice';
-import { Question } from 'interfaces/app_interfaces';
 
 const API_URL = 'https://opentdb.com/api.php';
 async function getQuestionsProxy(params : FormState) {
   const { results } = (await get(API_URL, { params })).data;
   return results;
 }
+
+export interface Question {
+  category: string;
+  correct_answer: string;
+  difficulty: string;
+  incorrect_answers: string[];
+  question: string;
+  type: string;
+};
 
 export const useQuestionsFetch = () => {
   const dispatch = useDispatch();
