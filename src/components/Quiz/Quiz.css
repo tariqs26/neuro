@@ -3,7 +3,6 @@
   flex-direction: column;
   width: min(90%, 45rem);
   margin: 0 auto;
-  margin-bottom: 2rem;
   color: var(--text);
   position: relative;
   top: 2rem;
@@ -21,12 +20,9 @@
 }
 
 .quiz-area {
-  width: 100%;
   background-color: hsl(240, 10%, 18%);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  border-radius: 5px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 5px 5px 0 0;
   overflow: clip;
   display: flex;
   flex-direction: column;
