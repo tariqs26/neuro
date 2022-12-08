@@ -23,7 +23,7 @@ const formSlice = createSlice({
       { payload }: PayloadAction<{ name: keyof FormState; value: string }>
     ) {
       const { name, value } = payload;
-      state[name] = value as never;
+      return { ...state, [name]: value };
     },
     clearForm() {
       return initialState;
