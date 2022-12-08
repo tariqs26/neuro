@@ -1,7 +1,7 @@
 import { useAppSelector } from 'app/hooks';
 import Timer from './components/Timer';
-import './QuizHeader.css';
 import ProgressBar from './components/ProgressBar';
+import './QuizHeader.css';
 
 export default function QuizHeader() {
   const { questions, currentIndex } = useAppSelector((state) => state.quiz);

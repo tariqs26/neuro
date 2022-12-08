@@ -1,5 +1,5 @@
-import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { closeModal } from 'features/quizModalSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { startTimer } from 'features/timerSlice';
