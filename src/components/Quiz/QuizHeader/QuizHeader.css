@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1em;
-  background-color: hsl(240, 10%, 5%);
+  background-color: var(--quiz-hdr-bg);
   box-shadow: 0 2 0.5rem 0.1rem var(--outline);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -20,7 +20,7 @@
 }
 
 .timer, .score {
-  color: var(--text);
+  color: var(--text-clr);
   font-size: 1.3rem;
 }
 
@@ -36,13 +36,6 @@
 }
 .timer.quiz-submit {
   color: hsl(116, 44%, 53%);
-}
-
-.leave {
-  background-color: hsl(5, 80%, 48%);
-}
-.leave:hover {
-  background-color: hsl(5, 80%, 55%);
 }
 
 .progress-bar {

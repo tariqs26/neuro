@@ -3,7 +3,7 @@
   flex-direction: column;
   width: min(90%, 45rem);
   margin: 0 auto;
-  color: var(--text);
+  color: var(--text-clr);
 }
 
 .no-questions {

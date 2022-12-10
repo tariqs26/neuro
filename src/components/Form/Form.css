@@ -24,7 +24,7 @@ form {
 }
 
 label {
-  color: #e7dbdb;
+  color: var(--label-clr);
 }
 
 .input-container {
@@ -33,9 +33,9 @@ label {
 
 .form-control,
 .opt-group option {
-  color: var(--text);
-  background-color: hsla(240, 10%, 40%, 0.7);
-  box-shadow: 0 0 0.5rem 0.1rem hsl(0, 0%, 15%);
+  color: var(--text-clr);
+  background-color: var(--inp-bg);
+  box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
   border: none;
   border-radius: 8px;
   font-size: inherit;
@@ -46,10 +46,10 @@ label {
 
 .form-control[type='submit'] {
   transition: 150ms ease-in-out;
-  background-color: hsl(0, 77%, 42%);
+  background-color: var(--submit-bg);
 }
 input[type='submit']:hover {
-  background-color: hsl(0, 77%, 45%);
+  background-color: var(--submit-bg-hvr);
   cursor: pointer;
 }
 
@@ -63,7 +63,7 @@ input[type='submit']:hover {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 0;
-  background-image: linear-gradient(to bottom, #5454ba 100%, transparent 0%);
+  background-image: linear-gradient(to bottom, var(--active-bg) 100%, transparent 0%);
   text-align: center;
   transition: 150ms ease-in-out;
 }
@@ -90,6 +90,6 @@ input[type='submit']:hover {
 }
 
 .opt-group option:hover {
-  background-color: hsla(240, 10%, 40%);
+  background-color: var(--inp-bg-hvr);
   cursor: pointer;
 }

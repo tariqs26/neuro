@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@100;400;500;700&display=swap');
 
 *,
 *::after,
@@ -6,35 +6,32 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family:'Rubik' , sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 body {
   background-color: var(--bg);
   --bg: hsl(240, 10%, 12%);
   --nav-bg: hsl(240, 10%, 10%);
+  --nav-clr: hsl(100, 80%, 49%);
   --alt-bg: hsl(240, 10%, 18%);
-  --outline : hsl(0, 0%, 10%);
+  --quiz-hdr-bg: hsl(240, 10%, 5%);
+  --btn-bg: hsl(240, 42%, 36%);
+  --btn-bg-hvr: hsl(240, 42%, 40%);
+  --modal-bg: hsla(240, 10%, 20%, 0.8);
+  --inp-bg: hsla(240, 10%, 40%, 0.7);
+  --inp-bg-hvr: hsla(240, 10%, 40%);
+  --submit-bg: hsl(0, 80%, 45%);
+  --submit-bg-hvr: hsl(0, 80%, 50%);
+  --active-bg: hsl(240, 43%, 53%);
+  --outline: hsl(0, 0%, 10%);
+  --inp-outline: hsl(0, 0%, 15%);
   --green: hsl(39, 50%, 58%);
-  --text: hsl(40, 11%, 84%);
+  --text-clr: hsl(40, 11%, 84%);
+  --label-clr: hsl(0, 20%, 88%);
   --picked: hsl(240, 38%, 50%);
   --correct: hsl(139, 56%, 34%);
   --wrong: hsl(0, 63%, 52%);
-}
-
-/* media query for color sheme */
-@media (prefers-color-scheme: light){
-  body {
-    --bg: hsl(240, 10%, 98%);
-    --nav-bg: hsl(240, 10%, 96%);
-    --alt-bg: hsl(240, 10%, 94%);
-    --outline : hsl(0, 0%, 90%);
-    --green: hsl(39, 50%, 58%);
-    --text: hsl(40, 11%, 84%);
-    --picked: hsl(240, 38%, 50%);
-    --correct: hsl(139, 56%, 34%);
-    --wrong: hsl(0, 63%, 52%);
-  }
 }
 
 #root {
@@ -44,17 +41,17 @@ body {
 }
 
 button {
-  background-color: hsl(240, 42%, 36%);
+  background-color: var(--btn-bg);
   border-radius: 5px;
-  border: 2px solid hsl(0, 1%, 15%);
-  color: var(--text);
+  border: 2px solid var(--inp-outline);
+  color: var(--text-clr);
   padding: 0.8rem 0;
   font-size: 1.2rem;
   width: 100%;
-  transition: 120ms ease-in-out background-color;
+  transition: 150ms ease-in-out;
 }
 
 button:hover {
-  background-color: hsl(240, 41%, 40%);
+  background-color: var(--btn-bg-hvr);
   cursor: pointer;
 }
