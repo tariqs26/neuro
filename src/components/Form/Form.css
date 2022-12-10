@@ -5,7 +5,7 @@ form {
   font-size: 1.1rem;
   background-color: var(--alt-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  border-radius: 5px;
+  border-radius: 7.5px;
   display: grid;
   place-items: center;
   gap: 1.5rem;
@@ -37,7 +37,7 @@ label {
   background-color: var(--inp-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
   border: none;
-  border-radius: 5px;
+  border-radius: 7.5px;
   font-size: inherit;
   margin-top: 0.5rem;
   padding: 0.5rem;
@@ -59,7 +59,7 @@ input[type='submit']:hover {
 }
 
 .opt-group option {
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   background-repeat: no-repeat;
   background-size: 100% 0;
   background-image: linear-gradient(to bottom, var(--active-bg) 100%, transparent 0%);
