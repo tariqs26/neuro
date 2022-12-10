@@ -5,7 +5,7 @@ form {
   font-size: 1.1rem;
   background-color: var(--alt-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  border-radius: 8px;
+  border-radius: 5px;
   display: grid;
   place-items: center;
   gap: 1.5rem;
@@ -37,7 +37,7 @@ label {
   background-color: var(--inp-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: inherit;
   margin-top: 0.5rem;
   padding: 0.5rem;
