@@ -60,7 +60,6 @@ input[type='submit']:hover {
 
 .opt-group option {
   padding: 0.4rem 0.8rem;
-  background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 0;
   background-image: linear-gradient(to bottom, var(--active-bg) 100%, transparent 0%);
@@ -69,7 +68,7 @@ input[type='submit']:hover {
 }
 
 .opt-group .active {
-  animation: active 120ms ease-in-out forwards;
+  animation: active 150ms ease-in-out forwards;
 }
 
 @keyframes active {
@@ -80,7 +79,7 @@ input[type='submit']:hover {
 
 .opt-group .inactive {
   background-size: 100% 100%;
-  animation: inactive 120ms ease-in-out forwards;
+  animation: inactive 150ms ease-in-out forwards;
 }
 
 @keyframes inactive {
