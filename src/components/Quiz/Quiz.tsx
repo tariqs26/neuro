@@ -51,8 +51,8 @@ const NoQuestions = () => {
   return (
     <div className='no-questions'>
       <h2 className='loader'>No Questions Found</h2>
-      <button className='back' onClick={() => navigate('/')}>
-        back
+      <button className='back' onClick={() => navigate(-1)}>
+        home
       </button>
     </div>
   );
