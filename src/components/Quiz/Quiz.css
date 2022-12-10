@@ -20,7 +20,7 @@
 }
 
 .quiz-area {
-  background-color: hsl(240, 10%, 18%);
+  background-color: var(--alt-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
   border-radius: 5px 5px 0 0;
   overflow: clip;

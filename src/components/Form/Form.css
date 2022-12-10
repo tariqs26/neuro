@@ -1,9 +1,9 @@
 form {
-  width: 23rem;
+  width: 24rem;
   margin-top: 4rem;
   padding: 1.25rem;
   font-size: 1.1rem;
-  background-color: var(--form-bg);
+  background-color: var(--alt-bg);
   box-shadow: 0 0 0.5rem 0.1rem var(--outline);
   border-radius: 8px;
   display: grid;
@@ -23,11 +23,16 @@ form {
   }
 }
 
-label { color: #e7dbdb; }
+label {
+  color: #e7dbdb;
+}
 
-.input-container { width: 100%; }
+.input-container {
+  width: 100%;
+}
 
-.form-control, .opt-group option {
+.form-control,
+.opt-group option {
   color: var(--text);
   background-color: hsla(240, 10%, 40%, 0.7);
   box-shadow: 0 0 0.5rem 0.1rem hsl(0, 0%, 15%);
@@ -68,7 +73,9 @@ input[type='submit']:hover {
 }
 
 @keyframes active {
-  100% { background-size: 100% 100%; }
+  100% {
+    background-size: 100% 100%;
+  }
 }
 
 .opt-group .inactive {
@@ -77,7 +84,9 @@ input[type='submit']:hover {
 }
 
 @keyframes inactive {
-  100% { background-size: 100% 0%; }
+  100% {
+    background-size: 100% 0%;
+  }
 }
 
 .opt-group option:hover {
