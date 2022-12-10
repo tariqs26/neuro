@@ -4,19 +4,13 @@
   width: min(90%, 45rem);
   margin: 0 auto;
   color: var(--text);
-  position: relative;
-  top: 2rem;
 }
 
 .no-questions {
   display: grid;
-  place-items: center;
+  grid-template-columns: 15rem;
+  margin: 0 auto;
   gap: 1rem;
-}
-
-.no-questions button {
-  width: 30%;
-  padding: 0.4rem 0.8rem;
 }
 
 .quiz-area {
@@ -29,6 +23,4 @@
   justify-content: space-between;
 }
 
-.loader {
-  text-align: center;
-}
+.loader { text-align: center; }
