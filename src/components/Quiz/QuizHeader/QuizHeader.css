@@ -1,35 +1,30 @@
 .header {
-  width: 100%;
   padding: 1rem;
-  background-color: var(--bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
   background-color: var(--quiz-hdr-bg);
   box-shadow: 0 2 0.5rem 0.1rem var(--inp-outline);
   border-radius: 0 0 5px 5px;
 }
 
 .inner-info {
-  width: 100%;
   display: flex;
-  gap: 0.5em;
   align-items: center;
+  gap: 1rem;
+  color: var(--text-clr);
 }
 
-.timer, .score {
-  color: var(--text-clr);
+:is(.timer, .score) {
   font-size: 1.3rem;
 }
 
 @media (max-width: 500px) {
-  .timer, .score {
+  :is(.timer, .score) {
     font-size: 1.1rem;
   }
 }
 
-.timer { flex: 1; }
+.timer {
+  flex: 1;
+}
 .timer.quiz-end {
   color: hsl(0, 100%, 70%);
 }
@@ -47,7 +42,9 @@
 }
 
 @media (max-width: 768px) {
-  .progress-bar { flex: 1.8; }
+  .progress-bar {
+    flex: 1.8;
+  }
 }
 
 .bar {
@@ -56,4 +53,3 @@
   transition: 180ms width ease-in-out;
   width: 0;
 }
-
