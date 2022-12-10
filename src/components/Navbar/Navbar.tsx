@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <div className='nav-bar'>
       <Trophy />
-      <h1 className='nav-title'>Trivify</h1>;
+      <h1 className='nav-title'>Trivify</h1>
     </div>
   );
 }

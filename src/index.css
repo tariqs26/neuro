@@ -22,6 +22,21 @@ body {
   --wrong: hsl(0, 63%, 52%);
 }
 
+/* media query for color sheme */
+@media (prefers-color-scheme: light){
+  body {
+    --bg: hsl(240, 10%, 98%);
+    --nav-bg: hsl(240, 10%, 96%);
+    --alt-bg: hsl(240, 10%, 94%);
+    --outline : hsl(0, 0%, 90%);
+    --green: hsl(39, 50%, 58%);
+    --text: hsl(40, 11%, 84%);
+    --picked: hsl(240, 38%, 50%);
+    --correct: hsl(139, 56%, 34%);
+    --wrong: hsl(0, 63%, 52%);
+  }
+}
+
 #root {
   min-height: 100vh;
   display: grid;
