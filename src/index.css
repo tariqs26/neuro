@@ -12,26 +12,50 @@
 body {
   background-color: var(--bg);
   --bg: hsl(240, 10%, 12%);
-  --nav-bg: hsl(240, 10%, 10%);
-  --nav-clr: hsl(100, 80%, 49%);
-  --alt-bg: hsl(240, 10%, 18%);
+  --nav-bg: hsl(240, 10%, 7%);
+  --nav-clr: hsl(100, 55%, 50%);
+  --alt-bg: hsl(240, 10%, 17%);
   --quiz-hdr-bg: hsl(240, 10%, 5%);
-  --btn-bg: hsl(240, 42%, 36%);
-  --btn-bg-hvr: hsl(240, 42%, 40%);
+  --btn-bg: hsl(240, 50%, 36%);
+  --btn-bg-hvr: hsl(240, 50%, 40%);
   --modal-bg: hsla(240, 10%, 20%, 0.8);
-  --inp-bg: hsla(240, 10%, 40%, 0.7);
+  --inp-bg: hsl(240, 10%, 35%);
   --inp-bg-hvr: hsla(240, 10%, 40%);
   --submit-bg: hsl(0, 80%, 45%);
   --submit-bg-hvr: hsl(0, 80%, 50%);
-  --active-bg: hsl(240, 43%, 53%);
-  --outline: hsl(0, 0%, 10%);
-  --inp-outline: hsl(0, 0%, 15%);
+  --active-bg: hsl(240, 45%, 55%);
+  --outline: hsl(240, 0%, 10%);
+  --inp-outline: hsl(240, 0%, 15%);
   --green: hsl(39, 50%, 58%);
-  --text-clr: hsl(40, 11%, 84%);
-  --label-clr: hsl(0, 20%, 88%);
-  --picked: hsl(240, 38%, 50%);
-  --correct: hsl(139, 56%, 34%);
+  --text-clr: hsl(240, 15%, 85%);
+  --label-clr: hsl(240, 20%, 90%);
+  --picked: hsl(240, 40%, 50%);
+  --correct: hsl(100, 56%, 34%);
   --wrong: hsl(0, 63%, 52%);
+}
+
+@media (prefers-color-scheme: light){
+  body {
+    --bg: hsl(240, 10%, 90%);
+    --nav-bg: hsl(240, 10%, 94%);
+    --nav-clr: hsl(100, 55%, 40%);
+    --alt-bg: hsl(240, 10%, 82%);
+    --quiz-hdr-bg: hsl(240, 10%, 95%);
+    --btn-bg: hsl(240, 50%, 65%);
+    --btn-bg-hvr: hsl(240, 50%, 70%);
+    --modal-bg: hsla(240, 10%, 20%, 0.8);
+    --inp-bg: hsl(240, 10%, 65%);
+    --inp-bg-hvr: hsl(240, 10%, 70%);
+    --submit-bg: hsl(0, 80%, 60%);
+    --submit-bg-hvr: hsl(0, 80%, 65%);
+    --active-bg: hsl(240, 43%, 70%);
+    --outline: hsl(240, 0%, 90%);
+    --inp-outline: hsl(240, 0%, 85%);
+    --green: hsl(39, 50%, 58%);
+    --text-clr: hsl(240, 15%, 20%);
+    --label-clr: hsl(240, 20%, 12%);
+    --picked: hsl(240, 40%, 78%);
+  }
 }
 
 #root {

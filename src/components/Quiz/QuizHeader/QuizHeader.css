@@ -7,7 +7,7 @@
   align-items: center;
   gap: 1em;
   background-color: var(--quiz-hdr-bg);
-  box-shadow: 0 2 0.5rem 0.1rem var(--outline);
+  box-shadow: 0 2 0.5rem 0.1rem var(--inp-outline);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -39,8 +39,8 @@
 }
 
 .progress-bar {
-  background-color: hsl(240, 10%, 20%);
-  border: 0.1em solid hsl(240, 10%, 5%);
+  background-color: var(--alt-bg);
+  border: 0.1em solid var(--quiz-hdr-bg);
   border-radius: 0.6rem;
   height: 1.2rem;
   overflow: hidden;
