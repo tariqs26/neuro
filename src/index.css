@@ -12,9 +12,9 @@
 body {
   background-color: var(--bg);
   --bg: hsl(240, 10%, 12%);
-  --nav-bg: hsl(240, 10%, 7%);
+  --nav-bg: hsl(240, 10%, 8%);
   --nav-clr: hsl(100, 55%, 50%);
-  --alt-bg: hsl(240, 10%, 17%);
+  --alt-bg: hsl(240, 10%, 18%);
   --quiz-hdr-bg: hsl(240, 10%, 5%);
   --btn-bg: hsl(240, 50%, 36%);
   --btn-bg-hvr: hsl(240, 50%, 40%);
