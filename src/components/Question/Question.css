@@ -1,24 +1,24 @@
 .question {
   color: rgb(212, 208, 199);
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 h3 {
-  background-color: var(--nav-bg);
   padding: 1rem 2rem;
+  background-color: var(--nav-bg);
   color: var(--nav-clr);
   font-size: 1.3rem;
 }
 
 .options {
+  height: 50vh;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  min-width: 60%;
-  height: 50vh;
 }
 
 .option-loader {
@@ -27,18 +27,13 @@ h3 {
   place-items: center;
 }
 
-.correct,
-.correct:hover {
+:is(.correct, .correct:hover) {
   background-color: var(--correct);
 }
-
-.incorrect,
-.incorrect:hover {
+:is(.incorrect, .incorrect:hover) {
   background-color: var(--wrong);
 }
-
-.picked,
-.picked:hover {
+:is(.picked, .picked:hover) {
   background-color: var(--picked);
 }
 
