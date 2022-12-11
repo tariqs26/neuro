@@ -20,9 +20,10 @@ const formSlice = createSlice({
   reducers: {
     setValue(
       state,
-      { payload }: PayloadAction<{ name: keyof FormState; value: string }>
+      {
+        payload: { name, value },
+      }: PayloadAction<{ name: keyof FormState; value: string }>
     ) {
-      const { name, value } = payload;
       return { ...state, [name]: value };
     },
     clearForm() {
