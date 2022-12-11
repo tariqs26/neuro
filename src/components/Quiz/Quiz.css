@@ -1,6 +1,8 @@
 .quiz {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 2rem;
   width: min(90%, 45rem);
   margin: 0 auto;
   color: var(--text-clr);
