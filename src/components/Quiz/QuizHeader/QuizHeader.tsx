@@ -6,14 +6,12 @@ import './QuizHeader.css';
 export default function QuizHeader() {
   const { questions, currentIndex } = useAppSelector((state) => state.quiz);
   return (
-    <div className='header'>
-      <div className='inner-info'>
+      <div className='header'>
         <Timer />
         <ProgressBar {...{ questions, currentIndex }} />
         <h2 className='score'>
           Q: {currentIndex + 1}/{questions.length}
         </h2>
       </div>
-    </div>
   );
 }

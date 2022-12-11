@@ -1,15 +1,12 @@
 .header {
   padding: 1rem;
   background-color: var(--quiz-hdr-bg);
+  color: var(--text-clr);
   box-shadow: 0 2 0.5rem 0.1rem var(--inp-outline);
   border-radius: 0 0 5px 5px;
-}
-
-.inner-info {
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--text-clr);
 }
 
 :is(.timer, .score) {
