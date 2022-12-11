@@ -43,7 +43,7 @@ export default function Question({
   };
   return (
     <>
-      <h3 ref={questionText}>{null}</h3>
+      <h2 ref={questionText}>{null}</h2>
       <div className='question'>
         {questions[currentIndex].picked || timerDelay > 2200 ? (
           <div className='options'>
@@ -72,7 +72,7 @@ export default function Question({
             })}
           </div>
         ) : (
-          <h2 className='option-loader'>Get Ready...</h2>
+          <h1 className='option-loader'>Get Ready...</h1>
         )}
       </div>
     </>

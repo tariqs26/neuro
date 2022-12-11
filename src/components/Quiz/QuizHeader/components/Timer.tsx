@@ -10,7 +10,7 @@ export default function Timer() {
     delay = 3000;
   useTimer(questionDuration - increment, increment, delay);
   return (
-    <h2
+    <h3
       className={
         'timer ' +
         (isTimerComplete ? 'quiz-end' : isTimerStopped ? 'quiz-submit' : '')
@@ -21,6 +21,6 @@ export default function Timer() {
       ) : (
         <> Time's Up! </>
       )}
-    </h2>
+    </h3>
   );
 }

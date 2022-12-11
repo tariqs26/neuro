@@ -9,9 +9,7 @@ export default function QuizHeader() {
     <div className='header'>
       <Timer />
       <ProgressBar {...{ questions, currentIndex }} />
-      <h2 className='score'>
-        Q: {currentIndex + 1}/{questions.length}
-      </h2>
+      <h3>Q: {currentIndex + 1}/{questions.length}</h3>
     </div>
   );
 }
