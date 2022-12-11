@@ -35,10 +35,10 @@ const timerSlice = createSlice({
 export const {
   startTimer,
   stopTimer,
-  clearTimer,
   timerComplete,
   incrementTimeElapsed,
   incrementTimerDelay,
+  clearTimer,
 } = timerSlice.actions;
 
 export default timerSlice.reducer;

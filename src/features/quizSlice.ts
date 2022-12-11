@@ -48,14 +48,8 @@ const quizSlice = createSlice({
     clearQuiz() {
       return initialState;
     },
-    pickAnswer(
-      state,
-      { payload }: PayloadAction<{ question: string; answer: string }>
-    ) {
-      const questionIndex = state.questions.findIndex(
-        ({ question: q }) => q === payload.question
-      );
-      const question = state.questions[questionIndex];
+    pickAnswer(state, { payload }: PayloadAction<{ answer: string }>) {
+      const question = state.questions[state.currentIndex];
       if (question.picked) return;
       question.picked = payload.answer;
     },
@@ -66,9 +60,9 @@ const quizSlice = createSlice({
 export const {
   setQuestions,
   setIsLoading,
-  submit,
   nextQuestion,
   incrementScore,
+  submit,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;
