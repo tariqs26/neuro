@@ -21,9 +21,9 @@ body {
   --modal-bg: hsla(240, 10%, 20%, 0.8);
   --inp-bg: hsl(240, 10%, 30%);
   --inp-bg-hvr: hsla(240, 10%, 35%);
-  --submit-bg: hsl(0, 80%, 45%);
-  --submit-bg-hvr: hsl(0, 80%, 50%);
-  --active-bg: hsl(240, 45%, 55%);
+  --submit-bg: hsl(0, 80%, 40%);
+  --submit-bg-hvr: hsl(0, 80%, 45%);
+  --active-bg: hsl(240, 45%, 50%);
   --outline: hsl(240, 0%, 10%);
   --inp-outline: hsl(240, 0%, 15%);
   --green: hsl(39, 50%, 58%);
@@ -82,6 +82,7 @@ button:hover {
 
 h2 {
   color: var(--nav-clr);
+  font-size: 1.4rem;
 }
 
 :is(h2, h3) {
