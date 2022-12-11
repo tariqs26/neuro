@@ -1,8 +1,8 @@
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import {
   pickAnswer,
-  updateScore,
-  updateCurrentIndex,
+  incrementScore,
+  nextQuestion,
 } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import { useText } from 'hooks/useText';
@@ -32,13 +32,13 @@ export default function Question({
 
   const handleOptionClick = (isPicked: boolean, text: string) => {
     if (isTimerStopped || timeElapsed === 0) return;
-    dispatch(updateScore((1 - timeElapsed / 20000) * 100));
+    dispatch(incrementScore((1 - timeElapsed / 20000) * 100));
     dispatch(pickAnswer({ question, answer: `${isPicked ? '' : text}` }));
     if (currentIndex === questions.length - 1) {
       dispatch(stopTimer());
       return;
     }
-    dispatch(updateCurrentIndex(1));
+    dispatch(nextQuestion());
     dispatch(clearTimer());
   };
   return (

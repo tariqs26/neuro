@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { updateCurrentIndex } from 'features/quizSlice';
+import { nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
 import QuizHeader from './QuizHeader/QuizHeader';
@@ -23,7 +23,7 @@ export default function Quiz() {
       dispatch(stopTimer());
       return;
     }
-    dispatch(updateCurrentIndex(1));
+    dispatch(nextQuestion());
     dispatch(clearTimer());
   }, [dispatch, questions, currentIndex, isTimerComplete, isLoading]);
 

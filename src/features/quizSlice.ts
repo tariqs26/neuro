@@ -36,13 +36,13 @@ const quizSlice = createSlice({
     updateIsLoading(state, { payload }: PayloadAction<boolean>) {
       state.isLoading = payload;
     },
-    updateCurrentIndex(state, { payload }: PayloadAction<number>) {
-      state.currentIndex += payload;
+    nextQuestion(state) {
+      state.currentIndex++;
     },
     updateSubmit(state, { payload }: PayloadAction<boolean>) {
       state.submit = payload;
     },
-    updateScore(state, { payload }: PayloadAction<number>) {
+    incrementScore(state, { payload }: PayloadAction<number>) {
       state.score += payload;
     },
     clearQuiz() {
@@ -67,8 +67,8 @@ export const {
   updateQuestions,
   updateIsLoading,
   updateSubmit,
-  updateCurrentIndex,
-  updateScore,
+  nextQuestion,
+  incrementScore,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;
