@@ -5,7 +5,7 @@ export default function Timer() {
   const { isTimerStopped, isTimerComplete, timeElapsed } = useAppSelector(
     (state) => state.timer
   );
-  const questionDuration = 20000,
+  const questionDuration = 10000,
     increment = 100,
     delay = 3000;
   useTimer(questionDuration - increment, increment, delay);
