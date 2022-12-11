@@ -1,5 +1,14 @@
 import './Navbar.css';
 
+export default function Navbar() {
+  return (
+    <div className='nav-bar'>
+      <Trophy />
+      <h1 className='nav-title'>Trivify</h1>
+    </div>
+  );
+}
+
 const Trophy = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -16,12 +25,3 @@ const Trophy = () => (
     />
   </svg>
 );
-
-export default function Navbar() {
-  return (
-    <div className='nav-bar'>
-      <Trophy />
-      <h1 className='nav-title'>Trivify</h1>
-    </div>
-  );
-}
