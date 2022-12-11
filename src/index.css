@@ -19,8 +19,8 @@ body {
   --btn-bg: hsl(240, 50%, 36%);
   --btn-bg-hvr: hsl(240, 50%, 40%);
   --modal-bg: hsla(240, 10%, 20%, 0.8);
-  --inp-bg: hsl(240, 10%, 35%);
-  --inp-bg-hvr: hsla(240, 10%, 40%);
+  --inp-bg: hsl(240, 10%, 30%);
+  --inp-bg-hvr: hsla(240, 10%, 35%);
   --submit-bg: hsl(0, 80%, 45%);
   --submit-bg-hvr: hsl(0, 80%, 50%);
   --active-bg: hsl(240, 45%, 55%);
