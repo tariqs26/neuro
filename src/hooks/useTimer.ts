@@ -25,7 +25,6 @@ export const useTimer = (
         timerDelay === delay &&
           dispatch(updateTimeElapsed(timeElapsed + increment));
       }, increment);
-      if (timeElapsed >= duration || isTimerStopped) clearInterval(interval);
       if (timeElapsed >= duration) dispatch(updateTimerComplete(true));
     }
     return () => clearInterval(interval);
