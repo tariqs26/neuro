@@ -30,17 +30,17 @@ const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-    updateQuestions(state, { payload }: PayloadAction<QuizQuestion[]>) {
+    setQuestions(state, { payload }: PayloadAction<QuizQuestion[]>) {
       state.questions = payload;
     },
-    updateIsLoading(state, { payload }: PayloadAction<boolean>) {
+    setIsLoading(state, { payload }: PayloadAction<boolean>) {
       state.isLoading = payload;
     },
     nextQuestion(state) {
       state.currentIndex++;
     },
-    updateSubmit(state, { payload }: PayloadAction<boolean>) {
-      state.submit = payload;
+    submit(state) {
+      state.submit = true;
     },
     incrementScore(state, { payload }: PayloadAction<number>) {
       state.score += payload;
@@ -64,9 +64,9 @@ const quizSlice = createSlice({
 });
 
 export const {
-  updateQuestions,
-  updateIsLoading,
-  updateSubmit,
+  setQuestions,
+  setIsLoading,
+  submit,
   nextQuestion,
   incrementScore,
   clearQuiz,
