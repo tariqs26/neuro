@@ -25,7 +25,7 @@ export default function Quiz() {
     }
     dispatch(nextQuestion());
     dispatch(clearTimer());
-  }, [dispatch, questions, currentIndex, isTimerComplete, isLoading]);
+  }, [dispatch, questions, currentIndex, isTimerComplete]);
 
   return (
     <div className='quiz'>
