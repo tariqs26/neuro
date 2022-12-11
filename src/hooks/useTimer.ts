@@ -17,6 +17,7 @@ export const useTimer = (
   );
 
   useEffect(() => {
+    if (timeElapsed >= duration) dispatch(updateTimerComplete(true));
     let interval: ReturnType<typeof setInterval>;
     if (!isTimerStopped) {
       interval = setInterval(() => {
@@ -25,7 +26,6 @@ export const useTimer = (
         timerDelay === delay &&
           dispatch(updateTimeElapsed(timeElapsed + increment));
       }, increment);
-      if (timeElapsed >= duration) dispatch(updateTimerComplete(true));
     }
     return () => clearInterval(interval);
   }, [isTimerStopped, timeElapsed, timerDelay]);
