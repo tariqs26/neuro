@@ -17,14 +17,14 @@ const timerSlice = createSlice({
     stopTimer(state) {
       state.isTimerStopped = true;
     },
-    updateTimerComplete(state, { payload }: PayloadAction<boolean>) {
-      state.isTimerComplete = payload;
+    timerComplete(state) {
+      state.isTimerComplete = true;
     },
-    updateTimeElapsed(state, { payload }: PayloadAction<number>) {
-      state.timeElapsed = payload;
+    incrementTimeElapsed(state, { payload }: PayloadAction<number>) {
+      state.timeElapsed += payload;
     },
-    updateTimerDelay(state, { payload }: PayloadAction<number>) {
-      state.timerDelay = payload;
+    incrementTimerDelay(state, { payload }: PayloadAction<number>) {
+      state.timerDelay += payload;
     },
     clearTimer() {
       return initialState;
@@ -36,9 +36,9 @@ export const {
   startTimer,
   stopTimer,
   clearTimer,
-  updateTimerComplete,
-  updateTimeElapsed,
-  updateTimerDelay,
+  timerComplete,
+  incrementTimeElapsed,
+  incrementTimerDelay,
 } = timerSlice.actions;
 
 export default timerSlice.reducer;

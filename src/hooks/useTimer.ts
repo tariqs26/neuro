@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import {
-  updateTimeElapsed,
-  updateTimerDelay,
-  updateTimerComplete,
+  incrementTimeElapsed,
+  incrementTimerDelay,
+  timerComplete,
 } from 'features/timerSlice';
 
 export const useTimer = (
@@ -17,14 +17,12 @@ export const useTimer = (
   );
 
   useEffect(() => {
-    if (timeElapsed >= duration) dispatch(updateTimerComplete(true));
+    if (timeElapsed >= duration) dispatch(timerComplete());
     let interval: ReturnType<typeof setInterval>;
     if (!isTimerStopped) {
       interval = setInterval(() => {
-        timerDelay < delay &&
-          dispatch(updateTimerDelay(timerDelay + increment));
-        timerDelay === delay &&
-          dispatch(updateTimeElapsed(timeElapsed + increment));
+        timerDelay < delay && dispatch(incrementTimerDelay(increment));
+        timerDelay === delay && dispatch(incrementTimeElapsed(increment));
       }, increment);
     }
     return () => clearInterval(interval);
