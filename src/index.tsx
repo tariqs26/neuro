@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'app/store';
 import Form from 'components/Form/Form';
@@ -13,10 +13,10 @@ createRoot(document.querySelector('#root') as HTMLDivElement).render(
     <Provider store={store}>
       <BrowserRouter>
         <Navbar />
-        <Switch>
+        <Routes>
           <Route path='/' element={<Form />} />
           <Route path='/quiz' element={<Quiz />} />
-        </Switch>
+        </Routes>
       </BrowserRouter>
     </Provider>
   </StrictMode>
