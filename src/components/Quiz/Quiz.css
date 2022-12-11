@@ -10,9 +10,15 @@
 
 .no-questions {
   display: grid;
-  grid-template-columns: 15rem;
+  grid-template-columns: 20rem;
   margin: 0 auto;
   gap: 1rem;
+}
+
+@media (max-width: 500px) {  
+.no-questions {
+  grid-template-columns: 15rem;
+}
 }
 
 .quiz-area {

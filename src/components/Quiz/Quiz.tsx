@@ -50,7 +50,7 @@ const NoQuestions = () => {
   const navigate = useNavigate();
   return (
     <div className='no-questions'>
-      <h2 className='loader'>No Questions Found</h2>
+      <h1 className='loader'>No Questions Found</h1>
       <button className='back' onClick={() => navigate(-1)}>
         home
       </button>
