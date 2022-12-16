@@ -6,6 +6,7 @@ import './QuizModal.css';
 
 export default function QuizModal() {
   const { isOpen } = useAppSelector((state) => state.quizModal);
+  const { questions, currentIndex } = useAppSelector((state) => state.quiz);
   const dispatch = useAppDispatch();
   return isOpen ? (
     <div className='modal-container'>
