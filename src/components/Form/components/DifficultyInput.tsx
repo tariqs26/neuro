@@ -5,15 +5,16 @@ export default function DifficultyInput({ clickHandler }: InputProps) {
     <div className='input-container'>
       <label>Select Difficulty:</label>
       <div className='opt-group difficulty' data-name='difficulty'>
-        <option className='active' value='easy' onClick={clickHandler}>
-          Easy
-        </option>
-        <option value='medium' onClick={clickHandler}>
-          Medium
-        </option>
-        <option value='hard' onClick={clickHandler}>
-          Hard
-        </option>
+        {['Easy', 'Medium', 'Hard'].map((diff, idx) => (
+          <option
+            key={diff}
+            className={idx === 0 ? 'active' : ''}
+            value={diff.toLowerCase()}
+            onClick={clickHandler}
+          >
+            {diff}
+          </option>
+        ))}
       </div>
     </div>
   );
