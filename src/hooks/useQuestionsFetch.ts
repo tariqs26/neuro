@@ -27,6 +27,7 @@ export const useQuestionsFetch = () => {
             question.correct_answer,
             ...question.incorrect_answers,
           ].sort(() => Math.random() - 0.5),
+          score: 0
         }));
       }
       if (!isSubmitted || data.length === 0) dispatch(error());

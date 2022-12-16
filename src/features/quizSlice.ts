@@ -3,6 +3,7 @@ import { Question } from 'hooks/useQuestionsFetch';
 
 interface QuizQuestion extends Question {
   picked: string;
+  score: number;
   options: string[];
 }
 
@@ -41,15 +42,21 @@ const quizSlice = createSlice({
       state.currentIndex++;
     },
     incrementScore(state, { payload }: PayloadAction<number>) {
-      state.score += payload;
+      const question = state.questions[state.currentIndex];
+      if (question.picked === question.correct_answer) state.score += payload;
     },
     clearQuiz() {
       return initialState;
     },
-    pickAnswer(state, { payload }: PayloadAction<{ answer: string }>) {
+    pickAnswer(
+      state,
+      { payload }: PayloadAction<{ answer: string; score: number }>
+    ) {
       const question = state.questions[state.currentIndex];
       if (question.picked) return;
       question.picked = payload.answer;
+      if (question.picked === question.correct_answer)
+        question.score = payload.score;
     },
   },
   extraReducers: {},
