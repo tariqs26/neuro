@@ -43,7 +43,7 @@ body {
 button {
   background-color: var(--btn-bg);
   border-radius: 5px;
-  border: 2px solid var(--inp-outline);
+  border: none;
   color: var(--text-clr);
   padding: 0.8rem 0;
   font-size: 1.2rem;
@@ -82,10 +82,7 @@ h3 {
     font-size: 1.2rem;
     padding: 1rem;
   }
-  h3 {
+  :is(h3, button) {
     font-size: 1.1rem;
-  }
-  button {
-    font-size: 1rem;
   }
 }
