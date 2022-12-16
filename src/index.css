@@ -63,7 +63,7 @@ h2 {
   min-height: 12vh;
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 :is(h2, h3) {
