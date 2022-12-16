@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
@@ -48,13 +48,12 @@ export default function Quiz() {
 }
 
 const NoQuestions = () => {
-  const navigate = useNavigate();
   return (
     <div className='no-questions'>
       <h1 className='loader'>No Questions Found</h1>
-      <button className='back' onClick={() => navigate('/', { replace: true })}>
-        home
-      </button>
+      <Link className='back' to='/'>
+        Home
+      </Link>
     </div>
   );
 };

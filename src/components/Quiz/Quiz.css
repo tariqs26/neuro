@@ -39,3 +39,9 @@
 .loader {
   text-align: center;
 }
+
+.no-questions a {
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
