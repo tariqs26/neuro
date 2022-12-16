@@ -10,10 +10,11 @@ import QuizModal from './QuizModal/QuizModal';
 import './Quiz.css';
 
 export default function Quiz() {
-  useQuestionsFetch();
   const { isLoading, isError, questions, currentIndex } = useAppSelector(
     (state) => state.quiz
   );
+  useQuestionsFetch();
+
   const { isTimerComplete } = useAppSelector((state) => state.timer);
   const dispatch = useAppDispatch();
 
@@ -25,7 +26,7 @@ export default function Quiz() {
     }
     dispatch(nextQuestion());
     dispatch(clearTimer());
-  }, [dispatch, questions, currentIndex, isTimerComplete]);
+  }, [questions, currentIndex, isTimerComplete]);
 
   return (
     <div className='quiz'>
@@ -51,7 +52,7 @@ const NoQuestions = () => {
   return (
     <div className='no-questions'>
       <h1 className='loader'>No Questions Found</h1>
-      <button className='back' onClick={() => navigate(-1)}>
+      <button className='back' onClick={() => navigate('/', { replace: true })}>
         home
       </button>
     </div>
