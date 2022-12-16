@@ -25,7 +25,7 @@ export default function Results() {
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th>No.</th>
             <th>Question</th>
             <th>Correct Answer</th>
             <th>Your Answer</th>
