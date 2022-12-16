@@ -13,15 +13,26 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex: 2;
+  width: 5.8rem;
+}
+.timer.quiz-end {
+  width: fit-content;
 }
 .timer.quiz-end {
   color: hsl(0, 100%, 70%);
-  flex-basis: fit-content;
-  justify-content: center;
 }
 .timer.quiz-submit {
   color: hsl(116, 44%, 53%);
+}
+
+@media (max-width: 550px){
+  .timer {
+    width: 5rem;
+  }
+  .timer svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 }
 
 .progress-bar {
@@ -30,11 +41,7 @@
   border-radius: 0.6rem;
   height: 1.2rem;
   overflow: hidden;
-  flex: 5;
-}
-
-.header:has(.timer.quiz-end) .progress-bar {
-  flex: 100;
+  flex: 1;
 }
 
 .bar {

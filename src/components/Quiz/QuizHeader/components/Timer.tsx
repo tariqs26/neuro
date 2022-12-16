@@ -9,6 +9,9 @@ export default function Timer() {
     increment = 100,
     delay = 3000;
   useTimer(questionDuration - increment, increment, delay);
+  const timeLeft = (questionDuration - timeElapsed) / 1000;
+  const timeFormatted =
+    timeLeft > 1 ? timeLeft.toPrecision(2) : timeLeft.toPrecision(1);
   return (
     <h3
       className={
@@ -18,7 +21,7 @@ export default function Timer() {
     >
       {!(isTimerStopped && isTimerComplete) ? (
         <>
-          <TimerIcon /> {((questionDuration - timeElapsed) / 1000).toFixed(1)}
+          <TimerIcon /> {timeFormatted}
         </>
       ) : (
         <> Time's Up! </>
