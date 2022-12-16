@@ -27,7 +27,7 @@ export default function Question({
   );
 
   const handleOptionClick = (isPicked: boolean, text: string) => {
-    if (isTimerStopped || timeElapsed === 0) return;
+    if (isTimerStopped || !timeElapsed) return;
     dispatch(incrementScore((1 - timeElapsed / 20000) * 100));
     dispatch(pickAnswer({ answer: `${isPicked ? '' : text}` }));
     if (currentIndex === questions.length - 1) {
