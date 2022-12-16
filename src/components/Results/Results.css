@@ -50,7 +50,7 @@ tr:nth-child(even) {
 }
 
 tr:last-child {
-  background-color: var(--nav-bg);
+  background-color: var(--table-bg);
 }
 
 @media only screen and (max-width: 668px),
@@ -65,7 +65,7 @@ tr:last-child {
   }
 
   tr td:first-child{
-    background-color: var(--nav-bg)
+    background-color: var(--table-bg)
   }
 
   td {

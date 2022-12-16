@@ -16,6 +16,7 @@ body {
   --bg: linear-gradient(180deg, var(--nav-bg) 0%, var(--bg-clr) 100%);
   --nav-bg: hsl(240, 20%, 8%);
   --nav-clr: hsl(240, 50%, 75%);
+  --table-bg: hsl(240, 20%, 12%);
   --alt-bg: hsl(240, 20%, 18%);
   --quiz-hdr-bg: hsl(240, 20%, 0%);
   --btn-bg: hsl(240, 40%, 30%);
