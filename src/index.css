@@ -10,52 +10,28 @@
 }
 
 body {
-  background-color: var(--bg);
-  --bg: hsl(240, 10%, 12%);
-  --nav-bg: hsl(240, 10%, 8%);
-  --nav-clr: hsl(100, 55%, 50%);
-  --alt-bg: hsl(240, 10%, 18%);
-  --quiz-hdr-bg: hsl(240, 10%, 5%);
-  --btn-bg: hsl(240, 50%, 36%);
-  --btn-bg-hvr: hsl(240, 50%, 40%);
-  --modal-bg: hsla(240, 10%, 20%, 0.8);
-  --inp-bg: hsl(240, 10%, 30%);
-  --inp-bg-hvr: hsla(240, 10%, 35%);
-  --submit-bg: hsl(0, 80%, 40%);
-  --submit-bg-hvr: hsl(0, 80%, 45%);
-  --active-bg: hsl(240, 45%, 50%);
-  --outline: hsl(240, 0%, 10%);
-  --inp-outline: hsl(240, 0%, 15%);
-  --green: hsl(39, 50%, 58%);
-  --text-clr: hsl(240, 15%, 85%);
-  --label-clr: hsl(240, 20%, 90%);
-  --picked: hsl(240, 40%, 50%);
+  background-color: hsl(230, 20%, 15%);
+  background-image: var(--bg);
+  --bg: linear-gradient(180deg, var(--nav-bg) 0%, hsl(230, 20%, 15%) 100%);
+  --nav-bg: hsl(230, 20%, 6%);
+  --nav-clr: hsl(100, 50%, 50%);
+  --alt-bg: hsl(230, 20%, 17%);
+  --quiz-hdr-bg: hsl(230, 20%, 0%);
+  --btn-bg: hsl(230, 40%, 30%);
+  --btn-bg-hvr: hsl(230, 40%, 35%);
+  --modal-bg: hsla(230, 20%, 20%, 0.8);
+  --inp-bg: hsl(230, 20%, 25%);
+  --inp-bg-hvr: hsla(230, 20%, 30%);
+  --submit-bg: hsl(20, 40%, 25%);
+  --submit-bg-hvr: hsl(20, 40%, 30%);
+  --active-bg: hsl(230, 40%, 25%);
+  --outline: hsl(230, 20%, 10%);
+  --inp-outline: hsl(230, 15%, 15%);
+  --green: hsl(40, 50%, 58%);
+  --text-clr: hsl(230, 15%, 85%);
+  --label-clr: hsl(230, 20%, 90%);
+  --picked: hsl(230, 25%, 40%);
   --correct: hsl(100, 56%, 34%);
-  --wrong: hsl(0, 63%, 52%);
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    --bg: hsl(240, 10%, 90%);
-    --nav-bg: hsl(240, 10%, 94%);
-    --nav-clr: hsl(100, 55%, 40%);
-    --alt-bg: hsl(240, 10%, 82%);
-    --quiz-hdr-bg: hsl(240, 10%, 95%);
-    --btn-bg: hsl(240, 50%, 65%);
-    --btn-bg-hvr: hsl(240, 50%, 70%);
-    --modal-bg: hsla(240, 10%, 20%, 0.8);
-    --inp-bg: hsl(240, 10%, 65%);
-    --inp-bg-hvr: hsl(240, 10%, 70%);
-    --submit-bg: hsl(0, 80%, 60%);
-    --submit-bg-hvr: hsl(0, 80%, 65%);
-    --active-bg: hsl(240, 43%, 70%);
-    --outline: hsl(240, 0%, 90%);
-    --inp-outline: hsl(240, 0%, 85%);
-    --green: hsl(39, 50%, 58%);
-    --text-clr: hsl(240, 15%, 20%);
-    --label-clr: hsl(240, 20%, 12%);
-    --picked: hsl(240, 40%, 78%);
-  }
 }
 
 #root {
@@ -98,7 +74,7 @@ h3 {
   color: var(--text-clr);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   h1 {
     font-size: 1.5rem;
   }
