@@ -19,7 +19,7 @@ body {
   --quiz-hdr-bg: hsl(240, 20%, 0%);
   --btn-bg: hsl(240, 40%, 30%);
   --btn-bg-hvr: hsl(240, 40%, 35%);
-  --picked: hsl(240, 40%, 40%);
+  --picked: hsl(240, 40%, 50%);
   --modal-bg: hsla(240, 20%, 20%, 0.8);
   --inp-bg: hsl(240, 20%, 25%);
   --inp-bg-hvr: hsla(240, 20%, 30%);
