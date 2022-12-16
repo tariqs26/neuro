@@ -1,5 +1,5 @@
 form {
-  width: 24rem;
+  width: min(90%, 24rem);
   margin-top: 4rem;
   padding: 1.25rem;
   font-size: 1.1rem;
