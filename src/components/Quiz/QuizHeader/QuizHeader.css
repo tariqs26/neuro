@@ -10,10 +10,15 @@
 }
 
 .timer {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 2;
 }
 .timer.quiz-end {
   color: hsl(0, 100%, 70%);
+  flex-basis: fit-content;
+  justify-content: center;
 }
 .timer.quiz-submit {
   color: hsl(116, 44%, 53%);
@@ -25,13 +30,11 @@
   border-radius: 0.6rem;
   height: 1.2rem;
   overflow: hidden;
-  flex: 3;
+  flex: 5;
 }
 
-@media (max-width: 768px) {
-  .progress-bar {
-    flex: 1.8;
-  }
+.header:has(.timer.quiz-end) .progress-bar {
+  flex: 100;
 }
 
 .bar {
