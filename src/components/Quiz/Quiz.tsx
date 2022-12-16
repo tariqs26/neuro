@@ -18,7 +18,7 @@ export default function Quiz() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!(questions && questions.length) || !isTimerComplete) return;
+    if (isError || !isTimerComplete) return;
     if (currentIndex === questions.length - 1) {
       dispatch(stopTimer());
       return;
