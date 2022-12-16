@@ -1,6 +1,6 @@
 import { FormEvent, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from 'app/hooks';
+import { setPage } from 'features/appSlice';
 import { setValue, clearForm, FormData, submit } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
@@ -15,14 +15,13 @@ export type InputProps = {
 };
 
 export default function Form() {
-  const navigate = useNavigate(),
-    dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(submit());
     dispatch(clearQuiz());
     dispatch(clearTimer());
-    navigate('/quiz');
+    dispatch(setPage('quiz'));
   };
 
   const handleOptionClick = (e: React.MouseEvent) => {
