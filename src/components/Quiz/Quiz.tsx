@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
+import { setPage } from 'features/appSlice';
 import { nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
+import { openModal } from 'features/quizModalSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
-import QuizHeader from './QuizHeader/QuizHeader';
+import QuizFooter from './QuizFooter/QuizFooter';
 import Question from '../Question/Question';
 import QuizModal from './QuizModal/QuizModal';
 import './Quiz.css';
@@ -22,6 +23,7 @@ export default function Quiz() {
     if (isError || !isTimerComplete) return;
     if (currentIndex === questions.length - 1) {
       dispatch(stopTimer());
+      dispatch(setPage('results'));
       return;
     }
     dispatch(nextQuestion());
@@ -37,10 +39,18 @@ export default function Quiz() {
         <NoQuestions />
       ) : (
         <>
+          <button
+            onClick={() => {
+              dispatch(stopTimer());
+              dispatch(openModal());
+            }}
+          >
+            Leave
+          </button>
           <div className='quiz-area'>
             <Question {...questions[currentIndex]} />
           </div>
-          <QuizHeader />
+          <QuizFooter />
         </>
       )}
     </div>
@@ -48,11 +58,11 @@ export default function Quiz() {
 }
 
 const NoQuestions = () => {
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   return (
     <div className='no-questions'>
       <h1 className='loader'>No Questions Found</h1>
-      <button onClick={() => navigate(-1)}>home</button>
+      <button onClick={() => dispatch(setPage('home'))}>home</button>
     </div>
   );
 };
