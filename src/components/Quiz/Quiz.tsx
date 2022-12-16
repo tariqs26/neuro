@@ -51,7 +51,7 @@ const NoQuestions = () => {
   return (
     <div className='no-questions'>
       <h1 className='loader'>No Questions Found</h1>
-      <Link className='back' to='/'>
+      <Link className='back' to='/' replace={true}>
         Home
       </Link>
     </div>
