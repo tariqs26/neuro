@@ -3,7 +3,7 @@
   padding: 1rem;
   z-index: 1;
   background-color: var(--nav-bg);
-  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
+  box-shadow: 0 0 1rem 0.2rem hsl(240, 20%, 15%);
   position: fixed;
   top: 0;
   display: flex;
