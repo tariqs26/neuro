@@ -11,7 +11,6 @@ export type QuizState = {
   currentIndex: number;
   isLoading: boolean;
   progress: number;
-  revealAnswers: boolean;
   submit: boolean;
   score: number;
 };
@@ -21,7 +20,6 @@ const initialState: QuizState = {
   currentIndex: 0,
   isLoading: true,
   progress: 0,
-  revealAnswers: false,
   submit: false,
   score: 0,
 };

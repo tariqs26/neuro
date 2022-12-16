@@ -19,7 +19,7 @@ export default function Question({
   const questionText = useText<HTMLHeadingElement>(question);
 
   const dispatch = useAppDispatch();
-  const { currentIndex, questions, revealAnswers } = useAppSelector(
+  const { currentIndex, questions, submit } = useAppSelector(
     (state) => state.quiz
   );
   const { isTimerStopped, timeElapsed, timerDelay } = useAppSelector(
@@ -51,9 +51,9 @@ export default function Question({
                   key={text}
                   className={
                     'option ' +
-                    (revealAnswers && correct === text && !isPicked
+                    (submit && correct === text && !isPicked
                       ? 'correct'
-                      : revealAnswers && isPicked && !(correct === text)
+                      : submit && isPicked && !(correct === text)
                       ? 'incorrect'
                       : isPicked
                       ? 'picked'
