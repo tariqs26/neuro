@@ -41,7 +41,7 @@ export default function Question({
     <>
       <h2 ref={questionText}>{null}</h2>
       <div className='question'>
-        {questions[currentIndex].picked || timerDelay > 2200 ? (
+        {questions[currentIndex].picked || timerDelay > 2000 ? (
           <div className='options'>
             {options.map((text: string) => {
               const isPicked = picked === text;
