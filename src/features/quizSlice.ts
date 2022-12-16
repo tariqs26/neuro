@@ -12,7 +12,6 @@ export type QuizState = {
   isLoading: boolean;
   isError: boolean;
   progress: number;
-  submit: boolean;
   score: number;
 };
 
@@ -22,7 +21,6 @@ const initialState: QuizState = {
   isLoading: true,
   isError: false,
   progress: 0,
-  submit: false,
   score: 0,
 };
 
@@ -41,9 +39,6 @@ const quizSlice = createSlice({
     },
     nextQuestion(state) {
       state.currentIndex++;
-    },
-    submit(state) {
-      state.submit = true;
     },
     incrementScore(state, { payload }: PayloadAction<number>) {
       state.score += payload;
@@ -66,7 +61,6 @@ export const {
   error,
   nextQuestion,
   incrementScore,
-  submit,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;
