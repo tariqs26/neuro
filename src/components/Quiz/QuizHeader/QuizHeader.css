@@ -14,6 +14,7 @@
   align-items: center;
   gap: 1rem;
   width: 5.8rem;
+  margin-right: 3rem;
 }
 .timer.quiz-end {
   width: fit-content;
@@ -28,6 +29,7 @@
 @media (max-width: 550px){
   .timer {
     width: 5rem;
+    margin-right: 1rem;
   }
   .timer svg {
     width: 1.1rem;
