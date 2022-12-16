@@ -60,11 +60,14 @@ button:hover {
 h2 {
   color: var(--nav-clr);
   font-size: 1.4rem;
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
 }
 
 :is(h2, h3) {
   font-weight: 500;
-  padding: 1rem 2rem;
   background-color: var(--nav-bg);
 }
 
