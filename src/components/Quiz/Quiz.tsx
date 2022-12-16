@@ -21,13 +21,15 @@ export default function Quiz() {
 
   useEffect(() => {
     if (isError || !isTimerComplete) return;
-    if (currentIndex === questions.length - 1) {
-      dispatch(stopTimer());
-      dispatch(setPage('results'));
-      return;
-    }
-    dispatch(nextQuestion());
-    dispatch(clearTimer());
+    dispatch(stopTimer());
+    setTimeout(() => {
+      if (currentIndex === questions.length - 1) {
+        dispatch(setPage('results'));
+        return;
+      }
+      dispatch(nextQuestion());
+      dispatch(clearTimer());
+    }, 2000);
   }, [questions, currentIndex, isTimerComplete]);
 
   return (
@@ -39,14 +41,6 @@ export default function Quiz() {
         <NoQuestions />
       ) : (
         <>
-          <button
-            onClick={() => {
-              dispatch(stopTimer());
-              dispatch(openModal());
-            }}
-          >
-            Leave
-          </button>
           <div className='quiz-area'>
             <Question {...questions[currentIndex]} />
           </div>
