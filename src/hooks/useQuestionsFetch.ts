@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { setQuestions, setIsLoading } from 'features/quizSlice';
+import { setQuestions, setIsLoading, error } from 'features/quizSlice';
 import getQuestionsProxy from 'api/getQuestionsProxy';
 
 export interface Question {
@@ -25,7 +25,8 @@ export const useQuestionsFetch = () => {
           () => Math.random() - 0.5
         ),
       }));
-      dispatch(setQuestions(data));
+      if (data.length === 0) dispatch(error());
+      else dispatch(setQuestions(data));
       dispatch(setIsLoading(false));
     };
     fetchData();

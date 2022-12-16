@@ -11,7 +11,7 @@ import './Quiz.css';
 
 export default function Quiz() {
   useQuestionsFetch();
-  const { isLoading, questions, currentIndex } = useAppSelector(
+  const { isLoading, isError, questions, currentIndex } = useAppSelector(
     (state) => state.quiz
   );
   const { isTimerComplete } = useAppSelector((state) => state.timer);
@@ -32,7 +32,7 @@ export default function Quiz() {
       <QuizModal />
       {isLoading ? (
         <h1 className='loader'>Loading...</h1>
-      ) : !(questions && questions.length) ? (
+      ) : isError ? (
         <NoQuestions />
       ) : (
         <>
