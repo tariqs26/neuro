@@ -9,15 +9,20 @@
 }
 
 .no-questions {
+  background-color: var(--alt-bg);
+  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
+  border-radius: 5px;
+  padding: 1rem;
   display: grid;
+  place-items: center;
   grid-template-columns: 20rem;
   margin: 0 auto;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 @media (max-width: 550px) {
   .no-questions {
-    grid-template-columns: 15rem;
+    grid-template-columns: 16rem;
   }
 }
 
