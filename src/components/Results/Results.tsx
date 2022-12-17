@@ -1,5 +1,7 @@
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { setPage } from 'features/appSlice';
+import { QuizQuestion } from 'features/quizSlice';
+import { useText } from 'hooks/useText';
 import './Results.css';
 
 export default function Results() {
@@ -34,13 +36,7 @@ export default function Results() {
         </thead>
         <tbody>
           {questions.map((q, idx) => (
-            <tr key={q.question}>
-              <td>{idx + 1}</td>
-              <td>{q.question}</td>
-              <td>{q.correct_answer}</td>
-              <td>{q.picked}</td>
-              <td>{q.score ? q.score.toFixed(0) : 0}</td>
-            </tr>
+            <Row key={q.question} question={q} idx={idx} />
           ))}
           <tr>
             <td colSpan={4}>Total Score</td>
@@ -55,3 +51,28 @@ export default function Results() {
     </div>
   );
 }
+
+type RowProps = {
+  question: QuizQuestion;
+  idx: number;
+};
+const Row = ({
+  question: { question, correct_answer, picked, score },
+  idx,
+}: RowProps) => {
+  return (
+    <tr key={question}>
+      <td>{idx + 1}</td>
+      {[question, correct_answer, picked].map((text, idx) => (
+        <RowEntry key={text + `${idx === 1 ? '-a' : '-u'}`} text={text} />
+      ))}
+      <td>{score ? score.toFixed(0) : 0}</td>
+    </tr>
+  );
+};
+
+
+const RowEntry = ({ text }: { text: string }) => {
+  const ref = useText<HTMLTableCellElement>(text);
+  return <td ref={ref}>{text}</td>;
+};
