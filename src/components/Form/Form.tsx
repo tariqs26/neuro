@@ -1,7 +1,7 @@
 import { FormEvent, useEffect } from 'react';
 import { useAppDispatch } from 'app/hooks';
 import { setPage } from 'features/appSlice';
-import { setValue, clearForm, FormData, submit } from 'features/formSlice';
+import { setValue, clearForm, FormState } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
 import CategoryInput from './components/CategoryInput';
@@ -18,7 +18,6 @@ export default function Form() {
   const dispatch = useAppDispatch();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(submit());
     dispatch(clearQuiz());
     dispatch(clearTimer());
     dispatch(setPage('quiz'));
@@ -34,7 +33,7 @@ export default function Form() {
     target.classList.remove('inactive');
     dispatch(
       setValue({
-        name: parent.dataset.name as keyof FormData,
+        name: parent.dataset.name as keyof FormState,
         value: target.value,
       })
     );

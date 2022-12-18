@@ -3,7 +3,6 @@ import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { setPage } from 'features/appSlice';
 import { nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
-import { openModal } from 'features/quizModalSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
 import QuizFooter from './QuizFooter/QuizFooter';
 import Question from '../Question/Question';
