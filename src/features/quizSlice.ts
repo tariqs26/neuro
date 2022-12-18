@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Question } from 'hooks/useQuestionsFetch';
 
-export interface QuizQuestion extends Question {
+export type QuizQuestion = Question & {
   picked: string;
   score: number;
   options: string[];
-}
+};
 
 export type QuizState = {
   questions: QuizQuestion[];
