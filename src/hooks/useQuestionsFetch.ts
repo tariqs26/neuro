@@ -27,7 +27,7 @@ export const useQuestionsFetch = () => {
         ),
         score: 0,
       }));
-      if (data.length === 0) dispatch(error());
+      if (!data.length) dispatch(error());
       else dispatch(setQuestions(data));
       dispatch(setIsLoading(false));
     };
