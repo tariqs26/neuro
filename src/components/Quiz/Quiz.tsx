@@ -1,31 +1,35 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
+import { setPage } from 'features/appSlice';
 import { nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
-import QuizHeader from './QuizHeader/QuizHeader';
+import QuizFooter from './QuizFooter/QuizFooter';
 import Question from '../Question/Question';
 import QuizModal from './QuizModal/QuizModal';
 import './Quiz.css';
 
 export default function Quiz() {
-  useQuestionsFetch();
   const { isLoading, isError, questions, currentIndex } = useAppSelector(
     (state) => state.quiz
   );
+  useQuestionsFetch();
+
   const { isTimerComplete } = useAppSelector((state) => state.timer);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!(questions && questions.length) || !isTimerComplete) return;
-    if (currentIndex === questions.length - 1) {
-      dispatch(stopTimer());
-      return;
-    }
-    dispatch(nextQuestion());
-    dispatch(clearTimer());
-  }, [dispatch, questions, currentIndex, isTimerComplete]);
+    if (isError || !isTimerComplete) return;
+    dispatch(stopTimer());
+    setTimeout(() => {
+      if (currentIndex === questions.length - 1) {
+        dispatch(setPage('results'));
+        return;
+      }
+      dispatch(nextQuestion());
+      dispatch(clearTimer());
+    }, 2000);
+  }, [questions, currentIndex, isTimerComplete]);
 
   return (
     <div className='quiz'>
@@ -39,7 +43,7 @@ export default function Quiz() {
           <div className='quiz-area'>
             <Question {...questions[currentIndex]} />
           </div>
-          <QuizHeader />
+          <QuizFooter />
         </>
       )}
     </div>
@@ -47,13 +51,11 @@ export default function Quiz() {
 }
 
 const NoQuestions = () => {
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   return (
     <div className='no-questions'>
       <h1 className='loader'>No Questions Found</h1>
-      <button className='back' onClick={() => navigate(-1)}>
-        home
-      </button>
+      <button onClick={() => dispatch(setPage('home'))}>home</button>
     </div>
   );
 };

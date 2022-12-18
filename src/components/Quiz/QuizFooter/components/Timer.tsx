@@ -9,6 +9,9 @@ export default function Timer() {
     increment = 100,
     delay = 3000;
   useTimer(questionDuration - increment, increment, delay);
+  const timeLeft = (questionDuration - timeElapsed) / 1000;
+  const timeFormatted =
+    timeLeft > 1 ? timeLeft.toPrecision(2) : timeLeft.toPrecision(1);
   return (
     <h3
       className={
@@ -17,10 +20,29 @@ export default function Timer() {
       }
     >
       {!(isTimerStopped && isTimerComplete) ? (
-        <>Time: {((questionDuration - timeElapsed) / 1000).toFixed(1)}</>
+        <>
+          <TimerIcon /> {timeFormatted}
+        </>
       ) : (
         <> Time's Up! </>
       )}
     </h3>
   );
 }
+
+const TimerIcon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    stroke='currentColor'
+    strokeWidth='2'
+    strokeLinecap='round'
+    strokeLinejoin='round'
+  >
+    <circle cx='12' cy='12' r='10'></circle>
+    <polyline points='12 6 12 12 16 14'></polyline>
+  </svg>
+);

@@ -1,24 +1,18 @@
 .quiz {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 2rem;
   width: min(90%, 45rem);
-  margin: 0 auto;
   color: var(--text-clr);
 }
 
 .no-questions {
+  background-color: var(--alt-bg);
+  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
+  border-radius: 5px;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: 20rem;
-  margin: 0 auto;
-  gap: 1rem;
-}
-
-@media (max-width: 500px) {
-  .no-questions {
-    grid-template-columns: 15rem;
-  }
+  gap: 1.5rem;
+  align-self: center;
 }
 
 .quiz-area {

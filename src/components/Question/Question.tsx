@@ -1,4 +1,5 @@
 import { useAppSelector, useAppDispatch } from 'app/hooks';
+import { setPage } from 'features/appSlice';
 import { pickAnswer, incrementScore, nextQuestion } from 'features/quizSlice';
 import { clearTimer, stopTimer } from 'features/timerSlice';
 import { useText } from 'hooks/useText';
@@ -19,50 +20,47 @@ export default function Question({
   const questionText = useText<HTMLHeadingElement>(question);
 
   const dispatch = useAppDispatch();
-  const { currentIndex, questions, submit } = useAppSelector(
-    (state) => state.quiz
-  );
+  const { currentIndex, questions } = useAppSelector((state) => state.quiz);
   const { isTimerStopped, timeElapsed, timerDelay } = useAppSelector(
     (state) => state.timer
   );
 
-  const handleOptionClick = (isPicked: boolean, text: string) => {
-    if (isTimerStopped || !timeElapsed) return;
-    dispatch(incrementScore((1 - timeElapsed / 20000) * 100));
-    dispatch(pickAnswer({ answer: `${isPicked ? '' : text}` }));
-    if (currentIndex === questions.length - 1) {
-      dispatch(stopTimer());
-      return;
-    }
-    dispatch(nextQuestion());
-    dispatch(clearTimer());
+  const handleOptionClick = (text: string) => {
+    dispatch(stopTimer());
+    const score = (1 - timeElapsed / 10000) * 100;
+    dispatch(pickAnswer({ answer: text, score }));
+    dispatch(incrementScore(score));
+    setTimeout(() => {
+      if (currentIndex === questions.length - 1) {
+        dispatch(setPage('results'));
+        return;
+      }
+      dispatch(nextQuestion());
+      dispatch(clearTimer());
+    }, 2000);
   };
   return (
     <>
       <h2 ref={questionText}>{null}</h2>
       <div className='question'>
-        {questions[currentIndex].picked || timerDelay > 2200 ? (
+        {questions[currentIndex].picked || timerDelay > 2000 ? (
           <div className='options'>
             {options.map((text: string) => {
-              const isPicked = picked === text;
-              const timerEnd = isTimerStopped ? 'finished' : '';
               return (
                 <Option
                   key={text}
                   className={
                     'option ' +
-                    (submit && correct === text && !isPicked
+                    (correct === text && isTimerStopped
                       ? 'correct'
-                      : submit && isPicked && !(correct === text)
+                      : correct !== text && picked === text
                       ? 'incorrect'
-                      : isPicked
+                      : picked === text
                       ? 'picked'
-                      : '') +
-                    ' ' +
-                    timerEnd
+                      : '')
                   }
                   text={text}
-                  onClick={() => handleOptionClick(isPicked, text)}
+                  onClick={() => handleOptionClick(text)}
                 />
               );
             })}

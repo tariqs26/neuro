@@ -5,7 +5,6 @@
 - Trivia app that allows users to generate timed quizzes based on the number of questions, category, and difficulty.
 - Includes a timer , progress bar, and a leave button which opens a modal to confirm exiting the quiz.
 - Built using **React** and **Typescript**.
-- Utilizes **React Router** to navigate between the different pages and dynamic routes.
 - Uses **Axios** to fetch data from the **Open Trivia Database API** to generate the questions.
 - Uses **Redux Toolkit** to manage the state of the quiz, form, and timer.
 

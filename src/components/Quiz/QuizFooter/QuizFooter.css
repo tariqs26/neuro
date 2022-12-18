@@ -2,7 +2,7 @@
   padding: 1rem;
   background-color: var(--quiz-hdr-bg);
   color: var(--text-clr);
-  box-shadow: 0 2 0.5rem 0.1rem var(--inp-outline);
+  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
   border-radius: 0 0 5px 5px;
   display: flex;
   align-items: center;
@@ -10,7 +10,14 @@
 }
 
 .timer {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 5.8rem;
+  margin-right: 3rem;
+}
+.timer.quiz-end {
+  width: fit-content;
 }
 .timer.quiz-end {
   color: hsl(0, 100%, 70%);
@@ -19,19 +26,24 @@
   color: hsl(116, 44%, 53%);
 }
 
+@media (max-width: 550px){
+  .timer {
+    width: 5rem;
+    margin-right: 1rem;
+  }
+  .timer svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
 .progress-bar {
   background-color: var(--alt-bg);
   border: 0.1em solid var(--quiz-hdr-bg);
   border-radius: 0.6rem;
   height: 1.2rem;
   overflow: hidden;
-  flex: 3;
-}
-
-@media (max-width: 768px) {
-  .progress-bar {
-    flex: 1.8;
-  }
+  flex: 1;
 }
 
 .bar {
