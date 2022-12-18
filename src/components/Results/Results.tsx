@@ -46,7 +46,7 @@ export default function Results() {
       </table>
       <div className='result-buttons'>
         <button onClick={() => dispatch(setPage('home'))}>Home</button>
-        <button onClick={() => dispatch(setPage('quiz'))}>Retry</button>
+        <button disabled={true} onClick={() => dispatch(setPage('quiz'))}>Retry</button>
       </div>
     </div>
   );
