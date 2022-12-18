@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap');
-
 *,
 *::after,
 *::before {
@@ -27,9 +25,9 @@ body {
   /* input */
   --inp-bg: hsl(240, 20%, 30%);
   --inp-bg-hvr: hsl(240, 20%, 35%);
-  --submit-bg: hsl(20, 40%, 30%);
-  --submit-bg-hvr: hsl(20, 40%, 35%);
-  --active-bg: hsl(240, 40%, 30%);
+  --submit-bg: hsl(10, 40%, 35%);
+  --submit-bg-hvr: hsl(10, 40%, 40%);
+  --active-bg: hsl(240, 40%, 35%);
   /* outline */
   --outline: hsl(240, 5%, 10%);
   --inp-outline: hsl(240, 5%, 15%);
