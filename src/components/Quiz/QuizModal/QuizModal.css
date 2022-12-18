@@ -1,7 +1,7 @@
 .modal-container {
   opacity: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--modal-bg);
   display: grid;
   place-items: center;
@@ -13,21 +13,29 @@
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal {
-  width: 80%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg);
+  width: min(90%, 400px);
+  background-color: var(--bg-clr);
   border-radius: 5px;
-  padding: 1rem;
   text-align: center;
   box-shadow: -1px 1px 5px 0px hsla(30, 0%, 0%, 0.75),
     1px -1px 5px 0px hsla(30, 0%, 0%, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
   animation: slideIn 0.3s ease-in-out;
+}
+
+.modal p {
+  padding: 0 1rem;
+  text-align: left;
+  color: var(--text-clr);
 }
 
 @keyframes slideIn {
@@ -42,23 +50,20 @@
   }
 }
 
-.modal h3 {
-  color: var(--green);
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
 .buttons {
   display: flex;
-  gap: 1rem;
+}
+
+.buttons button:first-child {
+  border-radius: 0 0 0 5px;
+}
+.buttons button:last-child {
+  border-radius: 0 0 5px 0;
 }
 
 .cancel {
-  background-color: hsl(0, 100%, 45%);
+  background-color: var(--submit-bg);
 }
-
 .cancel:hover {
-  background-color: hsl(0, 100%, 55%);
+  background-color: var(--submit-bg-hvr);
 }
-

@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Question } from 'hooks/useQuestionsFetch';
 
-interface QuizQuestion extends Question {
+export type QuizQuestion = Question & {
   picked: string;
+  score: number;
   options: string[];
-}
+};
 
 export type QuizState = {
   questions: QuizQuestion[];
@@ -12,7 +13,6 @@ export type QuizState = {
   isLoading: boolean;
   isError: boolean;
   progress: number;
-  submit: boolean;
   score: number;
 };
 
@@ -22,7 +22,6 @@ const initialState: QuizState = {
   isLoading: true,
   isError: false,
   progress: 0,
-  submit: false,
   score: 0,
 };
 
@@ -42,19 +41,22 @@ const quizSlice = createSlice({
     nextQuestion(state) {
       state.currentIndex++;
     },
-    submit(state) {
-      state.submit = true;
-    },
     incrementScore(state, { payload }: PayloadAction<number>) {
-      state.score += payload;
+      const question = state.questions[state.currentIndex];
+      if (question.picked === question.correct_answer) state.score += payload;
     },
     clearQuiz() {
       return initialState;
     },
-    pickAnswer(state, { payload }: PayloadAction<{ answer: string }>) {
+    pickAnswer(
+      state,
+      { payload }: PayloadAction<{ answer: string; score: number }>
+    ) {
       const question = state.questions[state.currentIndex];
       if (question.picked) return;
       question.picked = payload.answer;
+      if (question.picked === question.correct_answer)
+        question.score = payload.score;
     },
   },
   extraReducers: {},
@@ -66,7 +68,6 @@ export const {
   error,
   nextQuestion,
   incrementScore,
-  submit,
   clearQuiz,
   pickAnswer,
 } = quizSlice.actions;

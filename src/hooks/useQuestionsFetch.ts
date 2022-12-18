@@ -14,22 +14,20 @@ export interface Question {
 
 export const useQuestionsFetch = () => {
   const dispatch = useAppDispatch();
-  const { isSubmitted, ...params } = useAppSelector((state) => state.form);
+  const params = useAppSelector((state) => state.form);
   useEffect(() => {
     const fetchData = async () => {
       let data = [];
-      if (isSubmitted) {
-        let res = await getQuestionsProxy(params);
-        data = res.map((question: Question) => ({
-          ...question,
-          picked: '',
-          options: [
-            question.correct_answer,
-            ...question.incorrect_answers,
-          ].sort(() => Math.random() - 0.5),
-        }));
-      }
-      if (!isSubmitted || data.length === 0) dispatch(error());
+      let res = await getQuestionsProxy(params);
+      data = res.map((question: Question) => ({
+        ...question,
+        picked: '',
+        options: [question.correct_answer, ...question.incorrect_answers].sort(
+          () => Math.random() - 0.5
+        ),
+        score: 0,
+      }));
+      if (data.length === 0) dispatch(error());
       else dispatch(setQuestions(data));
       dispatch(setIsLoading(false));
     };

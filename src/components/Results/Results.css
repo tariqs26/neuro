@@ -1,0 +1,115 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: min(90%, 64rem);
+  padding: 1rem;
+  color: var(--text-clr);
+  background-color: var(--alt-bg);
+  box-shadow: 0 0 10px var(--outline);
+  border-radius: 5px;
+  opacity: 0;
+  animation: slide-in 300ms ease-in-out forwards;
+}
+
+.question-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.question-stats p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--picked);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+.question-stats p:first-child {
+  background-color: var(--correct);
+}
+.question-stats p:nth-child(2) {
+  background-color: var(--incorrect);
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--text-clr);
+}
+
+th,
+td {
+  border: 1px solid var(--text-clr);
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-clr);
+}
+
+tr:last-child {
+  background-color: var(--table-bg);
+}
+
+@media only screen and (max-width: 668px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  :is(table, thead, tbody, th, td, tr) {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  tr td:first-child{
+    background-color: var(--table-bg)
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid var(--text-clr);
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    white-space: nowrap;
+  }
+
+  td:first-child:before {
+    content: 'No.';
+  }
+  td:nth-of-type(2):before {
+    content: 'Question';
+  }
+  td:nth-of-type(3):before {
+    content: 'Correct Answer';
+  }
+  td:nth-of-type(4):before {
+    content: 'Your Answer';
+  }
+  td:nth-of-type(5):before {
+    content: 'Points';
+  }
+  tr:last-child td:first-child {
+    display: none;
+  }
+  tr:last-child td:last-child:before {
+    content: 'Total Score';
+  }
+}
+.result-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.result-buttons button {
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+}

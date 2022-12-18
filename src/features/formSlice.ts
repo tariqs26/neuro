@@ -1,14 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type FormData = {
+export type FormState = {
   amount: '5' | '10' | '15' | '20';
   category: string;
   difficulty: 'easy' | 'medium' | 'hard';
   type: 'multiple' | 'boolean';
-};
-
-export type FormState = FormData & {
-  isSubmitted: boolean;
 };
 
 const initialState: FormState = {
@@ -16,7 +12,6 @@ const initialState: FormState = {
   category: '9',
   difficulty: 'easy',
   type: 'multiple',
-  isSubmitted: false,
 };
 
 const formSlice = createSlice({
@@ -27,12 +22,9 @@ const formSlice = createSlice({
       state,
       {
         payload: { name, value },
-      }: PayloadAction<{ name: keyof FormData; value: string }>
+      }: PayloadAction<{ name: keyof FormState; value: string }>
     ) {
       return { ...state, [name]: value };
-    },
-    submit(state) {
-      state.isSubmitted = true;
     },
     clearForm() {
       return initialState;
@@ -40,6 +32,6 @@ const formSlice = createSlice({
   },
 });
 
-export const { setValue, clearForm, submit } = formSlice.actions;
+export const { setValue, clearForm } = formSlice.actions;
 
 export default formSlice.reducer;
