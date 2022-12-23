@@ -28,21 +28,17 @@ export default function Quiz() {
     <div className='no-questions'>
       <h1 className='loader'>Loading...</h1>
     </div>
+  ) : isError ? (
+    <div className='no-questions page'>
+      <h1 className='loader'>No Questions Found</h1>
+      <button onClick={() => dispatch(setPage('home'))}>home</button>
+    </div>
   ) : (
     <>
-      <QuizModal/>
+      <QuizModal />
       <div className='quiz page'>
-        {isError ? (
-          <div className='no-questions'>
-            <h1 className='loader'>No Questions Found</h1>
-            <button onClick={() => dispatch(setPage('home'))}>home</button>
-          </div>
-        ) : (
-          <>
-            <Question {...questions[currentIndex]} />
-            <QuizFooter />
-          </>
-        )}
+        <Question {...questions[currentIndex]} />
+        <QuizFooter />
       </div>
     </>
   );
