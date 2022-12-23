@@ -1,18 +1,15 @@
-.header {
-  padding: 1rem;
-  background-color: var(--quiz-hdr-bg);
-  color: var(--text-clr);
-  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  border-radius: 0 0 5px 5px;
+:is(.header, .timer){
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+.header {
+  padding: 1rem;
+  background-color: var(--quiz-hdr-bg);
+}
+
 .timer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   width: 5.8rem;
   margin-right: 3rem;
 }
