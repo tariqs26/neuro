@@ -30,8 +30,7 @@ export default function Quiz() {
     </div>
   ) : (
     <>
-      <QuizModal />
-
+      <QuizModal/>
       <div className='quiz page'>
         {isError ? (
           <div className='no-questions'>
