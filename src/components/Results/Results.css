@@ -3,17 +3,7 @@
   flex-direction: column;
   gap: 1.5rem;
   width: min(90%, 64rem);
-  animation: slide-up 400ms ease-in-out forwards;
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  animation: slide-left 400ms ease-in-out forwards;
 }
 
 .question-stats {
