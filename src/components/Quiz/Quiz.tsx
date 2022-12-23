@@ -24,7 +24,7 @@ export default function Quiz() {
     afterAnswer(dispatch, currentIndex, questions);
   }, [questions, currentIndex, isTimerComplete]);
 
-  return true ? (
+  return isLoading ? (
     <div className='loader-container'>
       <div className='loader-bars'>
         {[1, 2, 3, 4, 5, 6].map((i) => (
