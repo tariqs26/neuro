@@ -4,6 +4,19 @@
   width: min(90%, 45rem);
   overflow: clip;
   padding: 0 !important;
+  animation: slide-left 400ms ease-in-out forwards !important;
+}
+
+@keyframes slide-left {
+  0% {
+    filter: blur(2px);
+    transform: translateX(-100%) skewY(-2deg);
+  }
+  100% {
+    transform: translateY(0) skewY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
 }
 
 .no-questions {
