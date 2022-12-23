@@ -28,7 +28,10 @@
 
 table {
   border-collapse: collapse;
-  border: 1px solid var(--text-clr);
+  border-radius: 7.5px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  overflow: clip;
+  box-shadow: 0 0 1px 1px var(--text-clr);
 }
 
 th,
@@ -57,8 +60,8 @@ tr:last-child {
     visibility: hidden;
   }
 
-  tr td:first-child{
-    background-color: var(--table-bg)
+  tr td:first-child {
+    background-color: var(--table-bg);
   }
 
   td {
@@ -92,6 +95,9 @@ tr:last-child {
   }
   tr:last-child td:first-child {
     display: none;
+  }
+  tr:last-child td:last-child {
+    border-bottom: 0;
   }
   tr:last-child td:last-child:before {
     content: 'Total Score';
