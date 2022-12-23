@@ -1,24 +1,7 @@
 form {
   width: min(90%, 24rem);
-  padding: 1.25rem;
-  font-size: 1.1rem;
-  background-color: var(--alt-bg);
-  box-shadow: 0 0 0.5rem 0.1rem var(--outline);
-  border-radius: 7.5px;
   display: grid;
   gap: 1.5rem;
-  opacity: 0;
-  animation: slide-in 300ms ease-in-out forwards;
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateY(2rem);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 label {

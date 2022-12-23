@@ -31,31 +31,24 @@ export default function Quiz() {
     }, 2000);
   }, [questions, currentIndex, isTimerComplete]);
 
-  return (
-    <div className='quiz'>
+  return isLoading ? (
+    <div className='no-questions'>
+      <h1 className='loader'>Loading...</h1>
+    </div>
+  ) : (
+    <div className='quiz page'>
       <QuizModal />
-      {isLoading ? (
-        <h1 className='loader'>Loading...</h1>
-      ) : isError ? (
-        <NoQuestions />
+      {isError ? (
+        <div className='no-questions'>
+          <h1 className='loader'>No Questions Found</h1>
+          <button onClick={() => dispatch(setPage('home'))}>home</button>
+        </div>
       ) : (
         <>
-          <div className='quiz-area'>
-            <Question {...questions[currentIndex]} />
-          </div>
+          <Question {...questions[currentIndex]} />
           <QuizFooter />
         </>
       )}
     </div>
   );
 }
-
-const NoQuestions = () => {
-  const dispatch = useAppDispatch();
-  return (
-    <div className='no-questions'>
-      <h1 className='loader'>No Questions Found</h1>
-      <button onClick={() => dispatch(setPage('home'))}>home</button>
-    </div>
-  );
-};

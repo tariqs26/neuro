@@ -8,7 +8,7 @@ export default function Results() {
   const dispatch = useAppDispatch();
   const { score, questions } = useAppSelector((state) => state.quiz);
   return (
-    <div className='results'>
+    <div className='results page'>
       <h1>Results</h1>
       <div className='question-stats'>
         <p>
