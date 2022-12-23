@@ -45,9 +45,6 @@
   animation: loader-bar 800ms ease-in-out infinite alternate;
 }
 @keyframes loader-bar {
-  0% {
-    background-size: 100% 20%;
-  }
   100% {
     background-size: 100% 100%;
   }
