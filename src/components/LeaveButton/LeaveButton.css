@@ -1,0 +1,10 @@
+.leave {
+  background-color: var(--submit-bg);
+  margin-left: auto;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+}
+
+.leave:hover {
+  background-color: var(--submit-bg-hvr);
+}
