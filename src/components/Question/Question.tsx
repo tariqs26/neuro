@@ -26,6 +26,7 @@ export default function Question({
   );
 
   const handleOptionClick = (text: string) => {
+    if (isTimerStopped) return;
     dispatch(stopTimer());
     const score = (1 - timeElapsed / 10000) * 100;
     dispatch(pickAnswer({ answer: text, score }));
