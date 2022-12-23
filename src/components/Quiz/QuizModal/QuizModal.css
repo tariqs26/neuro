@@ -1,14 +1,13 @@
 .modal-container {
-  opacity: 0;
   width: 100vw;
   height: 100vh;
   background-color: var(--modal-bg);
   display: grid;
   place-items: center;
   position: fixed;
-  left: 0;
   top: 0;
   z-index: 2;
+  opacity: 0;
   animation: fadeIn 0.25s ease-in-out forwards;
 }
 
@@ -20,22 +19,11 @@
 
 .modal {
   width: min(90%, 400px);
-  background-color: var(--bg-clr);
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: -1px 1px 5px 0px hsla(30, 0%, 0%, 0.75),
-    1px -1px 5px 0px hsla(30, 0%, 0%, 0.7);
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-top: 1rem;
+  opacity: 1;
   animation: slideIn 0.3s ease-in-out;
-}
-
-.modal p {
-  padding: 0 1rem;
-  text-align: left;
-  color: var(--text-clr);
 }
 
 @keyframes slideIn {
@@ -52,13 +40,7 @@
 
 .buttons {
   display: flex;
-}
-
-.buttons button:first-child {
-  border-radius: 0 0 0 5px;
-}
-.buttons button:last-child {
-  border-radius: 0 0 5px 0;
+  gap: 1rem;
 }
 
 .cancel {
