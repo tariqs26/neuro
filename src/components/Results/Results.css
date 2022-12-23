@@ -12,11 +12,10 @@
   gap: 1rem;
 }
 .question-stats p {
-  font-size: 1.2rem;
   font-weight: 500;
   background-color: var(--picked);
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 7.5px;
   text-align: center;
 }
 .question-stats p:first-child {
