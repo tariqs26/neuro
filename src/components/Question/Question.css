@@ -47,24 +47,18 @@
   }
 }
 
-:is(.correct, .correct:hover) {
-  background-color: var(--correct);
-}
-:is(.incorrect, .incorrect:hover) {
-  background-color: var(--incorrect);
-}
-:is(.picked, .picked:hover) {
-  background-color: var(--picked);
-}
-
-.option.incorrect {
+.option:is(.incorrect, .correct) {
   opacity: 1;
-  animation: incorrect-shake 800ms 800ms linear;
 }
-
 .option.correct {
-  opacity: 1;
-  animation: correct 800ms 0s linear;
+  background-color: var(--correct);
+  transition: 300ms background-color ease-in-out;
+  animation: correct 600ms ease-in-out;
+}
+.option.incorrect {
+  background-color: var(--incorrect);
+  transition: 300ms 600ms background-color ease-in-out;
+  animation: incorrect-shake 600ms 600ms ease-in-out;
 }
 
 @keyframes incorrect-shake {
@@ -97,7 +91,6 @@
   }
 }
 
-/* cool animation */
 @keyframes correct {
   50% {
     transform: scale(1.1);
@@ -105,5 +98,4 @@
   100% {
     transform: scale(1);
   }
-  
 }
