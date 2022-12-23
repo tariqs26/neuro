@@ -22,6 +22,35 @@
 .no-questions {
   display: grid;
   gap: 1.5rem;
+  animation: slide-down 400ms ease-in-out forwards;
+}
+
+.loader-bars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loader-bar {
+  height: 3rem;
+  width: 100%;
+  background-image: linear-gradient(
+    to top,
+    var(--text-clr) 0%,
+    var(--text-clr) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  background-position: bottom;
+  animation: loader-bar 800ms ease-in-out infinite alternate;
+}
+@keyframes loader-bar {
+  0% {
+    background-size: 100% 20%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
 }
 
 .loader {

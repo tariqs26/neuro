@@ -24,8 +24,19 @@ export default function Quiz() {
     afterAnswer(dispatch, currentIndex, questions);
   }, [questions, currentIndex, isTimerComplete]);
 
-  return isLoading ? (
-    <div className='no-questions'>
+  return true ? (
+    <div className='loader-container'>
+      <div className='loader-bars'>
+        {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div
+            className='loader-bar'
+            key={i}
+            style={{
+              animationDelay: `${i * 0.2}s`,
+            }}
+          />
+        ))}
+      </div>
       <h1 className='loader'>Loading...</h1>
     </div>
   ) : isError ? (
