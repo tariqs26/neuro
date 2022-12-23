@@ -9,7 +9,6 @@
 .no-questions {
   display: grid;
   gap: 1.5rem;
-  align-self: center;
 }
 
 .loader {

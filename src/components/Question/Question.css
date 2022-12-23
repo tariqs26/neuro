@@ -24,6 +24,7 @@
 
 .option {
   opacity: 0;
+  padding: 0.8rem 1.6rem;
   animation: option-show 200ms linear forwards;
 }
 .option:nth-child(2) {
