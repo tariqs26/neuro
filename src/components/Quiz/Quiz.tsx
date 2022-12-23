@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
+import { afterAnswer } from 'app/utils';
 import { setPage } from 'features/appSlice';
-import { nextQuestion } from 'features/quizSlice';
-import { clearTimer, stopTimer } from 'features/timerSlice';
+import { stopTimer } from 'features/timerSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
 import QuizFooter from './QuizFooter/QuizFooter';
 import Question from '../Question/Question';
@@ -21,14 +21,7 @@ export default function Quiz() {
   useEffect(() => {
     if (isError || !isTimerComplete) return;
     dispatch(stopTimer());
-    setTimeout(() => {
-      if (currentIndex === questions.length - 1) {
-        dispatch(setPage('results'));
-        return;
-      }
-      dispatch(nextQuestion());
-      dispatch(clearTimer());
-    }, 2000);
+    afterAnswer(dispatch, currentIndex, questions);
   }, [questions, currentIndex, isTimerComplete]);
 
   return isLoading ? (

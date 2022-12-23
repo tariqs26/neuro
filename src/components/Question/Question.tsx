@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { setPage } from 'features/appSlice';
-import { pickAnswer, incrementScore, nextQuestion } from 'features/quizSlice';
-import { clearTimer, stopTimer } from 'features/timerSlice';
+import { afterAnswer } from 'app/utils';
+import { pickAnswer, incrementScore } from 'features/quizSlice';
+import { stopTimer } from 'features/timerSlice';
 import { useText } from 'hooks/useText';
 import './Question.css';
 
@@ -30,14 +30,7 @@ export default function Question({
     const score = (1 - timeElapsed / 10000) * 100;
     dispatch(pickAnswer({ answer: text, score }));
     dispatch(incrementScore(score));
-    setTimeout(() => {
-      if (currentIndex === questions.length - 1) {
-        dispatch(setPage('results'));
-        return;
-      }
-      dispatch(nextQuestion());
-      dispatch(clearTimer());
-    }, 2000);
+    afterAnswer(dispatch, currentIndex, questions);
   };
   return (
     <>
