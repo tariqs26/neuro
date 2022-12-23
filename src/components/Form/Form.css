@@ -85,6 +85,18 @@ input[type='submit']:hover {
   transition: 150ms ease-in-out;
 }
 
+@media (max-width: 380px) {
+  form {
+    width: 95%;
+    padding: 1rem !important;
+    gap: 2rem;
+  }
+
+  .opt-group option {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
 .opt-group .active {
   animation: active 150ms ease-in-out forwards;
 }
