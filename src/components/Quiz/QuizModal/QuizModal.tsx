@@ -6,8 +6,8 @@ import './QuizModal.css';
 export default function QuizModal() {
   const { isOpen } = useAppSelector((state) => state.quizModal);
   const dispatch = useAppDispatch();
-  return isOpen ? (
-    <div className='modal-container'>
+  return (
+    <div className={`modal-container ${isOpen ? '' : 'hidden'}`}>
       <div className='modal page'>
         <h1>Leave quiz?</h1>
         <p>
@@ -33,7 +33,5 @@ export default function QuizModal() {
         </div>
       </div>
     </div>
-  ) : (
-    <></>
   );
 }

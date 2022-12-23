@@ -6,43 +6,32 @@
   place-items: center;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 1;
+  transition: 200ms ease-in-out;
+}
+.modal-container.hidden {
   opacity: 0;
-  animation: fadeIn 0.25s ease-in-out forwards;
+  z-index: -1;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.modal {
+.modal-container .modal {
   width: min(90%, 400px);
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  transition: 200ms ease-in-out;
   opacity: 1;
-  animation: slideIn 0.3s ease-in-out;
+  animation: none;
 }
 
-@keyframes slideIn {
-  0% {
-    transform: scale(0.6);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.modal-container.hidden .modal {
+  opacity: 0;
 }
 
 .buttons {
   display: flex;
   gap: 1rem;
 }
-
 .cancel {
   background-color: var(--submit-bg);
 }

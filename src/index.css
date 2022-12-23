@@ -21,7 +21,7 @@ body {
   --btn-bg: hsl(240, 50%, 30%);
   --btn-bg-hvr: hsl(240, 50%, 35%);
   /* modal */
-  --modal-bg: hsla(240, 20%, 10%, 0.8);
+  --modal-bg: hsla(0, 0%, 0%, 0.6);
   /* input */
   --inp-bg: hsl(240, 20%, 30%);
   --inp-bg-hvr: hsl(240, 20%, 35%);
