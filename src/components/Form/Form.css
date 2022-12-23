@@ -2,6 +2,17 @@ form {
   width: min(90%, 24rem);
   display: grid;
   gap: 1.5rem;
+  animation: slide-down 400ms ease-in-out forwards;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 label {

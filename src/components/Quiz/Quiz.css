@@ -4,7 +4,7 @@
   width: min(90%, 45rem);
   overflow: clip;
   padding: 0 !important;
-  animation: slide-left 400ms ease-in-out forwards !important;
+  animation: slide-left 400ms ease-in-out forwards;
 }
 
 @keyframes slide-left {
