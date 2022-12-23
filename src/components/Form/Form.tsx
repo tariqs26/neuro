@@ -4,6 +4,7 @@ import { setPage } from 'features/appSlice';
 import { setValue, clearForm, FormState } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
+import { closeModal } from 'features/quizModalSlice';
 import CategoryInput from './components/CategoryInput';
 import DifficultyInput from './components/DifficultyInput';
 import AmountInput from './components/AmountInput';
@@ -19,6 +20,7 @@ export default function Form() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(clearQuiz());
+    dispatch(closeModal());
     dispatch(clearTimer());
     dispatch(setPage('quiz'));
   };
