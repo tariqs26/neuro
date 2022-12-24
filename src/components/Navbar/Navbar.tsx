@@ -4,7 +4,7 @@ export default function Navbar({ children }: { children?: React.ReactNode }) {
   return (
     <div className='nav-bar'>
       <Trophy />
-      <h1 className='nav-title'>Trivify</h1>
+      <h1 className='nav-title'>Quizr</h1>
       {children}
     </div>
   );
