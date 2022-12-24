@@ -1,4 +1,4 @@
-# Nuero
+# Neuro
 
 ## Description:
 
