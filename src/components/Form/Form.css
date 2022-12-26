@@ -39,7 +39,8 @@ label {
 }
 
 .form-control::-webkit-scrollbar-thumb {
-  background-color: var(--active-bg);
+  background-color: var(--text-clr);
+  border-radius: 0.2rem;
 }
 
 .form-control::-webkit-scrollbar-track-piece:end {
