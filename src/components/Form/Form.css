@@ -65,6 +65,14 @@ input[type='submit']:hover {
   gap: 1rem;
 }
 
+:is(.form-control, .opt-group option) {
+  background-color: var(--inp-bg);
+  box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
+  border-radius: 7.5px;
+  width: 100%;
+  user-select: none;
+}
+
 .opt-group option {
   padding: 0.5rem 1rem;
   background-repeat: no-repeat;
@@ -80,7 +88,6 @@ input[type='submit']:hover {
 
 @media (max-width: 380px) {
   form {
-    width: 95%;
     padding: 1rem !important;
     gap: 2rem;
   }
