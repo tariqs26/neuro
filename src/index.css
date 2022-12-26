@@ -22,8 +22,8 @@ body {
   --alt-bg: hsl(240, 20%, 18%);
   --quiz-hdr-bg: hsl(240, 20%, 0%);
   /* button */
-  --btn-bg: hsl(240, 50%, 30%);
-  --btn-bg-hvr: hsl(240, 50%, 35%);
+  --btn-bg: hsl(240, 50%, 35%);
+  --btn-bg-hvr: hsl(240, 50%, 40%);
   /* modal */
   --modal-bg: hsla(0, 0%, 0%, 0.4);
   /* input */
@@ -88,6 +88,7 @@ h3 {
   padding: 0.5rem;
   border-radius: 5px;
   color: var(--text-clr);
+  transition: 200ms ease-in-out;
 }
 
 @media (max-width: 550px) {
