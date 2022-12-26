@@ -2,30 +2,29 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--modal-bg);
+  backdrop-filter: blur(5px);
   display: grid;
   place-items: center;
   position: fixed;
   top: 0;
   z-index: 1;
-  transition: 200ms ease-in-out;
+  transition: 300ms ease-in-out;
 }
 .modal-container.hidden {
   opacity: 0;
   z-index: -1;
 }
 
-.modal-container .modal {
-  width: min(90%, 400px);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  transition: 200ms ease-in-out;
-  opacity: 1;
-  animation: none;
+.modal-container.hidden .modal {
+  transform: scale(0.2);
 }
 
-.modal-container.hidden .modal {
-  opacity: 0;
+.modal-container .modal {
+  width: min(90%, 400px);
+  display: grid;
+  gap: 1.5rem;
+  opacity: 1;
+  transition: 300ms ease-in-out;
 }
 
 .buttons {
