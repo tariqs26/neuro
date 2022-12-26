@@ -2,7 +2,7 @@ import './Navbar.css';
 
 export default function Navbar({ children }: { children?: React.ReactNode }) {
   return (
-    <div className='nav-bar'>
+    <div id="top" className='nav-bar'>
       <Trophy />
       <h1 className='nav-title'>Neuro</h1>
       {children}
