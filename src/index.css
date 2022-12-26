@@ -45,6 +45,7 @@ body {
 body {
   background-color: var(--bg-clr);
   background-image: var(--bg);
+  overflow-x: hidden;
 }
 
 button {
