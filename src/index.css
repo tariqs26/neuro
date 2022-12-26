@@ -9,6 +9,10 @@
   font-family: 'Rubik', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* background */
   --bg-clr: hsl(240, 20%, 15%);
