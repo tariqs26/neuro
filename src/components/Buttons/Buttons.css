@@ -1,7 +1,10 @@
+.btn {
+  width: fit-content;
+  margin-left: auto;
+
+}
 .leave {
   background-color: var(--submit-bg);
-  margin-left: auto;
-  width: fit-content;
 }
 
 .leave:hover {

@@ -3,14 +3,22 @@ import Form from 'components/Form/Form';
 import Quiz from 'components/Quiz/Quiz';
 import Navbar from 'components/Navbar/Navbar';
 import Results from 'components/Results/Results';
-import LeaveButton from 'components/LeaveButton/LeaveButton';
+import { LeaveButton, HomeButton } from 'components/Buttons/Buttons';
 import './App.css';
 
 export default function App() {
   const { page } = useAppSelector((state) => state.app);
   return (
     <div className='App'>
-      <Navbar>{page === 'quiz' && <LeaveButton />}</Navbar>
+      <Navbar>
+        {page === 'quiz' ? (
+          <LeaveButton />
+        ) : page === 'results' ? (
+          <HomeButton />
+        ) : (
+          <> </>
+        )}
+      </Navbar>
       <div className='page-container'>
         {page === 'home' && <Form />}
         {page === 'quiz' && <Quiz />}
