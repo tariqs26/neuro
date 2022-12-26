@@ -17,24 +17,16 @@ form {
 
 label {
   color: var(--label-clr);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
-.input-container {
-  width: 100%;
-}
-
-.form-control,
-.opt-group option {
+.form-control {
   color: var(--text-clr);
-  background-color: var(--inp-bg);
-  box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
   border: none;
-  border-radius: 7.5px;
   font-size: inherit;
-  margin-top: 0.5rem;
   padding: 0.5rem;
-  width: 100%;
-  user-select: none;
 }
 
 .form-control:focus {
