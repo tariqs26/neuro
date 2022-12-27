@@ -35,15 +35,44 @@ export default function Form() {
     );
   };
 
-  useEffect(() => {
-    dispatch(clearForm());
-  }, []);
+  const { amount, difficulty, type } = useAppSelector((state) => state.form);
+
   return (
     <form className='page' onSubmit={handleSubmit}>
-      <AmountInput clickHandler={handleOptionClick} />
+      <Input
+        label='Number of Questions'
+        dataName='amount'
+        stateValue={amount}
+        values={[
+          ['5', '5'],
+          ['10', '10'],
+          ['15', '15'],
+          ['20', '20'],
+        ]}
+        clickHandler={handleOptionClick}
+      />
       <CategoryInput dispatch={dispatch} />
-      <DifficultyInput clickHandler={handleOptionClick} />
-      <TypeInput clickHandler={handleOptionClick} />
+      <Input
+        label='Difficulty'
+        dataName='difficulty'
+        stateValue={difficulty}
+        values={[
+          ['Easy', 'easy'],
+          ['Medium', 'medium'],
+          ['Hard', 'hard'],
+        ]}
+        clickHandler={handleOptionClick}
+      />
+      <Input
+        label='Type'
+        dataName='type'
+        stateValue={type}
+        values={[
+          ['Multiple Choice', 'multiple'],
+          ['True / False', 'boolean'],
+        ]}
+        clickHandler={handleOptionClick}
+      />
       <div className='input-container'>
         <input type='submit' value='Start quiz' className='form-control' />
       </div>
