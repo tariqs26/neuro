@@ -1,19 +1,13 @@
-import { FormEvent, useEffect } from 'react';
-import { useAppDispatch } from 'app/hooks';
+import { FormEvent } from 'react';
+import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { setPage } from 'features/appSlice';
-import { setValue, clearForm, FormState } from 'features/formSlice';
+import { setValue, FormState } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
 import { closeModal } from 'features/quizModalSlice';
+import Input from './components/Input';
 import CategoryInput from './components/CategoryInput';
-import DifficultyInput from './components/DifficultyInput';
-import AmountInput from './components/AmountInput';
-import TypeInput from './components/TypeInput';
 import './Form.css';
-
-export type InputProps = {
-  clickHandler: (e: React.MouseEvent) => void;
-};
 
 export default function Form() {
   const dispatch = useAppDispatch();
