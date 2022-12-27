@@ -1,7 +1,7 @@
 .results {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   width: min(90%, 50rem);
   animation: slide-up 400ms ease-in-out forwards;
 }
@@ -36,11 +36,9 @@
 .flawless {
   color: hsl(100, 70%, 50%);
 }
-
 .excellent {
   color: hsl(150, 70%, 60%);
 }
-
 .fail {
   color: hsl(20, 70%, 50%);
 }
