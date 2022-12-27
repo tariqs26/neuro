@@ -20,7 +20,7 @@
 }
 
 .modal-container .modal {
-  width: min(90%, 400px);
+  width: min(90%, 25rem);
   display: grid;
   gap: 1.5rem;
   opacity: 1;
