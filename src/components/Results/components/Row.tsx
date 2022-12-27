@@ -21,8 +21,8 @@ const Row = ({
 };
 
 const RowEntry = ({ text }: { text: string }) => {
-  const ref = useText<HTMLTableCellElement>(text);
-  return <td ref={ref}>{text}</td>;
+  const ref = useText<HTMLTableCellElement>(text || '\u00A0');
+  return <td ref={ref} />;
 };
 
 export default Row;
