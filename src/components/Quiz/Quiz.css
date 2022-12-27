@@ -7,7 +7,7 @@
 
 @keyframes slide-left {
   0% {
-    transform: translateX(-100%) skewY(-2deg);
+    transform: translateX(-100%) skewY(-4deg);
   }
   100% {
     transform: translateY(0) skewY(0);
