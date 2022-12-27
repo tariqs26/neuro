@@ -73,6 +73,10 @@ button:hover {
   cursor: pointer;
 }
 
+h1 {
+  color: var(--label-clr);
+}
+
 h2 {
   color: var(--q-clr);
   font-size: 1.4rem;
