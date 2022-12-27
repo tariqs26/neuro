@@ -1,3 +1,4 @@
+import { useAppSelector as useSelector } from 'app/hooks';
 import { AppDispatch } from 'app/store';
 import { setValue } from 'features/formSlice';
 
@@ -5,13 +6,15 @@ type CategoryInputProps = {
   dispatch: AppDispatch;
 };
 export default function CategoryInput({ dispatch }: CategoryInputProps) {
+  const category = useSelector((state) => state.form.category);
   const name = 'category';
   return (
     <div className='input-container'>
-      <label htmlFor={name}>{'Select Category:'}</label>
+      <label htmlFor={name}>{`Select Category:`}</label>
       <select
         name={name}
         className='form-control'
+        value={category}
         onChange={(e) => {
           dispatch(setValue({ name, value: e.target.value }));
         }}
