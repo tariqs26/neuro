@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { afterAnswer } from 'app/utils';
-import { setPage } from 'features/appSlice';
 import { stopTimer } from 'features/timerSlice';
 import { useQuestionsFetch } from 'hooks/useQuestionsFetch';
 import QuizFooter from './QuizFooter/QuizFooter';
@@ -10,7 +9,7 @@ import QuizModal from './QuizModal/QuizModal';
 import './Quiz.css';
 
 export default function Quiz() {
-  const { isLoading, isError, questions, currentIndex } = useAppSelector(
+  const { isLoading, questions, currentIndex } = useAppSelector(
     (state) => state.quiz
   );
   useQuestionsFetch();
@@ -19,7 +18,7 @@ export default function Quiz() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (isError || !isTimerComplete) return;
+    if (!isTimerComplete) return;
     dispatch(stopTimer());
     afterAnswer(dispatch, currentIndex, questions);
   }, [questions, currentIndex, isTimerComplete]);
@@ -37,18 +36,7 @@ export default function Quiz() {
           />
         ))}
       </div>
-      <h1 className='loader'>Loading...</h1>
-    </div>
-  ) : isError ? (
-    <div className='no-questions page'>
-      <h1 className='loader'>No Questions Found</h1>
-      <p>
-        Sorry, there are no questions available for the selected options. This
-        is most likely due to the selected category not having enough questions,
-        or questions of the selected difficulty or type. Please try again with
-        different options.
-      </p>
-      <button onClick={() => dispatch(setPage('home'))}>home</button>
+      <h1>Loading...</h1>
     </div>
   ) : (
     <>

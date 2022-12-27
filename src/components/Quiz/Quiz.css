@@ -15,13 +15,6 @@
   }
 }
 
-.no-questions {
-  display: grid;
-  gap: 1.5rem;
-  width: min(90%, 25rem);
-  animation: slide-down 400ms ease-in-out forwards;
-}
-
 .loader-bars {
   display: flex;
   justify-content: center;

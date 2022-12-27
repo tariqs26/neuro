@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { setQuestions, setIsLoading, error } from 'features/quizSlice';
+import { setPage } from 'features/appSlice';
+import { setQuestions, setIsLoading } from 'features/quizSlice';
 import getQuestionsProxy from 'api/getQuestionsProxy';
 
 export interface Question {
@@ -30,7 +31,7 @@ export const useQuestionsFetch = () => {
           score: 0,
         }));
       } catch (err) {}
-      if (!data.length) dispatch(error());
+      if (!data.length) dispatch(setPage('error'));
       else dispatch(setQuestions(data));
       dispatch(setIsLoading(false));
     };

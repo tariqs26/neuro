@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type AppState = {
-  page: 'home' | 'quiz' | 'results';
+  page: 'home' | 'quiz' | 'error' | 'results';
 };
 
 const initialState: AppState = {
