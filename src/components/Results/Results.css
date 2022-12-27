@@ -46,15 +46,21 @@
 .question-stats {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
 }
+.question-stats svg {
+  width: 1.4rem;
+  display: block;
+}
 .question-stats p {
-  font-weight: 500;
+  padding: 0.4rem 0.8rem;
   background-color: var(--picked);
-  padding: 0.5rem 1rem;
   border-radius: 7.5px;
-  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .question-stats p:first-child {
   background-color: var(--correct);
@@ -96,6 +102,9 @@ tr:last-child {
   table {
     font-size: 1rem;
   }
+  .question-stats p {
+    padding: 0.3rem 0.6rem;
+  }
 }
 
 @media only screen and (max-width: 668px),
@@ -119,14 +128,12 @@ tr:last-child {
     position: relative;
     padding-left: 50%;
   }
-
   td:before {
     position: absolute;
     top: 10px;
     left: 10px;
     white-space: nowrap;
   }
-
   td:first-child:before {
     content: 'No.';
   }
