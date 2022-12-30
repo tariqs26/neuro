@@ -17,7 +17,7 @@ export default function Results() {
   useEffect(() => {
     const handleScroll = () => {
       const anchor = document.querySelector('.results-anchor') as HTMLElement;
-      if (window.scrollY > 50) anchor.classList.remove('hidden');
+      if (window.scrollY > 100) anchor.classList.remove('hidden');
       else anchor.classList.add('hidden');
     };
     document.addEventListener('scroll', handleScroll);
