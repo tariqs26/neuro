@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAppSelector } from 'app/hooks';
 import ResultsTitle from './components/ResultsTitle';
 import {
@@ -13,6 +14,17 @@ export default function Results() {
   const { score, questions } = useAppSelector((state) => state.quiz);
   const correct = questions.filter((q) => q.picked === q.correct_answer).length;
   const percentCorrect = correct / questions.length;
+  useEffect(() => {
+    const handleScroll = () => {
+      const anchor = document.querySelector('.results-anchor') as HTMLElement;
+      if (window.scrollY > 50) anchor.classList.remove('hidden');
+      else anchor.classList.add('hidden');
+    };
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <div className='results page'>
@@ -53,7 +65,7 @@ export default function Results() {
           </tbody>
         </table>
       </div>
-      <a className='results-anchor' href='#top'>
+      <a className='results-anchor hidden' href='#top'>
         <UpArrow />
       </a>
     </>
