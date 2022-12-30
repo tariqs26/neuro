@@ -23,7 +23,7 @@ const Input = ({
         {values.map(([key, value]) => (
           <option
             key={key}
-            className={value === stateValue ? 'active' : ''}
+            className={value === stateValue ? 'active' : 'inactive'}
             value={value}
             onClick={clickHandler}
           >
