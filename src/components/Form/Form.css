@@ -98,7 +98,7 @@ input[type='submit']:hover {
 }
 
 .opt-group .active {
-  animation: active 150ms ease-in-out forwards;
+  animation: active 200ms ease-in-out forwards;
 }
 
 @keyframes active {
@@ -109,7 +109,7 @@ input[type='submit']:hover {
 
 .opt-group .inactive {
   background-size: 100% 100%;
-  animation: inactive 150ms ease-in-out forwards;
+  animation: inactive 200ms ease-in-out forwards;
 }
 
 @keyframes inactive {
