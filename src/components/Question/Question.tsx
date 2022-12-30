@@ -11,12 +11,8 @@ type QuestionProps = {
   picked: string;
   correct_answer: string;
 };
-export default function Question({
-  question,
-  options,
-  picked,
-  correct_answer: correct,
-}: QuestionProps) {
+export default function Question(props: QuestionProps) {
+  const { question, options, picked, correct_answer: correct } = props;
   const questionText = useText<HTMLHeadingElement>(question);
 
   const dispatch = useAppDispatch();
