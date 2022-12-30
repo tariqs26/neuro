@@ -48,7 +48,7 @@ export default function Form() {
         ]}
         clickHandler={handleOptionClick}
       />
-      <CategoryInput dispatch={dispatch} />
+      <CategoryInput />
       <Input
         label='Difficulty'
         dataName='difficulty'

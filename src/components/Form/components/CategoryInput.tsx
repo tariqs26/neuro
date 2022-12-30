@@ -1,12 +1,9 @@
-import { useAppSelector as useSelector } from 'app/hooks';
-import { AppDispatch } from 'app/store';
+import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { setValue } from 'features/formSlice';
 
-type CategoryInputProps = {
-  dispatch: AppDispatch;
-};
-export default function CategoryInput({ dispatch }: CategoryInputProps) {
-  const category = useSelector((state) => state.form.category);
+export default function CategoryInput() {
+  const dispatch = useAppDispatch();
+  const category = useAppSelector((state) => state.form.category);
   const name = 'category';
   return (
     <div className='input-container'>
