@@ -9,13 +9,8 @@ type Props = {
   clickHandler: (e: React.MouseEvent) => void;
 };
 
-const Input = ({
-  label,
-  dataName,
-  stateValue,
-  values,
-  clickHandler,
-}: Props) => {
+const Input = (props: Props) => {
+  const { label, dataName, stateValue, values, clickHandler } = props;
   return (
     <div className='input-container'>
       <label>{`Select ${label}`}</label>
