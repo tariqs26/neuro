@@ -33,3 +33,15 @@
 .nav-logo h1 {
   font-size: 1.5rem;
 }
+
+@media (max-width: 550px) {
+  .nav-logo {
+    outline: 1px solid black;
+  }
+  .nav-logo svg {
+    width: 1rem;
+  }
+  .nav-logo h1 {
+    font-size: 1.3rem;
+  }
+}
