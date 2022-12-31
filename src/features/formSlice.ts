@@ -22,7 +22,10 @@ const formSlice = createSlice({
       state,
       {
         payload: { name, value },
-      }: PayloadAction<{ name: keyof FormState; value: string }>
+      }: PayloadAction<{
+        name: keyof FormState;
+        value: FormState[keyof FormState];
+      }>
     ) {
       return { ...state, [name]: value };
     },
