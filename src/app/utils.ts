@@ -1,12 +1,12 @@
 import { AppDispatch } from './store';
 import { setPage } from 'features/appSlice';
-import { nextQuestion } from 'features/quizSlice';
+import { nextQuestion, QuizQuestion } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
 
 export const afterAnswer = (
   dispatch: AppDispatch,
   currentIndex: number,
-  questions: []
+  questions: QuizQuestion[]
 ) => {
   setTimeout(() => {
     if (currentIndex === questions.length - 1) {
