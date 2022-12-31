@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 
 type Props = {
-  questions: Array<any>;
+  questions: Array<unknown>;
   currentIndex: number;
 };
 export default function ProgressBar({ questions, currentIndex: idx }: Props) {
