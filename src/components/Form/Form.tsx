@@ -4,7 +4,6 @@ import { setPage } from 'features/appSlice';
 import { setValue, FormState } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
-import { closeModal } from 'features/quizModalSlice';
 import Input from './components/Input';
 import CategoryInput from './components/CategoryInput';
 import './Form.css';
@@ -14,7 +13,6 @@ export default function Form() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(clearQuiz());
-    dispatch(closeModal());
     dispatch(clearTimer());
     dispatch(setPage('quiz'));
   };

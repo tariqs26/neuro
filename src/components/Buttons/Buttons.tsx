@@ -1,15 +1,14 @@
 import { useAppDispatch } from 'app/hooks';
 import { setPage } from 'features/appSlice';
-import { openModal } from 'features/quizModalSlice';
 import './Buttons.css';
 
 export const LeaveButton = () => {
-  const dispatch = useAppDispatch();
   return (
     <button
       className='leave btn'
       onClick={() => {
-        dispatch(openModal());
+        const modal = document.querySelector('.modal') as HTMLDialogElement;
+        modal.showModal();
       }}
     >
       Leave Quiz

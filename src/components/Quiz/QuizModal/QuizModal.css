@@ -1,30 +1,43 @@
-.modal-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--modal-bg);
-  backdrop-filter: blur(5px);
-  display: grid;
-  place-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  transition: 150ms ease-in-out;
-}
-.modal-container.hidden {
-  opacity: 0;
-  z-index: -1;
-}
-
-.modal-container.hidden .modal {
-  transform: scale(0.2);
-}
-
-.modal-container .modal {
+.modal {
   width: min(90%, 25rem);
-  display: grid;
-  gap: 1.5rem;
-  opacity: 1;
-  transition: 250ms ease-in-out;
+  margin: auto;
+  padding: 1.5rem;
+  background-color: var(--alt-bg);
+  color: var(--text-clr);
+  border: none;
+  border-radius: 7.5px;
+  box-shadow: 0 0.3rem 0.5rem 0.2rem var(--outline), 0 0 0 100vw var(--modal-bg);
+}
+
+.modal :is(h1, p) {
+  margin-bottom: 1.5rem;
+}
+
+.modal[open] {
+  animation: modal-in 300ms ease-in-out;
+}
+@keyframes modal-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal[closing] {
+  animation: modal-out 300ms ease-in-out;
+}
+@keyframes modal-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
 }
 
 .buttons {
