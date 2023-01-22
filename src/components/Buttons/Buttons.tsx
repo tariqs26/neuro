@@ -7,8 +7,8 @@ export const LeaveButton = () => {
     <button
       className='leave btn'
       onClick={() => {
-        const modal = document.querySelector('.modal') as HTMLDialogElement;
-        modal.showModal();
+        const modal = document.querySelector('.modal');
+        (modal as HTMLDialogElement).showModal();
       }}
     >
       Leave Quiz

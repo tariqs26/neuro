@@ -13,7 +13,7 @@ const Input = (props: Props) => {
   const { label, dataName, stateValue, values, clickHandler } = props;
   return (
     <div className='input-container'>
-      <label>{`Select ${label}`}</label>
+      <label>{`Select ${label}:`}</label>
       <div className='opt-group' data-name={dataName}>
         {values.map(([key, value]) => (
           <option
