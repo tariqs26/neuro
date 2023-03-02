@@ -70,6 +70,7 @@ input[type='submit']:hover {
   box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
   border-radius: 7.5px;
   width: 100%;
+  -webkit-user-select: none;
   user-select: none;
 }
 
