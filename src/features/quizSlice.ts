@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Question } from 'hooks/useQuestionsFetch';
+import type { Question } from 'hooks/useQuestionsFetch';
 
 export type QuizQuestion = Question & {
   picked: string;

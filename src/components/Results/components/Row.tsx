@@ -1,4 +1,4 @@
-import { QuizQuestion } from 'features/quizSlice';
+import type { QuizQuestion } from 'features/quizSlice';
 import { useText } from 'hooks/useText';
 
 type RowProps = {
