@@ -15,6 +15,7 @@ export default function CategoryInput() {
         onChange={(e) => {
           dispatch(setValue({ name, value: e.target.value }));
         }}
+        title='Select a category'
       >
         <Categories />
       </select>
