@@ -62,32 +62,14 @@
 }
 
 @keyframes incorrect-shake {
-  0% {
+  0%, 100% {
     transform: translateX(0);
   }
-  20% {
-    transform: translateX(1rem);
-  }
-  30% {
+  30%, 50%, 70% {
     transform: translateX(-1rem);
   }
-  40% {
+  20%, 40%, 60%, 80% {
     transform: translateX(1rem);
-  }
-  50% {
-    transform: translateX(-1rem);
-  }
-  60% {
-    transform: translateX(1rem);
-  }
-  70% {
-    transform: translateX(-1rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
