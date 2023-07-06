@@ -1,18 +1,14 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type AppState = {
-  page: 'home' | 'quiz' | 'error' | 'results';
-};
+type AppState = { page: Page };
 
-const initialState: AppState = {
-  page: 'home',
-};
+const initialState: AppState = { page: "home" };
 
 const appSlice = createSlice({
-  name: 'app',
+  name: "app",
   initialState,
   reducers: {
-    setPage(state, action: PayloadAction<AppState['page']>) {
+    setPage(state, action: PayloadAction<Page>) {
       state.page = action.payload;
     },
   },

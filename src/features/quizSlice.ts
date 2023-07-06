@@ -1,19 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { Question } from 'hooks/useQuestionsFetch';
-
-export type QuizQuestion = Question & {
-  picked: string;
-  score: number;
-  options: string[];
-};
-
-export type QuizState = {
-  questions: QuizQuestion[];
-  currentIndex: number;
-  isLoading: boolean;
-  progress: number;
-  score: number;
-};
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: QuizState = {
   questions: [],
@@ -24,7 +9,7 @@ const initialState: QuizState = {
 };
 
 const quizSlice = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
     setQuestions(state, { payload }: PayloadAction<QuizQuestion[]>) {
@@ -54,7 +39,6 @@ const quizSlice = createSlice({
         question.score = payload.score;
     },
   },
-  extraReducers: {},
 });
 
 export const {

@@ -1,21 +1,14 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export type FormState = {
-  amount: '5' | '10' | '15' | '20';
-  category: string;
-  difficulty: 'easy' | 'medium' | 'hard';
-  type: 'multiple' | 'boolean';
-};
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: FormState = {
-  amount: '5',
-  category: '9',
-  difficulty: 'easy',
-  type: 'multiple',
+  amount: "5",
+  category: "9",
+  difficulty: "easy",
+  type: "multiple",
 };
 
 const formSlice = createSlice({
-  name: 'form',
+  name: "form",
   initialState,
   reducers: {
     setValue(
