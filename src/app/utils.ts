@@ -1,4 +1,4 @@
-import { AppDispatch } from './store';
+import type { AppDispatch } from './store';
 import { setPage } from 'features/appSlice';
 import { nextQuestion, QuizQuestion } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
