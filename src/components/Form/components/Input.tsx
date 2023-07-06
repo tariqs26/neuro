@@ -1,6 +1,3 @@
-import { FormState } from 'features/formSlice';
-
-type FormValue = FormState[keyof FormState];
 type Props = {
   label: string;
   dataName: keyof FormState;
@@ -9,16 +6,16 @@ type Props = {
   clickHandler: (e: React.MouseEvent) => void;
 };
 
-const Input = (props: Props) => {
+export default function Input(props: Props) {
   const { label, dataName, stateValue, values, clickHandler } = props;
   return (
-    <div className='input-container'>
+    <div className="input-container">
       <label>{`Select ${label}:`}</label>
-      <div className='opt-group' data-name={dataName}>
+      <div className="opt-group" data-name={dataName}>
         {values.map(([key, value]) => (
           <option
             key={key}
-            className={value === stateValue ? 'active' : 'inactive'}
+            className={value === stateValue ? "active" : "inactive"}
             value={value}
             onClick={clickHandler}
           >
@@ -28,6 +25,4 @@ const Input = (props: Props) => {
       </div>
     </div>
   );
-};
-
-export default Input;
+}

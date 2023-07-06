@@ -9,11 +9,6 @@
   align-self: flex-start;
   position: relative;
 }
-@media (max-width: 550px) {
-  .nav-bar {
-    padding: 1rem;
-  }
-}
 
 .nav-logo {
   display: flex;
@@ -35,6 +30,9 @@
 }
 
 @media (max-width: 550px) {
+  .nav-bar {
+    padding: 1rem;
+  }
   .nav-logo {
     outline: 1px solid black;
   }

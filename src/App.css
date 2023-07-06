@@ -23,3 +23,24 @@
   font-size: 1.1rem;
   opacity: 0;
 }
+
+.error-page {
+  display: grid;
+  gap: 1.5rem;
+  width: min(90%, 25rem);
+  animation: slide-down 400ms ease-in-out forwards;
+}
+
+.btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.leave {
+  background-color: var(--submit-bg);
+}
+
+.leave:hover {
+  background-color: var(--submit-bg-hvr);
+}

@@ -7,6 +7,8 @@ type FormState = {
   type: "multiple" | "boolean";
 };
 
+type FormValue = FormState[keyof FormState];
+
 type Question = {
   category: string;
   correct_answer: string;

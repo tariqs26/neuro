@@ -1,11 +1,10 @@
 import { useAppDispatch } from 'app/hooks';
 import { setPage } from 'features/appSlice';
-import './Buttons.css';
 
 export const LeaveButton = () => {
   return (
     <button
-      className='leave btn'
+      className='btn leave'
       onClick={() => {
         const modal = document.querySelector('.modal');
         (modal as HTMLDialogElement).showModal();

@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { setPage } from 'features/appSlice';
-import { setValue, FormState } from 'features/formSlice';
+import { setValue } from 'features/formSlice';
 import { clearQuiz } from 'features/quizSlice';
 import { clearTimer } from 'features/timerSlice';
 import Input from './components/Input';
@@ -10,6 +10,7 @@ import './Form.css';
 
 export default function Form() {
   const dispatch = useAppDispatch();
+  
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(clearQuiz());

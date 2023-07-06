@@ -1,5 +1,4 @@
-import type { QuizQuestion } from 'features/quizSlice';
-import { useText } from 'hooks/useText';
+import { useText } from "hooks/useText";
 
 type RowProps = {
   question: QuizQuestion;
@@ -13,7 +12,7 @@ const Row = ({
     <tr key={question}>
       <td>{idx + 1}</td>
       {[question, correct_answer, picked].map((text, idx) => (
-        <RowEntry key={text + `${idx === 1 ? '-a' : '-u'}`} text={text} />
+        <RowEntry key={text + `${idx === 1 ? "-a" : "-u"}`} text={text} />
       ))}
       <td>{score ? score.toFixed(0) : 0}</td>
     </tr>
@@ -21,7 +20,7 @@ const Row = ({
 };
 
 const RowEntry = ({ text }: { text: string }) => {
-  const ref = useText<HTMLTableCellElement>(text || '\u00A0');
+  const ref = useText<HTMLTableCellElement>(text || "\u00A0");
   return <td ref={ref} />;
 };
 

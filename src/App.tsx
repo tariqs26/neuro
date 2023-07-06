@@ -3,8 +3,8 @@ import Form from 'components/Form/Form';
 import Quiz from 'components/Quiz/Quiz';
 import Navbar from 'components/Navbar/Navbar';
 import Results from 'components/Results/Results';
-import ErrorPage from 'components/ErrorPage/ErrorPage';
-import { LeaveButton, HomeButton } from 'components/Buttons/Buttons';
+import ErrorPage from 'pages/Error';
+import { LeaveButton, HomeButton } from 'components/Buttons';
 import './App.css';
 
 export default function App() {
