@@ -17,6 +17,10 @@
 
 .error-page {
   display: grid;
-  gap: 1.5rem;
   width: min(90%, 25rem);
+}
+
+.error-page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
