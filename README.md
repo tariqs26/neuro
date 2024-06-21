@@ -25,11 +25,12 @@ npm i
 
 Here are the scripts you can run to interact with the project:
 
-| Script            | Description                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------ |
-| `npm run dev`     | Launch the app in development mode at [http://localhost:3000](http://localhost:3000) |
-| `npm run build`   | Build the app for production                                                         |
-| `npm run preview` | Preview the production build                                                         |
+| Script            | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| `npm run dev`     | Launch the app in development mode at <http://localhost:3000/> |
+| `npm run lint`    | Lint the project                                               |
+| `npm run build`   | Build the app for production                                   |
+| `npm run preview` | Preview the production build                                   |
 
 ## Contributing
 
