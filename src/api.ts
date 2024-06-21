@@ -12,7 +12,7 @@ type ApiResponse =
     }
 
 const fetchQuestions = async (params: Data): Promise<ApiResponse> => {
-  const url = new URL(import.meta.env.VITE_API_URL)
+  const url = new URL("https://opentdb.com/api.php")
   url.search = new URLSearchParams(params).toString()
 
   const res = await fetch(url)
