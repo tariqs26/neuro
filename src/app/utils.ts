@@ -1,7 +1,7 @@
-import type { AppDispatch } from './store';
-import { setPage } from 'features/appSlice';
-import { nextQuestion, QuizQuestion } from 'features/quizSlice';
-import { clearTimer } from 'features/timerSlice';
+import { setPage } from "@/features/appSlice"
+import { moveToNextQuestion, resetTimer } from "@/features/quizSlice"
+import type { AppDispatch } from "./store"
+import type { QuizQuestion } from "@/types/quiz"
 
 export const afterAnswer = (
   dispatch: AppDispatch,
@@ -10,10 +10,10 @@ export const afterAnswer = (
 ) => {
   setTimeout(() => {
     if (currentIndex === questions.length - 1) {
-      dispatch(setPage('results'));
-      return;
+      dispatch(setPage("results"))
+      return
     }
-    dispatch(nextQuestion());
-    dispatch(clearTimer());
-  }, 1400);
-};
+    dispatch(moveToNextQuestion())
+    dispatch(resetTimer())
+  }, 1400)
+}
