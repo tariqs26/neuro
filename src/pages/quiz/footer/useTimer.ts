@@ -23,12 +23,10 @@ export const useTimer = (options: {
 
     const interval = setInterval(() => {
       if (elapsedDelay < delay) dispatch(incrementDelay(increment))
-      else {
-        if (elapsedTime >= duration) {
-          dispatch(completeTimer())
-          clearInterval(interval)
-        } else dispatch(incrementTime(increment))
-      }
+      else if (elapsedTime >= duration) {
+        dispatch(completeTimer())
+        clearInterval(interval)
+      } else dispatch(incrementTime(increment))
     }, increment)
 
     return () => clearInterval(interval)
