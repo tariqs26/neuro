@@ -12,11 +12,11 @@ export const useTimer = (options: {
   delay: number
 }) => {
   const dispatch = useDispatch()
-  const { status, elapsedDelay, elapsedTime } = useSelector(
-    (state) => state.quiz.timer
-  )
+  const timer = useSelector((state) => state.quiz.timer)
 
   useEffect(() => {
+    const { status, elapsedTime, elapsedDelay } = timer
+
     if (status !== "running") return
 
     const { duration, increment, delay } = options
@@ -32,5 +32,5 @@ export const useTimer = (options: {
     }, increment)
 
     return () => clearInterval(interval)
-  }, [options, dispatch, status, elapsedDelay, elapsedTime])
+  }, [options, dispatch, timer])
 }
