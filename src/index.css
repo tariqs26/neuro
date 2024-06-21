@@ -50,6 +50,7 @@ body {
   background-color: var(--background);
   background-image: url("assets/stacked-waves-haikei.svg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #root {
