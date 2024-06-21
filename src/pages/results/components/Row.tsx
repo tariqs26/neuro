@@ -11,7 +11,7 @@ const Row = ({
 }: RowProps) => (
   <tr key={question}>
     <td>{idx + 1}</td>
-    {[question, correct_answer, picked].map((text, idx) => (
+    {[question, picked, correct_answer].map((text, idx) => (
       <td
         key={`${text}${idx === 1 ? "-a" : "-u"}`}
         dangerouslySetInnerHTML={{ __html: text }}

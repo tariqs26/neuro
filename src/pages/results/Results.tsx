@@ -1,8 +1,8 @@
 import { useSelector } from "@/app/hooks"
 import { MinusCircle, RightCircle, WrongCircle } from "@/components/Icons"
-import Anchor from "../../pages/results/components/Anchor"
-import Row from "../../pages/results/components/Row"
-import ResultsTitle from "../../pages/results/components/Title"
+import Anchor from "./components/Anchor"
+import Row from "./components/Row"
+import ResultsTitle from "./components/Title"
 
 import "./Results.css"
 
@@ -37,8 +37,8 @@ const Results = () => {
             <tr>
               <th>No.</th>
               <th>Question</th>
-              <th>Correct Answer</th>
               <th>Your Answer</th>
+              <th>Correct Answer</th>
               <th>Points</th>
             </tr>
           </thead>
