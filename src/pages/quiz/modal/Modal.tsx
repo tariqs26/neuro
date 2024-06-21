@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { useDispatch } from "@/app/hooks"
 import { setPage } from "@/features/appSlice"
 import "./Modal.css"
