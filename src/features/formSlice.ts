@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type { Data, FormState, FormValue } from "../types/form"
+import type { Data, FormState, FormValue } from "@/types/form"
 
 const initialState: FormState = {
   isSubmitting: false,
