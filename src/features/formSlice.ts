@@ -1,11 +1,10 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import type { Data, FormState, FormValue } from "../types/form"
 
 const initialState: FormState = {
-  amount: "5",
-  category: "9",
-  difficulty: "easy",
-  type: "multiple",
-};
+  isSubmitting: false,
+  data: { amount: "5", category: "9", difficulty: "easy", type: "multiple" },
+}
 
 const formSlice = createSlice({
   name: "form",
@@ -16,18 +15,19 @@ const formSlice = createSlice({
       {
         payload: { name, value },
       }: PayloadAction<{
-        name: keyof FormState;
-        value: FormState[keyof FormState];
+        name: keyof Data
+        value: FormValue
       }>
     ) {
-      return { ...state, [name]: value };
+      state.data = {
+        ...state.data,
+        [name]: value,
+      }
     },
-    clearForm() {
-      return initialState;
-    },
+    resetForm: () => initialState,
   },
-});
+})
 
-export const { setValue, clearForm } = formSlice.actions;
+export const { setValue, resetForm } = formSlice.actions
 
-export default formSlice.reducer;
+export default formSlice.reducer

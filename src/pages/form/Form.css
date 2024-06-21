@@ -1,29 +1,18 @@
-form {
+.form {
   width: min(90%, 24rem);
   display: grid;
   gap: 1.5rem;
-  animation: slide-down 400ms ease-in-out forwards;
 }
 
-@keyframes slide-down {
-  0% {
-    transform: translateY(-4rem);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-label {
-  color: var(--label-clr);
+.form-label {
+  color: var(--label-foreground);
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .form-control {
-  color: var(--text-clr);
+  color: var(--foreground);
   border: none;
   font-size: inherit;
   padding: 0.5rem;
@@ -35,11 +24,11 @@ label {
 
 .form-control::-webkit-scrollbar {
   width: 0.4rem;
-  background-color: var(--alt-bg);
+  background-color: var(--secondary);
 }
 
 .form-control::-webkit-scrollbar-thumb {
-  background-color: var(--text-clr);
+  background-color: var(--foreground);
   border-radius: 0.2rem;
 }
 
@@ -51,30 +40,31 @@ label {
   margin-top: 1rem;
 }
 
-.form-control[type='submit'] {
+.form-control[type="submit"] {
   transition: 150ms ease-in-out;
-  background-color: var(--submit-bg);
+  background-color: var(--submit);
 }
-input[type='submit']:hover {
-  background-color: var(--submit-bg-hvr);
+
+input[type="submit"]:hover {
+  background-color: var(--submit-hover);
   cursor: pointer;
 }
 
-.opt-group {
+.option-group {
   display: flex;
   gap: 1rem;
 }
 
-:is(.form-control, .opt-group option) {
-  background-color: var(--inp-bg);
-  box-shadow: 0 0 0.5rem 0.1rem var(--inp-outline);
+:is(.form-control, .option-group button) {
+  background-color: var(--input);
+  box-shadow: 0 0 0.5rem 0.1rem var(--input-outline);
   border-radius: 7.5px;
   width: 100%;
   -webkit-user-select: none;
   user-select: none;
 }
 
-.opt-group option {
+.option-group button {
   padding: 0.5rem 1rem;
   background-repeat: no-repeat;
   background-size: 100% 0;
@@ -93,12 +83,12 @@ input[type='submit']:hover {
     gap: 2rem;
   }
 
-  .opt-group option {
+  .option-group button {
     padding: 0.5rem;
   }
 }
 
-.opt-group .active {
+.option-group .active {
   animation: active 200ms ease-in-out forwards;
 }
 
@@ -108,7 +98,7 @@ input[type='submit']:hover {
   }
 }
 
-.opt-group .inactive {
+.option-group .inactive {
   background-size: 100% 100%;
   animation: inactive 200ms ease-in-out forwards;
 }
@@ -119,7 +109,7 @@ input[type='submit']:hover {
   }
 }
 
-.opt-group option:hover {
-  background-color: var(--inp-bg-hvr);
+.option-group button:hover {
+  background-color: var(--input-hover);
   cursor: pointer;
 }
