@@ -24,13 +24,13 @@ const formSlice = createSlice({
         [name]: value,
       }
     },
-    setSubmitting(state) {
-      state.isSubmitting = true
+    setIsSubmitting(state, { payload }: PayloadAction<boolean>) {
+      state.isSubmitting = payload
     },
     resetForm: () => initialState,
   },
 })
 
-export const { setValue, setSubmitting, resetForm } = formSlice.actions
+export const { setValue, setIsSubmitting, resetForm } = formSlice.actions
 
 export default formSlice.reducer

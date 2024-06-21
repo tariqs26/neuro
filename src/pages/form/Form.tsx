@@ -1,14 +1,14 @@
+import type { FormEvent } from "react"
+import { getQuestions } from "@/api"
 import { useDispatch, useSelector } from "@/app/hooks"
 import { setPage } from "@/features/appSlice"
+import { setIsSubmitting } from "@/features/formSlice"
 import { resetQuiz, setQuestions } from "@/features/quizSlice"
-import { getQuestions } from "@/api"
-import type { FormEvent } from "react"
 
 import CategoryInput from "./CategoryInput"
 import Input from "./Input"
 
 import "./Form.css"
-import { setSubmitting } from "@/features/formSlice"
 
 const Form = () => {
   const dispatch = useDispatch()
@@ -18,7 +18,7 @@ const Form = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     try {
-      dispatch(setSubmitting())
+      dispatch(setIsSubmitting(true))
       const questions = await getQuestions(data)
       dispatch(resetQuiz())
       dispatch(setQuestions(questions))
@@ -26,7 +26,7 @@ const Form = () => {
     } catch (error) {
       dispatch(setPage("error"))
     } finally {
-      dispatch(setSubmitting())
+      dispatch(setIsSubmitting(false))
     }
   }
 
