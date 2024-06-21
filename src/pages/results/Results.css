@@ -17,7 +17,7 @@
 }
 
 .results-anchor {
-  color: var(--text-clr);
+  color: var(--foreground);
   text-decoration: none;
   display: flex;
   background-color: hsla(0, 0%, 0%, 0.8);
@@ -78,27 +78,27 @@ table {
   border-radius: 7.5px;
   border-style: hidden; /* hide standard table (collapsed) border */
   overflow: clip;
-  box-shadow: 0 0 1px 1px var(--text-clr);
+  box-shadow: 0 0 1px 1px var(--foreground);
 }
 
 th {
-  color: var(--label-clr);
+  color: var(--label-foreground);
 }
 
 th,
 td {
   font-weight: 400;
-  border: 1px solid var(--text-clr);
+  border: 1px solid var(--foreground);
   padding: 0.5rem 1rem;
   text-align: left;
 }
 
 tr:nth-child(even) {
-  background-color: var(--bg-clr);
+  background-color: var(--background);
 }
 
 tr:last-child {
-  background-color: var(--table-bg);
+  background-color: var(--table);
 }
 
 @media (max-width: 550px) {
@@ -110,7 +110,10 @@ tr:last-child {
     padding: 0.3rem 0.6rem;
   }
   .question-stats svg {
-    width: 1.4rem;
+    width: 1.5rem;
+  }
+  .results-title {
+    font-size: 1.75rem;
   }
 }
 
@@ -125,12 +128,12 @@ tr:last-child {
   }
 
   tr td:first-child {
-    background-color: var(--table-bg);
+    background-color: var(--table);
   }
 
   td {
     border: none;
-    border-bottom: 1px solid var(--text-clr);
+    border-bottom: 1px solid var(--foreground);
     position: relative;
     padding-left: 50%;
   }
@@ -165,3 +168,5 @@ tr:last-child {
     content: "Total Score";
   }
 }
+
+
