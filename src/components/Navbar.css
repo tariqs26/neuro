@@ -1,0 +1,60 @@
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+  background-color: var(--navbar);
+  border-bottom: 1px solid var(--navbar-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: hsl(0, 0%, 4%);
+  outline: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 7.5px;
+}
+
+.navbar-logo :is(span, svg) {
+  color: var(--navbar-foreground);
+}
+
+.navbar-logo svg {
+  width: 1.3rem;
+}
+
+.navbar-logo span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.leave {
+  background-color: var(--submit);
+}
+
+.leave:hover {
+  background-color: var(--submit-hover);
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-logo {
+    outline: 1px solid black;
+  }
+
+  .navbar-logo svg {
+    width: 1.1rem;
+  }
+
+  .navbar-logo span {
+    font-size: 1.3rem;
+  }
+}
