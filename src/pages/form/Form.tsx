@@ -8,6 +8,7 @@ import CategoryInput from "./CategoryInput"
 import Input from "./Input"
 
 import "./Form.css"
+import { setSubmitting } from "@/features/formSlice"
 
 const Form = () => {
   const dispatch = useDispatch()
@@ -17,12 +18,15 @@ const Form = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     try {
+      dispatch(setSubmitting())
       const questions = await getQuestions(data)
       dispatch(resetQuiz())
       dispatch(setQuestions(questions))
       dispatch(setPage("quiz"))
     } catch (error) {
       dispatch(setPage("error"))
+    } finally {
+      dispatch(setSubmitting())
     }
   }
 
