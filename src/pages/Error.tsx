@@ -9,5 +9,5 @@ export default function ErrorPage() {
         different options.
       </p>
     </div>
-  );
+  )
 }
