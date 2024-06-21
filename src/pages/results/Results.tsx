@@ -9,7 +9,7 @@ import "./Results.css"
 const Results = () => {
   const { questions } = useSelector((state) => state.quiz)
 
-  const score = questions.reduce((acc, q) => acc + q.score, 0)
+  const score = Math.round(questions.reduce((acc, q) => acc + q.score, 0))
   const correct = questions.filter((q) => q.picked === q.correct_answer).length
   const percentCorrect = correct / questions.length
 
