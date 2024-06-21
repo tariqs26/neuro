@@ -1,32 +1,28 @@
-import { useAppSelector } from 'app/hooks';
-import Form from 'components/Form/Form';
-import Quiz from 'components/Quiz/Quiz';
-import Navbar from 'components/Navbar/Navbar';
-import Results from 'components/Results/Results';
-import ErrorPage from 'pages/Error';
-import { LeaveButton, HomeButton } from 'components/Buttons';
-import './App.css';
+import { useSelector } from "./app/hooks"
+import type { Page } from "./types"
+
+import Navbar from "./components/Navbar"
+import ErrorPage from "./pages/Error"
+import Form from "./pages/form/Form"
+import Quiz from "./pages/quiz/Quiz"
+import Results from "./pages/results/Results"
+
+import "./App.css"
+
+const pageMap: Record<Page, JSX.Element> = {
+  home: <Form />,
+  quiz: <Quiz />,
+  results: <Results />,
+  error: <ErrorPage />,
+}
 
 export default function App() {
-  const { page } = useAppSelector((state) => state.app);
-  const { isLoading } = useAppSelector((state) => state.quiz);
+  const { page } = useSelector((state) => state.app)
+
   return (
-    <div className='App'>
-      <Navbar>
-        {page === 'quiz' && !isLoading ? (
-          <LeaveButton />
-        ) : ['results', 'error'].includes(page) ? (
-          <HomeButton />
-        ) : (
-          <> </>
-        )}
-      </Navbar>
-      <div className='page-container'>
-        {page === 'home' && <Form />}
-        {page === 'quiz' && <Quiz />}
-        {page === 'results' && <Results />}
-        {page === 'error' && <ErrorPage />}
-      </div>
-    </div>
-  );
+    <>
+      <Navbar />
+      <main className="page-container">{pageMap[page]}</main>
+    </>
+  )
 }
