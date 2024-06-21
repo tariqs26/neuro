@@ -1,4 +1,4 @@
-:is(.header, .timer){
+:is(.header, .timer) {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -6,25 +6,35 @@
 
 .header {
   padding: 1rem;
-  background-color: var(--quiz-hdr-bg);
+  background-color: var(--quiz-header);
+}
+
+.timer,
+.footer-question-display {
+  font-weight: 500;
+  background-color: var(--navbar);
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--foreground);
 }
 
 .timer {
-  width: 5.8rem;
+  width: 6rem;
   margin-right: 3rem;
 }
+
 .timer.quiz-end {
   width: -moz-fit-content;
   width: fit-content;
-}
-.timer.quiz-end {
   color: hsl(0, 100%, 70%);
 }
+
 .timer.quiz-submit {
   color: hsl(116, 44%, 53%);
 }
 
-@media (max-width: 550px){
+@media (max-width: 550px) {
   .timer {
     width: 5rem;
     margin-right: 1rem;
@@ -33,11 +43,16 @@
     width: 1.1rem;
     height: 1.1rem;
   }
+
+  .timer,
+  .footer-question-display {
+    font-size: 1.1rem;
+  }
 }
 
 .progress-bar {
-  background-color: var(--alt-bg);
-  border: 0.1em solid var(--quiz-hdr-bg);
+  background-color: var(--secondary);
+  border: 0.1em solid var(--quiz-header);
   border-radius: 0.6rem;
   height: 1.2rem;
   overflow: hidden;
