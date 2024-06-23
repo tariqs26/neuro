@@ -27,7 +27,7 @@ const Input = (props: InputProps) => {
 
   return (
     <div className="form-group">
-      <label className="form-label">Select {props.label}</label>
+      <label className="form-label">{props.label}</label>
       <div className="option-group" data-name={props.dataName}>
         {props.values.map(([key, value]) => (
           <button

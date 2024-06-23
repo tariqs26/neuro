@@ -9,7 +9,7 @@ const CategoryInput = () => {
   return (
     <div className="form-group">
       <label htmlFor="category" className="form-label">
-        Select Category
+        Category
       </label>
       <select
         name="category"
