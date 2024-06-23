@@ -7,13 +7,13 @@ const Footer = () => {
   const { questions, currentIndex } = useSelector((state) => state.quiz)
 
   return (
-    <div className="header">
+    <footer className="footer">
       <Timer />
       <ProgressBar {...{ questions, currentIndex }} />
-      <p className="footer-question-display">
+      <p className="question-display">
         Q: {currentIndex + 1}/{questions.length}
       </p>
-    </div>
+    </footer>
   )
 }
 
