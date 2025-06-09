@@ -1,9 +1,10 @@
 import { useSelector } from "@/app/hooks"
-import ProgressBar from "./ProgressBar"
-import Timer from "./Timer"
+import { ProgressBar } from "./ProgressBar"
+import { Timer } from "./Timer"
+
 import "./Footer.css"
 
-const Footer = () => {
+export const Footer = () => {
   const { questions, currentIndex } = useSelector((state) => state.quiz)
 
   return (
@@ -16,5 +17,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer

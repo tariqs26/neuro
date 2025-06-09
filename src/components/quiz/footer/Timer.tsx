@@ -2,7 +2,7 @@ import { useSelector } from "@/app/hooks"
 import { TimerIcon } from "@/components/Icons"
 import { useTimer } from "./useTimer"
 
-export default function Timer() {
+export const Timer = () => {
   const { status, elapsedTime } = useSelector((state) => state.quiz.timer)
 
   const timerOptions = {

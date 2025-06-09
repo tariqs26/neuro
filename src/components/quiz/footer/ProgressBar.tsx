@@ -5,7 +5,10 @@ type ProgressBarProps = {
   currentIndex: number
 }
 
-const ProgressBar = ({ questions, currentIndex: idx }: ProgressBarProps) => {
+export const ProgressBar = ({
+  questions,
+  currentIndex: idx,
+}: ProgressBarProps) => {
   const barRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -20,5 +23,3 @@ const ProgressBar = ({ questions, currentIndex: idx }: ProgressBarProps) => {
     </div>
   )
 }
-
-export default ProgressBar

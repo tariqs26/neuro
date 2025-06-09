@@ -1,9 +1,10 @@
 import { useRef } from "react"
 import { useDispatch } from "@/app/hooks"
 import { setPage } from "@/features/appSlice"
+
 import "./Modal.css"
 
-const Modal = () => {
+export const Modal = () => {
   const dispatch = useDispatch()
 
   const dialogRef = useRef<HTMLDialogElement>(null)
@@ -46,5 +47,3 @@ const Modal = () => {
     </dialog>
   )
 }
-
-export default Modal

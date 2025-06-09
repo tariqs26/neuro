@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from "@/app/hooks"
 import { afterAnswer } from "@/app/utils"
 import { pauseTimer } from "@/features/quizSlice"
 
-import QuizFooter from "./footer/Footer"
-import QuizModal from "./modal/Modal"
-import Question from "./question/Question"
+import { Question } from "@/components/quiz/question/Question"
+import { Footer } from "@/components/quiz/footer/Footer"
+import { Modal } from "@/components/quiz/modal/Modal"
 
 import "./Quiz.css"
 
-export default function Quiz() {
+export const QuizPage = () => {
   const {
     questions,
     currentIndex,
@@ -27,9 +27,9 @@ export default function Quiz() {
 
   return (
     <div className="quiz page">
-      <QuizModal />
+      <Modal />
       <Question {...questions[currentIndex]} />
-      <QuizFooter />
+      <Footer />
     </div>
   )
 }

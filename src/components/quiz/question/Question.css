@@ -12,14 +12,14 @@
 }
 
 .question-title {
+  min-height: 2.5lh;
   color: var(--question-foreground);
-  font-size: 1.4rem;
-  min-height: 12vh;
+  background-color: var(--navbar);
+  font-size: 1.25rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  font-weight: 500;
-  background-color: var(--navbar);
 }
 
 .loader-bars {
@@ -123,10 +123,9 @@
   }
 }
 
-@media (max-width: 550px) {
+@media screen and (max-width: 550px) {
   .question-title {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
   }
   .options {
     width: 90%;

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "@/app/hooks"
 import { afterAnswer } from "@/app/utils"
 import { pauseTimer, selectAnswer } from "@/features/quizSlice"
+
 import "./Question.css"
 
 type QuestionProps = {
@@ -10,7 +11,7 @@ type QuestionProps = {
   correct_answer: string
 }
 
-const Question = ({
+export const Question = ({
   question,
   options,
   picked,
@@ -81,5 +82,3 @@ const Question = ({
     </>
   )
 }
-
-export default Question

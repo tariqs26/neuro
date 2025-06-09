@@ -5,8 +5,8 @@
   background-color: var(--secondary);
   color: var(--foreground);
   border: none;
-  border-radius: 7.5px;
-  box-shadow: 0 0 0 var(--outline), 0 0 0 100vw var(--modal-backdrop);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 var(--outline), 0 0 0 100vw hsla(0, 0%, 0%, 0.6);
 }
 
 .modal p {
@@ -14,7 +14,6 @@
 }
 
 .modal-title {
-  font-size: 1.75rem;
   margin-bottom: 0.5rem;
 }
 
@@ -33,11 +32,11 @@
 }
 
 .cancel {
-  background-color: var(--submit);
+  background-color: var(--destructive);
 }
 
 .cancel:hover {
-  background-color: var(--submit-hover);
+  background-color: var(--destructive-hover);
 }
 
 @keyframes modal-in {
@@ -61,12 +60,8 @@
   }
 }
 
-@media (max-width: 550px) {
+@media screen and (max-width: 550px) {
   .modal {
     padding: 1rem;
-  }
-
-  .modal-title {
-    font-size: 1.5rem;
   }
 }
