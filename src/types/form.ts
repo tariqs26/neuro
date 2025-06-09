@@ -5,9 +5,6 @@ export type Data = {
   type: "multiple" | "boolean"
 }
 
-export type FormState = {
-  isSubmitting: boolean
-  data: Data
-}
+export type FormState = { isSubmitting: boolean; data: Data }
 
 export type FormValue = Data[keyof Data]
