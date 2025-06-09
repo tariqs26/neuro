@@ -1,11 +1,10 @@
-const Title = ({ percentCorrect }: { percentCorrect: number }) => {
-  const className = `result-title ${
+export const Title = ({ percentCorrect }: { percentCorrect: number }) => {
+  const className =
     percentCorrect === 1
       ? "flawless"
       : percentCorrect > 0.5
       ? "excellent"
       : "fail"
-  }`
 
   const title =
     percentCorrect === 1
@@ -18,5 +17,3 @@ const Title = ({ percentCorrect }: { percentCorrect: number }) => {
 
   return <h1 className={className}>{title}</h1>
 }
-
-export default Title

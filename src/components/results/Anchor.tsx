@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { UpArrow } from "@/components/Icons"
 
-const Anchor = () => {
+export const Anchor = () => {
   const anchorRef = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
@@ -24,5 +24,3 @@ const Anchor = () => {
     </a>
   )
 }
-
-export default Anchor

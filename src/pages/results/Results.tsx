@@ -1,12 +1,12 @@
 import { useSelector } from "@/app/hooks"
 import { MinusCircle, RightCircle, WrongCircle } from "@/components/Icons"
-import Anchor from "./components/Anchor"
-import Row from "./components/Row"
-import ResultsTitle from "./components/Title"
+import { Anchor } from "@/components/results/Anchor"
+import { Row } from "@/components/results/Row"
+import { Title } from "@/components/results/Title"
 
 import "./Results.css"
 
-const Results = () => {
+export const ResultsPage = () => {
   const { questions } = useSelector((state) => state.quiz)
 
   const score = Math.round(questions.reduce((acc, q) => acc + q.score, 0))
@@ -16,7 +16,7 @@ const Results = () => {
   return (
     <>
       <div className="results page">
-        <ResultsTitle {...{ percentCorrect }} />
+        <Title {...{ percentCorrect }} />
         <div className="question-stats">
           <p title="correct">
             <RightCircle /> {correct}
@@ -57,5 +57,3 @@ const Results = () => {
     </>
   )
 }
-
-export default Results
