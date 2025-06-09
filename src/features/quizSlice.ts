@@ -64,4 +64,4 @@ export const {
   resetQuiz,
 } = quizSlice.actions
 
-export default quizSlice.reducer
+export const quizReducer = quizSlice.reducer

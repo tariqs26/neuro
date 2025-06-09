@@ -15,4 +15,4 @@ const appSlice = createSlice({
 
 export const { setPage } = appSlice.actions
 
-export default appSlice.reducer
+export const appReducer = appSlice.reducer

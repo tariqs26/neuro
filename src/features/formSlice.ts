@@ -14,15 +14,9 @@ const formSlice = createSlice({
       state,
       {
         payload: { name, value },
-      }: PayloadAction<{
-        name: keyof Data
-        value: FormValue
-      }>
+      }: PayloadAction<{ name: keyof Data; value: FormValue }>
     ) {
-      state.data = {
-        ...state.data,
-        [name]: value,
-      }
+      state.data = { ...state.data, [name]: value }
     },
     setIsSubmitting(state, { payload }: PayloadAction<boolean>) {
       state.isSubmitting = payload
@@ -33,4 +27,4 @@ const formSlice = createSlice({
 
 export const { setValue, setIsSubmitting, resetForm } = formSlice.actions
 
-export default formSlice.reducer
+export const formReducer = formSlice.reducer
