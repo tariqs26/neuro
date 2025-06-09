@@ -22,7 +22,7 @@
   display: flex;
   background-color: hsla(0, 0%, 0%, 0.8);
   padding: 0.6rem;
-  border-radius: 7.5px;
+  border-radius: var(--radius);
   transition: 150ms ease-in-out;
   position: fixed;
   bottom: 1rem;
@@ -59,9 +59,8 @@
 .question-stats p {
   padding: 0.4rem 0.8rem;
   background-color: var(--picked);
-  border-radius: 7.5px;
+  border-radius: var(--radius);
   font-weight: 500;
-  font-size: 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -75,22 +74,24 @@
 
 table {
   border-collapse: collapse;
-  border-radius: 7.5px;
+  border-radius: var(--radius);
   border-style: hidden; /* hide standard table (collapsed) border */
   overflow: clip;
-  box-shadow: 0 0 1px 1px var(--foreground);
-}
-
-th {
-  color: var(--label-foreground);
+  box-shadow: 0 0 1px 1px var(--border);
 }
 
 th,
 td {
   font-weight: 400;
-  border: 1px solid var(--foreground);
+  border: 1px solid var(--border);
   padding: 0.5rem 1rem;
   text-align: left;
+  vertical-align: text-top;
+}
+
+th {
+  color: var(--foreground);
+  font-weight: 500;
 }
 
 tr:nth-child(even) {
@@ -101,23 +102,16 @@ tr:last-child {
   background-color: var(--table);
 }
 
-@media (max-width: 550px) {
-  .question-stats p,
-  table {
-    font-size: 1rem;
-  }
+@media screen and (max-width: 550px) {
   .question-stats p {
     padding: 0.3rem 0.6rem;
   }
   .question-stats svg {
     width: 1.5rem;
   }
-  .results-title {
-    font-size: 1.75rem;
-  }
 }
 
-@media only screen and (max-width: 668px) {
+@media screen and (max-width: 668px) {
   :is(table, thead, tbody, th, td, tr) {
     display: block;
   }
