@@ -16,7 +16,7 @@ const ProgressBar = ({ questions, currentIndex: idx }: ProgressBarProps) => {
 
   return (
     <div className="progress-bar">
-      <div ref={barRef} className="bar"  />
+      <div ref={barRef} className="bar" />
     </div>
   )
 }
