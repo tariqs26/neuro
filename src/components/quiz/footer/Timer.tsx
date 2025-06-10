@@ -1,16 +1,11 @@
 import { useSelector } from "@/app/hooks"
+import { TIMER_OPTIONS } from "@/lib/constants"
 import { TimerIcon } from "@/components/Icons"
 import { useTimer } from "./useTimer"
 
-const TIMER_OPTIONS = {
-  duration: 10000,
-  increment: 100,
-  delay: 3000,
-}
-
 export const Timer = () => {
   const { status, elapsedTime } = useSelector((state) => state.quiz.timer)
-  useTimer(TIMER_OPTIONS)
+  useTimer()
 
   const remainingSeconds = (TIMER_OPTIONS.duration - elapsedTime) / 1000
 

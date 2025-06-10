@@ -44,3 +44,9 @@ export const INPUT_OPTIONS = {
     ["True / False", "boolean"],
   ],
 } satisfies Record<string, [string, Data[keyof Omit<Data, "category">]][]>
+
+export const TIMER_OPTIONS = {
+  duration: 10000,
+  increment: 100,
+  delay: 3000,
+}

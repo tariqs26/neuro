@@ -5,12 +5,9 @@ import {
   incrementDelay,
   incrementTime,
 } from "@/features/quizSlice"
+import { TIMER_OPTIONS } from "@/lib/constants"
 
-export const useTimer = (options: {
-  duration: number
-  increment: number
-  delay: number
-}) => {
+export const useTimer = () => {
   const timer = useSelector((state) => state.quiz.timer)
   const dispatch = useDispatch()
 
@@ -19,7 +16,7 @@ export const useTimer = (options: {
 
     if (status !== "running") return
 
-    const { duration, increment, delay } = options
+    const { duration, increment, delay } = TIMER_OPTIONS
 
     const interval = setInterval(() => {
       if (elapsedDelay < delay) dispatch(incrementDelay(increment))
@@ -30,5 +27,5 @@ export const useTimer = (options: {
     }, increment)
 
     return () => clearInterval(interval)
-  }, [options, dispatch, timer])
+  }, [dispatch, timer])
 }
