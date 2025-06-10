@@ -32,10 +32,9 @@ export const Question = ({
         : ""
     }`
 
-  const handleOptionClick = (text: string) => {
+  const handleOptionClick = (answer: string) => {
     dispatch(pauseTimer())
-    const score = (1 - elapsedTime / 10000) * 100
-    dispatch(selectAnswer({ answer: text, score }))
+    dispatch(selectAnswer({ answer }))
     afterAnswer(dispatch, currentIndex, questions)
   }
 

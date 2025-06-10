@@ -1,4 +1,5 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { TIMER_OPTIONS } from "@/lib/constants"
 import type { QuizQuestion, QuizState } from "@/types/quiz"
 
 const initialTimerState = {
@@ -23,15 +24,15 @@ const quizSlice = createSlice({
     moveToNextQuestion(state) {
       state.currentIndex++
     },
-    selectAnswer(
-      state,
-      { payload }: PayloadAction<{ answer: string; score: number }>
-    ) {
+    selectAnswer(state, { payload }: PayloadAction<{ answer: string }>) {
       const question = state.questions[state.currentIndex]
       if (question.picked) return
       question.picked = payload.answer
-      if (question.picked === question.correct_answer)
-        question.score = payload.score
+      if (question.picked === question.correct_answer) {
+        const score =
+          (1 - state.timer.elapsedTime / TIMER_OPTIONS.duration) * 100
+        question.score = score
+      }
     },
     pauseTimer({ timer }) {
       timer.status = "paused"
