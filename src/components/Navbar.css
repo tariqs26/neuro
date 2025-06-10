@@ -1,10 +1,10 @@
 .navbar {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
   margin-bottom: 1.8rem;
   position: relative;
   background-color: var(--navbar);
-  border-bottom: 1px solid var(--navbar-foreground);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,12 +16,12 @@
   gap: 0.4rem;
   background-color: hsl(0, 0%, 4%);
   outline: 2px solid black;
-  padding: 0.5rem;
-  border-radius: 7.5px;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
 }
 
 .navbar-logo :is(span, svg) {
-  color: var(--navbar-foreground);
+  color: hsl(240, 50%, 75%);
 }
 
 .navbar-logo svg {
@@ -34,14 +34,14 @@
 }
 
 .leave {
-  background-color: var(--submit);
+  background-color: var(--destructive);
 }
 
 .leave:hover {
-  background-color: var(--submit-hover);
+  background-color: var(--destructive-hover);
 }
 
-@media (max-width: 550px) {
+@media screen and (max-width: 550px) {
   .navbar {
     padding: 1rem;
   }
@@ -55,6 +55,6 @@
   }
 
   .navbar-logo span {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }

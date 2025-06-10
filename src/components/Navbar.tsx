@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "@/app/hooks"
-import { Puzzle } from "@/components/Icons"
-import "./Navbar.css"
 import { setPage } from "@/features/appSlice"
+import { Puzzle } from "@/components/Icons"
 
-const Navbar = () => {
+import "./Navbar.css"
+
+export const Navbar = () => {
   const dispatch = useDispatch()
   const { page } = useSelector((state) => state.app)
 
@@ -32,5 +33,3 @@ const Navbar = () => {
     </header>
   )
 }
-
-export default Navbar
