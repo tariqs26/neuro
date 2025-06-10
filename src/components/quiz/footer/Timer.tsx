@@ -10,7 +10,6 @@ const TIMER_OPTIONS = {
 
 export const Timer = () => {
   const { status, elapsedTime } = useSelector((state) => state.quiz.timer)
-
   useTimer(TIMER_OPTIONS)
 
   const remainingSeconds = (TIMER_OPTIONS.duration - elapsedTime) / 1000
