@@ -3,8 +3,8 @@ import { setValue } from "@/features/formSlice"
 import { CATEGORIES } from "@/lib/constants"
 
 export const CategoryInput = () => {
-  const dispatch = useDispatch()
   const category = useSelector(({ form }) => form.data.category)
+  const dispatch = useDispatch()
 
   return (
     <div className="form-group">

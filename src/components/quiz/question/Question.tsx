@@ -11,12 +11,12 @@ export const Question = ({
   picked,
   correct_answer: correct,
 }: QuizQuestion) => {
-  const dispatch = useDispatch()
   const {
     currentIndex,
     questions,
     timer: { status, elapsedTime, elapsedDelay },
   } = useSelector((state) => state.quiz)
+  const dispatch = useDispatch()
 
   const animationDelay =
     questions[currentIndex].type === "boolean" ? 2600 : 2200

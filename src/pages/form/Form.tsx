@@ -12,9 +12,8 @@ import { Input } from "@/components/form/Input"
 import "./Form.css"
 
 export const FormPage = () => {
-  const dispatch = useDispatch()
-
   const { isSubmitting, data } = useSelector((state) => state.form)
+  const dispatch = useDispatch()
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()

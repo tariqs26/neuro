@@ -5,8 +5,8 @@ import { Puzzle } from "@/components/Icons"
 import "./Navbar.css"
 
 export const Navbar = () => {
-  const dispatch = useDispatch()
   const { page } = useSelector((state) => state.app)
+  const dispatch = useDispatch()
 
   return (
     <header id="top" className="navbar">

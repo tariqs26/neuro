@@ -11,8 +11,8 @@ export const useTimer = (options: {
   increment: number
   delay: number
 }) => {
-  const dispatch = useDispatch()
   const timer = useSelector((state) => state.quiz.timer)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const { status, elapsedTime, elapsedDelay } = timer

@@ -5,8 +5,8 @@ import { setPage } from "@/features/appSlice"
 import "./Modal.css"
 
 export const Modal = () => {
-  const dispatch = useDispatch()
   const dialogRef = useRef<HTMLDialogElement>(null)
+  const dispatch = useDispatch()
 
   const closeModal = () => {
     if (!dialogRef.current) return
