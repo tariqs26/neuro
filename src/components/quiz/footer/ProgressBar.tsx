@@ -13,7 +13,6 @@ export const ProgressBar = ({
 
   useEffect(() => {
     if (!barRef.current) return
-
     barRef.current.style.width = `${((idx + 1) / questions.length) * 100}%`
   }, [idx, questions])
 
