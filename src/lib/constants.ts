@@ -27,23 +27,20 @@ export const CATEGORIES = [
   { value: "32", label: "Cartoon & Animations" },
 ]
 
-export const INPUT_OPTIONS: Record<
-  string,
-  [string, Data[keyof Omit<Data, "category">]][]
-> = {
-  AMOUNT: [
+export const INPUT_OPTIONS = {
+  amount: [
     ["5", "5"],
     ["10", "10"],
     ["15", "15"],
     ["20", "20"],
   ],
-  DIFFICULTY: [
+  difficulty: [
     ["Easy", "easy"],
     ["Medium", "medium"],
     ["Hard", "hard"],
   ],
-  TYPE: [
+  type: [
     ["Multiple Choice", "multiple"],
     ["True / False", "boolean"],
   ],
-}
+} satisfies Record<string, [string, Data[keyof Omit<Data, "category">]][]>

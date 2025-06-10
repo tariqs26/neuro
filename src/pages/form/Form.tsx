@@ -37,20 +37,20 @@ export const FormPage = () => {
         label="Number of Questions"
         dataName="amount"
         stateValue={data.amount}
-        values={INPUT_OPTIONS.AMOUNT}
+        values={INPUT_OPTIONS.amount}
       />
       <CategoryInput />
       <Input
         label="Difficulty"
         dataName="difficulty"
         stateValue={data.difficulty}
-        values={INPUT_OPTIONS.DIFFICULTY}
+        values={INPUT_OPTIONS.difficulty}
       />
       <Input
         label="Type"
         dataName="type"
         stateValue={data.type}
-        values={INPUT_OPTIONS.TYPE}
+        values={INPUT_OPTIONS.type}
       />
       <div className="form-group">
         <button type="submit" className="form-control" disabled={isSubmitting}>
