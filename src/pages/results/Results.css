@@ -144,10 +144,10 @@ tr:last-child {
     content: "Question";
   }
   td:nth-of-type(3):before {
-    content: "Correct Answer";
+    content: "Your Answer";
   }
   td:nth-of-type(4):before {
-    content: "Your Answer";
+    content: "Correct Answer";
   }
   td:nth-of-type(5):before {
     content: "Points";
