@@ -16,7 +16,7 @@ export const ResultsPage = () => {
   return (
     <>
       <div className="results page">
-        <Title {...{ percentCorrect }} />
+        <Title percentCorrect={percentCorrect} />
         <div className="question-stats">
           <p title="correct">
             <RightCircle /> {correct}
