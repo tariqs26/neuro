@@ -6,16 +6,12 @@ import "./Modal.css"
 
 export const Modal = () => {
   const dispatch = useDispatch()
-
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   const closeModal = () => {
     if (!dialogRef.current) return
-
     const modal = dialogRef.current
-
     modal.setAttribute("closing", "")
-
     modal.addEventListener(
       "animationend",
       () => {

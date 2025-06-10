@@ -16,7 +16,6 @@ export const QuizPage = () => {
     currentIndex,
     timer: { status },
   } = useSelector((state) => state.quiz)
-
   const dispatch = useDispatch()
 
   useEffect(() => {
