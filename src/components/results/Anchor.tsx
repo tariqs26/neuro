@@ -6,12 +6,8 @@ export const Anchor = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!anchorRef.current) return
-      const anchor = anchorRef.current
-      if (window.scrollY > 100) anchor.classList.remove("hidden")
-      else anchor.classList.add("hidden")
+      anchorRef.current?.classList.toggle("hidden", window.scrollY <= 100)
     }
-
     document.addEventListener("scroll", handleScroll)
     return () => {
       document.removeEventListener("scroll", handleScroll)
