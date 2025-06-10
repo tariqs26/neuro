@@ -127,7 +127,7 @@ tr:last-child {
 
   td {
     border: none;
-    border-bottom: 1px solid var(--foreground);
+    border-bottom: 1px solid var(--border);
     position: relative;
     padding-left: 50%;
   }
