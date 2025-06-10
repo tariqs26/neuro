@@ -1,4 +1,4 @@
-export default function ErrorPage() {
+export const ErrorPage = () => {
   return (
     <div className="error-page page">
       <h1 className="loader">No Questions Found</h1>
