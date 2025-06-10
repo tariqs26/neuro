@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
 import type { Page } from "@/types"
 
 const initialState: { page: Page } = { page: "home" }

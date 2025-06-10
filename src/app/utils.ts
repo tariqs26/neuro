@@ -1,7 +1,7 @@
 import { setPage } from "@/features/appSlice"
 import { moveToNextQuestion, resetTimer } from "@/features/quizSlice"
-import type { AppDispatch } from "./store"
 import type { QuizQuestion } from "@/types/quiz"
+import type { AppDispatch } from "./store"
 
 export const afterAnswer = (
   dispatch: AppDispatch,

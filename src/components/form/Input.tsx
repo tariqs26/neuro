@@ -1,6 +1,6 @@
-import type { FormValue, Data } from "@/types/form"
-import { setValue } from "@/features/formSlice"
 import { useDispatch } from "@/app/hooks"
+import { setValue } from "@/features/formSlice"
+import type { Data, FormValue } from "@/types/form"
 
 type InputProps = {
   label: string

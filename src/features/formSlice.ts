@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
 import type { Data, FormState, FormValue } from "@/types/form"
 
 const initialState: FormState = {
