@@ -59,7 +59,7 @@ export const Question = ({
               <button
                 key={text}
                 type="button"
-                disabled={status !== "running"}
+                disabled={timer.status !== "running"}
                 className={optionClassName(text)}
                 onClick={() => handleOptionClick(text)}
                 dangerouslySetInnerHTML={{ __html: text }}
