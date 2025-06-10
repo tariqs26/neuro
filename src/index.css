@@ -15,40 +15,34 @@
   line-height: 1.5;
   color-scheme: dark light;
 
-  --background: rgb(31, 31, 46);
+  --background: hsl(240, 19%, 15%);
   --secondary: hsl(240, 20%, 18%);
   --navbar: hsl(240, 20%, 8%);
   --table: hsl(240, 20%, 12%);
-  --quiz-header: hsl(240, 20%, 0%);
-
   --button: hsl(240, 50%, 35%);
   --button-hover: hsl(240, 50%, 40%);
-
-  --modal-backdrop: hsla(0, 0%, 0%, 0.6);
-
   --input: hsl(240, 20%, 30%);
   --input-hover: hsl(240, 20%, 35%);
-  --submit: hsl(10, 40%, 35%);
-  --submit-hover: hsl(10, 40%, 40%);
-  --active-bg: hsl(240, 40%, 35%);
-
-  --outline: hsl(240, 5%, 10%);
-  --input-outline: hsl(240, 5%, 15%);
-
-  --foreground: hsl(240, 15%, 85%);
-  --navbar-foreground: #9f9fdf;
-  --label-foreground: hsl(240, 20%, 90%);
-
-  /* options */
-  --question-foreground: hsl(100, 50%, 50%);
+  --destructive: hsl(10, 40%, 35%);
+  --destructive-hover: hsl(10, 40%, 40%);
+  --active: hsl(240, 40%, 35%);
   --picked: hsl(240, 50%, 50%);
   --correct: hsl(100, 50%, 30%);
   --incorrect: hsl(0, 50%, 30%);
+
+  --foreground: hsl(240, 15%, 87.5%);
+  --question-foreground: hsl(100, 50%, 50%);
+
+  --border: hsl(240, 7%, 35%);
+  --outline: hsl(240, 5%, 10%);
+  --input-outline: hsl(240, 5%, 15%);
+
+  --radius: 0.5rem;
 }
 
 body {
   background-color: var(--background);
-  background-image: url("assets/stacked-waves-haikei.svg");
+  background-image: url("/stacked-waves-haikei.svg");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -61,13 +55,18 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 button {
   background-color: var(--button);
-  border-radius: 7.5px;
+  border-radius: var(--radius);
   border: none;
   color: var(--foreground);
   padding: 0.6rem 1.2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -89,10 +88,5 @@ button:focus {
 @media screen and (max-width: 550px) {
   button {
     padding: 0.5rem 1rem;
-    font-size: 1rem;
   }
-}
-
-.flex {
-  display: flex;
 }
