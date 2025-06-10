@@ -15,7 +15,7 @@ const fetchQuestions = async (params: Data): Promise<ApiResponse> => {
   return res.json()
 }
 
-const errorMessages = {
+const ERROR_MESSAGES = {
   1: "Could not return results. The API doesn't have enough questions for your query.",
   2: "Invalid parameter. Please check the values you've entered.",
   5: "Too many requests. Please wait a while before trying again.",
@@ -24,7 +24,7 @@ const errorMessages = {
 export const getQuestions = async (params: Data) => {
   const { response_code, results } = await fetchQuestions(params)
 
-  if (response_code !== 0) throw new Error(errorMessages[response_code])
+  if (response_code !== 0) throw new Error(ERROR_MESSAGES[response_code])
 
   return results.map(({ incorrect_answers, ...question }) => ({
     ...question,
