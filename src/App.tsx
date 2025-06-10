@@ -9,7 +9,7 @@ import { ResultsPage } from "./pages/results/Results"
 
 import "./App.css"
 
-const pageMap: Record<Page, React.ReactElement> = {
+const PAGE_MAP: Record<Page, React.ReactElement> = {
   home: <FormPage />,
   quiz: <QuizPage />,
   results: <ResultsPage />,
@@ -22,7 +22,7 @@ export const App = () => {
   return (
     <>
       <Navbar />
-      <main className="page-container">{pageMap[page]}</main>
+      <main className="page-container">{PAGE_MAP[page]}</main>
     </>
   )
 }
