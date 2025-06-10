@@ -11,7 +11,7 @@ export const Row = ({
     {[question, picked, correct_answer].map((text, idx) => (
       <td
         key={`${text}${idx === 1 ? "-a" : "-u"}`}
-        dangerouslySetInnerHTML={{ __html: text }}
+        dangerouslySetInnerHTML={{ __html: text || "-" }}
       />
     ))}
     <td>{score ? score.toFixed(0) : 0}</td>
