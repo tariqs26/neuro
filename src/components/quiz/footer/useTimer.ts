@@ -16,15 +16,13 @@ export const useTimer = () => {
 
     if (status !== "running") return
 
-    const { duration, increment, delay } = TIMER_OPTIONS
-
     const interval = setInterval(() => {
-      if (elapsedDelay < delay) dispatch(incrementDelay(increment))
-      else if (elapsedTime >= duration) {
+      if (elapsedDelay < TIMER_OPTIONS.delay) dispatch(incrementDelay())
+      else if (elapsedTime >= TIMER_OPTIONS.duration) {
         dispatch(completeTimer())
         clearInterval(interval)
-      } else dispatch(incrementTime(increment))
-    }, increment)
+      } else dispatch(incrementTime())
+    }, TIMER_OPTIONS.increment)
 
     return () => clearInterval(interval)
   }, [dispatch, timer])

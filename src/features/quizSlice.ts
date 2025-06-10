@@ -40,11 +40,11 @@ const quizSlice = createSlice({
     completeTimer({ timer }) {
       timer.status = "completed"
     },
-    incrementTime({ timer }, { payload }: PayloadAction<number>) {
-      timer.elapsedTime += payload
+    incrementTime({ timer }) {
+      timer.elapsedTime += TIMER_OPTIONS.increment
     },
-    incrementDelay({ timer }, { payload }: PayloadAction<number>) {
-      timer.elapsedDelay += payload
+    incrementDelay({ timer }) {
+      timer.elapsedDelay += TIMER_OPTIONS.increment
     },
     resetTimer: (state) => {
       state.timer = initialTimerState
