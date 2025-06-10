@@ -1,9 +1,9 @@
-import type { Question } from "@/types"
+import type { ApiQuestion } from "@/types"
 import type { Data } from "@/types/form"
 
 type ApiResponse =
   | { response_code: 1 | 2 | 5; results: never[] }
-  | { response_code: 0; results: Question[] }
+  | { response_code: 0; results: ApiQuestion[] }
 
 const fetchQuestions = async (params: Data): Promise<ApiResponse> => {
   const url = new URL("https://opentdb.com/api.php")

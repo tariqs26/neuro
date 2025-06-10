@@ -1,6 +1,6 @@
-import type { Question } from "."
+import type { ApiQuestion } from "."
 
-export type QuizQuestion = Omit<Question, "incorrect_answers"> & {
+export type QuizQuestion = Omit<ApiQuestion, "incorrect_answers"> & {
   picked: string
   score: number
   options: string[]

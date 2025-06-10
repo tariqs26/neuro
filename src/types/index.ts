@@ -1,6 +1,6 @@
 export type Page = "home" | "quiz" | "error" | "results"
 
-export type Question = {
+export type ApiQuestion = {
   category: string
   correct_answer: string
   difficulty: "easy" | "medium" | "hard"
