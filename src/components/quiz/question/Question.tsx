@@ -1,22 +1,16 @@
 import { useDispatch, useSelector } from "@/app/hooks"
 import { afterAnswer } from "@/app/utils"
 import { pauseTimer, selectAnswer } from "@/features/quizSlice"
+import type { QuizQuestion } from "@/types/quiz"
 
 import "./Question.css"
-
-type QuestionProps = {
-  question: string
-  options: string[]
-  picked: string
-  correct_answer: string
-}
 
 export const Question = ({
   question,
   options,
   picked,
   correct_answer: correct,
-}: QuestionProps) => {
+}: QuizQuestion) => {
   const dispatch = useDispatch()
   const {
     currentIndex,
