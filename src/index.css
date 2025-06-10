@@ -65,7 +65,7 @@ button {
   border-radius: var(--radius);
   border: none;
   color: var(--foreground);
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   font-size: 1.1rem;
   font-weight: 500;
   display: inline-flex;
@@ -81,12 +81,6 @@ button:hover {
   cursor: pointer;
 }
 
-button:focus {
+button:focus-visible {
   outline: none;
-}
-
-@media screen and (max-width: 550px) {
-  button {
-    padding: 0.5rem 1rem;
-  }
 }
