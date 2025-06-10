@@ -5,21 +5,22 @@
 }
 
 .form-label {
-  color: var(--label-foreground);
+  color: var(--foreground);
   display: block;
+  font-weight: 500;
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
 }
 
 .form-control {
   color: var(--foreground);
   border: none;
   font-size: inherit;
+  font-weight: 500;
   padding: 0.5rem;
 }
 
-.form-control:focus {
-  outline: 2px solid var(--active-bg);
+.form-control:focus-visible {
+  outline: 2px solid var(--active);
 }
 
 .form-control::-webkit-scrollbar {
@@ -42,11 +43,11 @@
 
 .form-control[type="submit"] {
   transition: 150ms ease-in-out;
-  background-color: var(--submit);
+  background-color: var(--destructive);
 }
 
 input[type="submit"]:hover {
-  background-color: var(--submit-hover);
+  background-color: var(--destructive-hover);
   cursor: pointer;
 }
 
@@ -58,7 +59,7 @@ input[type="submit"]:hover {
 :is(.form-control, .option-group button) {
   background-color: var(--input);
   box-shadow: 0 0 0.5rem 0.1rem var(--input-outline);
-  border-radius: 7.5px;
+  border-radius: var(--radius);
   width: 100%;
   -webkit-user-select: none;
   user-select: none;
@@ -70,26 +71,21 @@ input[type="submit"]:hover {
   background-size: 100% 0;
   background-image: linear-gradient(
     to bottom,
-    var(--active-bg) 100%,
+    var(--active) 100%,
     transparent 0%
   );
   text-align: center;
   transition: 150ms ease-in-out;
 }
 
-@media (max-width: 380px) {
-  form {
-    padding: 1rem !important;
-    gap: 2rem;
-  }
-
+@media screen and (max-width: 550px) {
   .option-group button {
     padding: 0.5rem;
   }
 }
 
 .option-group .active {
-  animation: active 200ms ease-in-out forwards;
+  animation: active 200ms ease-in forwards;
 }
 
 @keyframes active {
@@ -100,7 +96,7 @@ input[type="submit"]:hover {
 
 .option-group .inactive {
   background-size: 100% 100%;
-  animation: inactive 200ms ease-in-out forwards;
+  animation: inactive 200ms ease-out forwards;
 }
 
 @keyframes inactive {

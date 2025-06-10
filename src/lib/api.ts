@@ -2,21 +2,14 @@ import type { Question } from "@/types"
 import type { Data } from "@/types/form"
 
 type ApiResponse =
-  | {
-      response_code: 1 | 2 | 5
-      results: never[]
-    }
-  | {
-      response_code: 0
-      results: Question[]
-    }
+  | { response_code: 1 | 2 | 5; results: never[] }
+  | { response_code: 0; results: Question[] }
 
 const fetchQuestions = async (params: Data): Promise<ApiResponse> => {
   const url = new URL("https://opentdb.com/api.php")
   url.search = new URLSearchParams(params).toString()
 
   const res = await fetch(url)
-
   if (!res.ok) throw new Error("An error occurred while fetching the data.")
 
   return res.json()

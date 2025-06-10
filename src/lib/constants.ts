@@ -1,4 +1,6 @@
-export const categories = [
+import type { Data } from "@/types/form"
+
+export const CATEGORIES = [
   { value: "9", label: "General Knowledge" },
   { value: "10", label: "Books" },
   { value: "11", label: "Movies" },
@@ -24,3 +26,24 @@ export const categories = [
   { value: "31", label: "Japanese Anime & Manga" },
   { value: "32", label: "Cartoon & Animations" },
 ]
+
+export const INPUT_OPTIONS: Record<
+  string,
+  [string, Data[keyof Omit<Data, "category">]][]
+> = {
+  AMOUNT: [
+    ["5", "5"],
+    ["10", "10"],
+    ["15", "15"],
+    ["20", "20"],
+  ],
+  DIFFICULTY: [
+    ["Easy", "easy"],
+    ["Medium", "medium"],
+    ["Hard", "hard"],
+  ],
+  TYPE: [
+    ["Multiple Choice", "multiple"],
+    ["True / False", "boolean"],
+  ],
+}

@@ -1,16 +1,17 @@
 import type { FormEvent } from "react"
-import { getQuestions } from "@/api"
 import { useDispatch, useSelector } from "@/app/hooks"
 import { setPage } from "@/features/appSlice"
 import { setIsSubmitting } from "@/features/formSlice"
 import { resetQuiz, setQuestions } from "@/features/quizSlice"
+import { getQuestions } from "@/lib/api"
+import { INPUT_OPTIONS } from "@/lib/constants"
 
-import CategoryInput from "./CategoryInput"
-import Input from "./Input"
+import { CategoryInput } from "@/components/form/CategoryInput"
+import { Input } from "@/components/form/Input"
 
 import "./Form.css"
 
-const Form = () => {
+export const FormPage = () => {
   const dispatch = useDispatch()
 
   const { isSubmitting, data } = useSelector((state) => state.form)
@@ -36,32 +37,20 @@ const Form = () => {
         label="Number of Questions"
         dataName="amount"
         stateValue={data.amount}
-        values={[
-          ["5", "5"],
-          ["10", "10"],
-          ["15", "15"],
-          ["20", "20"],
-        ]}
+        values={INPUT_OPTIONS.AMOUNT}
       />
       <CategoryInput />
       <Input
         label="Difficulty"
         dataName="difficulty"
         stateValue={data.difficulty}
-        values={[
-          ["Easy", "easy"],
-          ["Medium", "medium"],
-          ["Hard", "hard"],
-        ]}
+        values={INPUT_OPTIONS.DIFFICULTY}
       />
       <Input
         label="Type"
         dataName="type"
         stateValue={data.type}
-        values={[
-          ["Multiple Choice", "multiple"],
-          ["True / False", "boolean"],
-        ]}
+        values={INPUT_OPTIONS.TYPE}
       />
       <div className="form-group">
         <button type="submit" className="form-control" disabled={isSubmitting}>
@@ -71,5 +60,3 @@ const Form = () => {
     </form>
   )
 }
-
-export default Form

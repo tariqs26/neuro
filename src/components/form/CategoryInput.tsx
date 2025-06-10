@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "@/app/hooks"
 import { setValue } from "@/features/formSlice"
-import { categories } from "./categories"
+import { CATEGORIES } from "@/lib/constants"
 
-const CategoryInput = () => {
+export const CategoryInput = () => {
   const dispatch = useDispatch()
-  const category = useSelector((state) => state.form.data.category)
+  const category = useSelector(({ form }) => form.data.category)
 
   return (
     <div className="form-group">
@@ -20,7 +20,7 @@ const CategoryInput = () => {
         }}
         title="Select a category"
       >
-        {categories.map(({ value, label }) => (
+        {CATEGORIES.map(({ value, label }) => (
           <option key={value} value={value}>
             {label}
           </option>
@@ -29,5 +29,3 @@ const CategoryInput = () => {
     </div>
   )
 }
-
-export default CategoryInput

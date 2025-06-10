@@ -9,7 +9,7 @@ type InputProps = {
   values: Array<[string, FormValue]>
 }
 
-const Input = (props: InputProps) => {
+export const Input = (props: InputProps) => {
   const dispatch = useDispatch()
 
   const handleOptionClick = (e: React.MouseEvent) => {
@@ -33,9 +33,9 @@ const Input = (props: InputProps) => {
           <button
             type="button"
             key={key}
-            className={`${
+            className={`form-control ${
               value === props.stateValue ? "active" : "inactive"
-            } form-control`}
+            }`}
             value={value}
             onClick={handleOptionClick}
           >
@@ -46,5 +46,3 @@ const Input = (props: InputProps) => {
     </div>
   )
 }
-
-export default Input
